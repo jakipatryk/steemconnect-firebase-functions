@@ -1,3 +1,6 @@
+# JavaScript output files
+dist/
+
 # Logs
 logs
 *.log

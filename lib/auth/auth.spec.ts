@@ -78,7 +78,7 @@ describe('getAccessToken', () => {
       code
     );
 
-    expect(result.error).to.equal('invalid_grant');
+    expect(result).to.have.property('error');
   });
 });
 

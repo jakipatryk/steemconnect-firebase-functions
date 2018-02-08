@@ -77,6 +77,6 @@ export const getAccessTokenFromFirestore = async (admin: any, uid: string) => {
       return doc.data();
     }
   } catch (err) {
-    throw new Error(`Error getting document: ${err}`);
+    throw new Error(`Error getting token: ${err}`);
   }
 };

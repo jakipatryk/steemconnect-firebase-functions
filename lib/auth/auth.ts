@@ -36,9 +36,18 @@ export const getAccessToken = async (
       },
       json: true
     };
+
     const accessToken = await rp.post(options);
     return accessToken;
   } catch (e) {
-    return e.response.body;
+    throw e.error;
   }
+};
+
+export const mintFirebaseToken = async (
+  admin: any,
+  uid: string
+): Promise<string> => {
+  const firebaseToken = await admin.auth().createCustomToken(uid);
+  return firebaseToken;
 };

@@ -2,9 +2,7 @@ import 'mocha';
 import { expect } from 'chai';
 import * as nock from 'nock';
 
-import { getAuthorizationUrl, getAccessToken } from './auth';
-
-import * as rp from 'request-promise';
+import { getAuthorizationUrl, getAccessToken, mintFirebaseToken } from './auth';
 
 describe('getAuthorizationUrl', () => {
   it('should return a correct url when scope has one element', () => {
@@ -63,27 +61,35 @@ describe('getAccessToken', () => {
     );
   });
 
-  it('should return an error message if code is invalid', async () => {
+  it('should throw an error if code is invalid', async () => {
     nock('https://steemconnect.com')
       .post('/api/oauth2/token')
-      .reply(401, {
+      .replyWithError({
         error: 'invalid_grant',
         error_description: 'The token has invalid role'
       });
 
-    const result = await getAccessToken(
-      clientId,
-      clientSecret,
-      redirectUri,
-      code
+    return getAccessToken(clientId, clientSecret, redirectUri, code).catch(
+      err => {
+        expect(err).to.exist.and.have.property('error');
+      }
     );
-
-    expect(result).to.have.property('error');
   });
 });
 
 describe('mintFirebaseToken', () => {
-  it('should mint a Firebase token based on given code');
+  it('should mint and return a Firebase token', async () => {
+    const Admin = function() {
+      this.auth = () => this;
+      this.createCustomToken = async uid => 'fdsfer3432.fsdgre3.trefds';
+    };
+    const admin = new Admin();
+    const uid = 'steemconnect:adammalysz';
+
+    const result = await mintFirebaseToken(admin, uid);
+
+    expect(result).to.equal('fdsfer3432.fsdgre3.trefds');
+  });
 });
 
 describe('saveUserDataInFirestore', () => {

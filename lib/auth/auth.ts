@@ -51,3 +51,15 @@ export const mintFirebaseToken = async (
   const firebaseToken = await admin.auth().createCustomToken(uid);
   return firebaseToken;
 };
+
+export const saveAccessToken = async (
+  admin: any,
+  uid: string,
+  accessToken: any
+) => {
+  const tokenDetails = Object.assign({}, accessToken);
+  return admin
+    .firestore()
+    .doc(`steemconnectToken/${uid}`)
+    .set(tokenDetails, { merge: true });
+};

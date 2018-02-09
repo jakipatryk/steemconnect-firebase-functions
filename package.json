@@ -6,9 +6,9 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "test": "mocha -r ts-node/register lib/**/*.spec.ts",
+    "test": "mocha -r ts-node/register tests/*.spec.ts",
     "test-watch":
-      "mocha --watch --watch-extensions ts -r ts-node/register lib/**/*.spec.ts"
+      "mocha --watch --watch-extensions ts -r ts-node/register tests/*.spec.ts"
   },
   "repository": {
     "type": "git",

@@ -1,7 +1,9 @@
+import { AccessToken } from './interfaces/AccessToken';
+
 export async function saveAccessToken(
   admin: any,
   uid: string,
-  accessToken: any
+  accessToken: AccessToken
 ) {
   const tokenDetails = Object.assign({}, accessToken);
   return admin

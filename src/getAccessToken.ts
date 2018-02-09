@@ -1,3 +1,5 @@
+import { AccessToken } from './interfaces/AccessToken';
+
 import * as rp from 'request-promise';
 
 export async function getAccessToken(
@@ -5,7 +7,7 @@ export async function getAccessToken(
   clientSecret: string,
   redirectUri: string,
   code: string
-): Promise<any> {
+): Promise<AccessToken> {
   try {
     const options = {
       uri: 'https://steemconnect.com/api/oauth2/token',

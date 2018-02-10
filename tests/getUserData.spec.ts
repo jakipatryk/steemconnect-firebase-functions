@@ -9,7 +9,11 @@ describe('getUserData', () => {
       .get('/api/me')
       .reply(200, {
         user: 'jakipatryk-dev',
-        scope: ['vote', 'comment']
+        _id: 'jakipatryk-dev',
+        name: 'jakipatryk-dev',
+        account: {},
+        scope: ['vote', 'comment'],
+        user_metadata: {}
       });
 
     const accessToken = 'gfdgergfdvcx.fdsfdsds';

@@ -13,13 +13,10 @@ describe('getAccessToken', () => {
     nock('https://steemconnect.com')
       .post('/api/oauth2/token')
       .reply(200, {
-        username: 'dev',
-        access_token: {
           access_token: 'ey.eyJy4MDI5NjU3fQ.lqX2bTkW7R',
           expires_in: 604800,
           username: 'dev'
-        }
-      });
+        });
 
     const result = await getAccessToken(
       clientId,
@@ -29,9 +26,7 @@ describe('getAccessToken', () => {
     );
 
     expect(result.username).to.equal('dev');
-    expect(result.access_token.access_token).to.equal(
-      'ey.eyJy4MDI5NjU3fQ.lqX2bTkW7R'
-    );
+    expect(result.access_token).to.equal('ey.eyJy4MDI5NjU3fQ.lqX2bTkW7R');
   });
 
   it('should throw an error if code is invalid', async () => {

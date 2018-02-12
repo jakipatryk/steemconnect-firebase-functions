@@ -1,14 +1,15 @@
 {
   "name": "steemconnect-firebase-functions",
   "version": "1.0.0",
-  "description": "",
+  "description": "A library to use SteemConnect in Firebase Functions.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
     "test": "mocha -r ts-node/register tests/*.spec.ts",
     "test-watch":
-      "mocha --watch --watch-extensions ts -r ts-node/register tests/*.spec.ts"
+      "mocha --watch --watch-extensions ts -r ts-node/register tests/*.spec.ts",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -16,7 +17,7 @@
       "git+https://github.com/jakipatryk/steemconnect-firebase-functions.git"
   },
   "keywords": ["steemconnect", "steem", "firebase"],
-  "author": "jakipatryk",
+  "author": "jakipatryk (https://steemit.com/@jakipatryk)",
   "license": "MIT",
   "bugs": {
     "url":

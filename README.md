@@ -34,3 +34,15 @@ export const redirect = functions.https.onRequest((req, res) => {
   res.redirect(endpoint);
 });
 ```
+
+## Docs
+
+| Function | Parameters | Description |
+| --- | --- | --- |
+| `broadcastOperations` | accessToken, operations | broadcasts given operations to Steem blockchain and returns result data if succeeded |
+| `getAccessToken` | clientId, clientSecret, redirectUri, code | exchanges code for access token and returns it |
+| `getAccessTokenFromFirestore` | admin, uid | returns access token for given uid from Firestore if exists |
+| `getAuthorizationUrl` | clientId, redirectUri, scope | returns a URL to SteemConnect with app credentials that enables users to log in to their account |
+| `getUserData` | accessToken | returns requested user details from SteemConnect |
+| `mintFirebaseToken` | admin, uid | creates and returns Firebase Custom Auth Token |
+| `saveAccessToken` | admin, uid, accessToken | saves access token in the Firestore `steemconnectToken/uid` document |

@@ -1,2 +1,2 @@
-import { AccessToken } from './interfaces/AccessToken';
-export declare function getAccessTokenFromFirestore(admin: any, uid: string): Promise<AccessToken>;
+import { AccessTokenResponse } from './interfaces/AccessTokenResponse';
+export declare function getAccessTokenFromFirestore(admin: any, uid: string): Promise<AccessTokenResponse>;

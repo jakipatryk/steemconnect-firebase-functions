@@ -1,2 +1,2 @@
-import { AccessToken } from './interfaces/AccessToken';
-export declare function saveAccessToken(admin: any, uid: string, accessToken: AccessToken): Promise<any>;
+import { AccessTokenResponse } from './interfaces/AccessTokenResponse';
+export declare function saveAccessToken(admin: any, uid: string, accessToken: AccessTokenResponse): Promise<any>;

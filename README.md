@@ -35,6 +35,10 @@ export const redirect = functions.https.onRequest((req, res) => {
 });
 ```
 
+## Tutorials
+
+- [How to authenticate users via SteemConnect on the Firebase?](https://utopian.io/utopian-io/@jakipatryk/how-to-authenticate-users-via-steemconnect-on-the-firebase)
+
 ## Docs
 
 | Function | Parameters | Description |

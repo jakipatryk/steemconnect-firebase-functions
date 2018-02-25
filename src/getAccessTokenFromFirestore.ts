@@ -1,9 +1,9 @@
-import { AccessToken } from './interfaces/AccessToken';
+import { AccessTokenResponse } from './interfaces/AccessTokenResponse';
 
 export async function getAccessTokenFromFirestore(
   admin: any,
   uid: string
-): Promise<AccessToken> {
+): Promise<AccessTokenResponse> {
   try {
     const doc = await admin
       .firestore()

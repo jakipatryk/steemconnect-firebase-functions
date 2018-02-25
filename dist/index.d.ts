@@ -5,3 +5,4 @@ export { saveAccessToken } from './saveAccessToken';
 export { getAccessTokenFromFirestore } from './getAccessTokenFromFirestore';
 export { getUserData } from './getUserData';
 export { broadcastOperations } from './broadcastOperations';
+export { refreshAccessToken } from './refreshAccessToken';

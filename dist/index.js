@@ -14,3 +14,5 @@ var getUserData_1 = require("./getUserData");
 exports.getUserData = getUserData_1.getUserData;
 var broadcastOperations_1 = require("./broadcastOperations");
 exports.broadcastOperations = broadcastOperations_1.broadcastOperations;
+var refreshAccessToken_1 = require("./refreshAccessToken");
+exports.refreshAccessToken = refreshAccessToken_1.refreshAccessToken;

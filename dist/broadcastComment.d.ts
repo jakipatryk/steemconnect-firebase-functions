@@ -1,0 +1,1 @@
+export declare function broadcastComment(accessToken: string, parentAuthor: string, parentPermlink: string, commentAuthor: string, commentPermlink: string, commentBody: string, jsonMetadata?: object): Promise<any>;

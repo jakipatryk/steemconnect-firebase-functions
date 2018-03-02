@@ -8,7 +8,7 @@ export function createOptions(
   percentSteemDolars?: number,
   allowVotes?: boolean,
   allowCurationRewards?: boolean
-) {
+): Operation {
   const optionsOperation: Operation = [
     'comment_options',
     {

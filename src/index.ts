@@ -9,3 +9,4 @@ export { refreshAccessToken } from './refreshAccessToken';
 export { broadcastUpvote } from './broadcastUpvote';
 export { broadcastComment } from './broadcastComment';
 export { broadcastPost } from './broadcastPost';
+export { createOptions } from './createOptions';

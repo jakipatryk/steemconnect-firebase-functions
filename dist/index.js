@@ -22,3 +22,5 @@ var broadcastComment_1 = require("./broadcastComment");
 exports.broadcastComment = broadcastComment_1.broadcastComment;
 var broadcastPost_1 = require("./broadcastPost");
 exports.broadcastPost = broadcastPost_1.broadcastPost;
+var createOptions_1 = require("./createOptions");
+exports.createOptions = createOptions_1.createOptions;

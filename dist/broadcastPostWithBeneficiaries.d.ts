@@ -1,0 +1,1 @@
+export declare function broadcastPostWithBeneficiaries(accessToken: string, mainTag: string, postAuthor: string, postPermlink: string, postTitle: string, postBody: string, beneficiariesAccount: string, beneficiariesWeight: number, jsonMetadata?: object): Promise<any>;

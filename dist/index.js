@@ -24,3 +24,5 @@ var broadcastPost_1 = require("./broadcastPost");
 exports.broadcastPost = broadcastPost_1.broadcastPost;
 var createOptions_1 = require("./createOptions");
 exports.createOptions = createOptions_1.createOptions;
+var broadcastPostWithBeneficiaries_1 = require("./broadcastPostWithBeneficiaries");
+exports.broadcastPostWithBeneficiaries = broadcastPostWithBeneficiaries_1.broadcastPostWithBeneficiaries;

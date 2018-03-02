@@ -10,3 +10,6 @@ export { broadcastUpvote } from './broadcastUpvote';
 export { broadcastComment } from './broadcastComment';
 export { broadcastPost } from './broadcastPost';
 export { createOptions } from './createOptions';
+export {
+  broadcastPostWithBeneficiaries
+} from './broadcastPostWithBeneficiaries';

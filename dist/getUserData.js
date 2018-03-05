@@ -9,6 +9,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const rp = require("request-promise");
+/**
+ * Gets and returns the user data of the user.
+ * @param {string} accessToken The access_token of the user.
+ * @returns {Promise} Promise object that resolves into user data object.
+ */
 function getUserData(accessToken) {
     return __awaiter(this, void 0, void 0, function* () {
         try {

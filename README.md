@@ -50,7 +50,7 @@ This library has been mainly designed to use with Firebase Cloud Functions, but 
 
 ### Any NodeJS environment functions
 
-These functions can be used in any NodeJS env:
+These functions can be used in any NodeJS environment:
 
 #### broadcastComment
 
@@ -70,7 +70,7 @@ Broadcasts a comment to the Steem blockchain and returns the result of the opera
 
 ##### What does it return?
 
-These function returns a **Promise** object that resolves into the result of the operation.
+This function returns a **Promise** object that resolves into the result of the operation.
 
 ##### Example usage
 

@@ -8,6 +8,7 @@ import { Operation } from './interfaces/Operation';
  * @param {string} mainTag The main tag of the post (not possible to change it later).
  * @param {string} postAuthor The username of the user who wants to add a post.
  * @param {string} postPermlink The permlink of the post.
+ * @param {string} postTitle The title of the post.
  * @param {string} postBody The content of the post.
  * @param {Object} [jsonMetadata] Optional additional metadata (ex. the name of the app or additional tags).
  * @returns {Promise} Promise object that resolves into the result of the operation.

@@ -150,6 +150,7 @@ Broadcasts a post to the Steem blockchain and returns the result of the operatio
 | `mainTag`      | string | the main tag of the post (not possible to change it later)                | +        |
 | `postAuthor`   | string | the username of the user who wants to add a post                          | +        |
 | `postPermlink` | string | the permlink of the post                                                  | +        |
+| `postTitle`    | string | the title of the post                                                     | +        |
 | `postBody`     | string | the content of the post                                                   | +        |
 | `jsonMetadata` | object | optional additional metadata (ex. the name of the app or additional tags) | -        |
 
@@ -195,6 +196,7 @@ Broadcasts a post with beneficiaries details to the Steem blockchain and returns
 | `mainTag`              | string | the main tag of the post (not possible to change it later)                                         | +        |
 | `postAuthor`           | string | the username of the user who wants to add a post                                                   | +        |
 | `postPermlink`         | string | the permlink of the post                                                                           | +        |
+| `postTitle`            | string | the title of the post                                                                              | +        |
 | `postBody`             | string | the content of the post                                                                            | +        |
 | `beneficiariesAccount` | string | the username of the beneficiaries account                                                          | +        |
 | `beneficiariesWeight`  | number | the weight of the beneficiaries (ex. 2500 is equal the 25% rewards going to beneficiaries account) | +        |

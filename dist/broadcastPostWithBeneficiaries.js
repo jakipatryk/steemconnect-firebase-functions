@@ -8,6 +8,7 @@ const createOptions_1 = require("./createOptions");
  * @param {string} mainTag The main tag of the post (not possible to change it later).
  * @param {string} postAuthor The username of the user who wants to add a post.
  * @param {string} postPermlink The permlink of the post.
+ * @param {string} postTitle The title of the post.
  * @param {string} postBody The content of the post.
  * @param {string} beneficiariesAccount The username of the beneficiaries account.
  * @param {number} beneficiariesWeight The weight of the beneficiaries (ex. 2500 is equal the 25% rewards going to beneficiaries account).

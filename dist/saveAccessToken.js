@@ -8,6 +8,13 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+/**
+ * Saves access token and its details in the Firestore.
+ * @param admin The configurated firebase-admin object.
+ * @param {string} uid The uid of the user.
+ * @param {Object} accessToken The access token + its details object.
+ * @returns {Promise} Promise object.
+ */
 function saveAccessToken(admin, uid, accessToken) {
     return __awaiter(this, void 0, void 0, function* () {
         const tokenDetails = Object.assign({}, accessToken);

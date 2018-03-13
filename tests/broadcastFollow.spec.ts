@@ -21,14 +21,14 @@ describe('broadcastComment', function() {
           required_auths: [],
           required_posting_auths: [username],
           id: 'follow',
-          json: [
+          json: JSON.stringify([
             'follow',
             {
               follower: username,
               following: userToFollow,
               what: ['blog']
             }
-          ]
+          ])
         }
       ]
     ];

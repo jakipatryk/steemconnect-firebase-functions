@@ -350,6 +350,7 @@ Creates and returns the authorization URL to SteemConnect OAuth2 service.
 | `clientId`    | string | the client id of the SteemConnect app                                | +        |
 | `redirectUri` | string | the URI you want the user to be redirected to after successful login | +        |
 | `scope`       | array  | the array of scopes (ex. ['vote', 'comment'])                        | +        |
+| `state`       | string | optional state variable                                              | -        |
 
 ##### What does it return?
 

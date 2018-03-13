@@ -4,7 +4,7 @@ import * as broadcaster from '../src/broadcastOperations';
 import { expect } from 'chai';
 import * as sinon from 'sinon';
 
-describe('broadcastComment', function() {
+describe('broadcastUnfollow', function() {
   const accessToken = 'fdsgfdew';
   const username = 'jakipatryk-dev';
   const userToUnfollow = 'jakipatryk';

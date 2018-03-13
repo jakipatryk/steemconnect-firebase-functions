@@ -311,11 +311,11 @@ Broadcasts an unfollow to the Steem blockchain and returns the result of the ope
 
 ##### Parameters
 
-| Name             | Type   | Description                                            | Required |
-| ---------------- | ------ | ------------------------------------------------------ | -------- |
-| `accessToken`    | string | the `access_token` of the user                         | +        |
-| `username`       | string | the username of the user that wants to follow somebody | +        |
-| `userToUnfollow` | string | the username of the user to unfollow                   | +        |
+| Name             | Type   | Description                                              | Required |
+| ---------------- | ------ | -------------------------------------------------------- | -------- |
+| `accessToken`    | string | the `access_token` of the user                           | +        |
+| `username`       | string | the username of the user that wants to unfollow somebody | +        |
+| `userToUnfollow` | string | the username of the user to unfollow                     | +        |
 
 ##### What does it return?
 

@@ -268,6 +268,43 @@ broadcastPostWithBeneficiaries(
 
 ---
 
+#### broadcastReblog
+
+Broadcasts a reblog to the Steem blockchain and returns the result of the operation.
+
+##### Parameters
+
+| Name           | Type   | Description                                             | Required |
+| -------------- | ------ | ------------------------------------------------------- | -------- |
+| `accessToken`  | string | the `access_token` of the user                          | +        |
+| `username`     | string | the username of the user that wants to reblog something | +        |
+| `postAuthor`   | string | the username of the author of the post to reblog        | +        |
+| `postPermlink` | string | the permlink of the post to reblog                      | +        |
+
+##### What does it return?
+
+This function returns a **Promise** object that resolves into the result of the operation.
+
+##### Example usage
+
+```typescript
+import { broadcastReblog } from 'steemconnect-firebase-functions';
+
+const accessToken = 'access-token';
+const username = 'jakipatryk-dev';
+const postAuthor = 'jakipatryk';
+const postPermlink =
+  'steemconnect-firebase-functions-version-1-1-0-has-just-been-published';
+
+broadcastReblog(accessToken, username, postAuthor, postPermlink).then(
+  result => {
+    console.log(result);
+  }
+);
+```
+
+---
+
 #### broadcastUnfollow
 
 Broadcasts an unfollow to the Steem blockchain and returns the result of the operation.
@@ -293,7 +330,7 @@ const accessToken = 'access-token';
 const username = 'jakipatryk';
 const userToUnfollow = 'ned';
 
-broadcastUnollow(accessToken, username, userToUnfollow).then(result => {
+broadcastUnfollow(accessToken, username, userToUnfollow).then(result => {
   console.log(result);
 });
 ```

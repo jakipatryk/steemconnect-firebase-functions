@@ -11,3 +11,7 @@ export { broadcastComment } from './broadcastComment';
 export { broadcastPost } from './broadcastPost';
 export { createOptions } from './createOptions';
 export { broadcastPostWithBeneficiaries } from './broadcastPostWithBeneficiaries';
+export { broadcastFollow } from './broadcastFollow';
+export { broadcastUnfollow } from './broadcastUnfollow';
+export { broadcastReblog } from './broadcastReblog';
+export { createFirebaseAccount } from './createFirebaseAccount';

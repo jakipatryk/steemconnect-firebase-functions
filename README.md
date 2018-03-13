@@ -537,6 +537,51 @@ refreshAccessToken(clientId, clientSecret, redirectUri, code).then(
 
 These function can be used only on the Firebase:
 
+#### createFirebaseAccount
+
+Creates or updates Firebase auth user account.
+
+##### Parameters
+
+| Name            | Type    | Description                                                  | Required |
+| --------------- | ------- | ------------------------------------------------------------ | -------- |
+| `admin`         | object  | the configurated `firebase-admin` object                     | +        |
+| `uid`           | string  | the uid of the user                                          | +        |
+| `username`      | string  | the username of the user                                     | +        |
+| `photoURL`      | string  | optional user's photo URL                                    | -        |
+| `email`         | string  | optional user's email                                        | -        |
+| `emailVerified` | boolean | optional boolean whether or not the user's email is verified | -        |
+| `phoneNumber`   | string  | optional user's phone number                                 | -        |
+| `disabled`      | boolean | optional boolean whether or not the user is disabled         | -        |
+
+##### What does it return?
+
+This function returns a **Promise** object.
+
+##### Example usage
+
+```typescript
+import { createFirebaseAccount } from 'steemconnect-firebase-functions';
+
+import * as admin from 'firebase-admin';
+
+const serviceAccount = require('../serviceAccountKey.json');
+
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount)
+});
+
+const uid = 'steemconnect:jakipatryk';
+const username = 'jakipatryk';
+const photoURL = 'https://some-uri.com/avatar.jpg';
+
+createFirebaseAccount(admin, uid, username, photoURL).then(() => {
+  console.log(5 * 20 + 11);
+});
+```
+
+---
+
 #### getAccessTokenFromFirestore
 
 Gets and returns the access token + details object from the Firestore.

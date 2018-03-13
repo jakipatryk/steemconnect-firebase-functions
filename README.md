@@ -98,6 +98,38 @@ broadcastComment(
 
 ---
 
+#### broadcastFollow
+
+Broadcasts a follow to the Steem blockchain and returns the result of the operation.
+
+##### Parameters
+
+| Name           | Type   | Description                                            | Required |
+| -------------- | ------ | ------------------------------------------------------ | -------- |
+| `accessToken`  | string | the `access_token` of the user                         | +        |
+| `username`     | string | the username of the user that wants to follow somebody | +        |
+| `userToFollow` | string | the username of the user to follow                     | +        |
+
+##### What does it return?
+
+This function returns a **Promise** object that resolves into the result of the operation.
+
+##### Example usage
+
+```typescript
+import { broadcastFollow } from 'steemconnect-firebase-functions';
+
+const accessToken = 'access-token';
+const username = 'jakipatryk';
+const userToFollow = 'ned';
+
+broadcastFollow(accessToken, username, userToFollow).then(result => {
+  console.log(result);
+});
+```
+
+---
+
 #### broadcastOperations
 
 Broadcasts operations to the Steem blockchain.

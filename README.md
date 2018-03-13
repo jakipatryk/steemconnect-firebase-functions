@@ -98,6 +98,38 @@ broadcastComment(
 
 ---
 
+#### broadcastFollow
+
+Broadcasts a follow to the Steem blockchain and returns the result of the operation.
+
+##### Parameters
+
+| Name           | Type   | Description                                            | Required |
+| -------------- | ------ | ------------------------------------------------------ | -------- |
+| `accessToken`  | string | the `access_token` of the user                         | +        |
+| `username`     | string | the username of the user that wants to follow somebody | +        |
+| `userToFollow` | string | the username of the user to follow                     | +        |
+
+##### What does it return?
+
+This function returns a **Promise** object that resolves into the result of the operation.
+
+##### Example usage
+
+```typescript
+import { broadcastFollow } from 'steemconnect-firebase-functions';
+
+const accessToken = 'access-token';
+const username = 'jakipatryk';
+const userToFollow = 'ned';
+
+broadcastFollow(accessToken, username, userToFollow).then(result => {
+  console.log(result);
+});
+```
+
+---
+
 #### broadcastOperations
 
 Broadcasts operations to the Steem blockchain.
@@ -230,6 +262,75 @@ broadcastPostWithBeneficiaries(
   beneficiariesAccount,
   beneficiariesWeight
 ).then(result => {
+  console.log(result);
+});
+```
+
+---
+
+#### broadcastReblog
+
+Broadcasts a reblog to the Steem blockchain and returns the result of the operation.
+
+##### Parameters
+
+| Name           | Type   | Description                                             | Required |
+| -------------- | ------ | ------------------------------------------------------- | -------- |
+| `accessToken`  | string | the `access_token` of the user                          | +        |
+| `username`     | string | the username of the user that wants to reblog something | +        |
+| `postAuthor`   | string | the username of the author of the post to reblog        | +        |
+| `postPermlink` | string | the permlink of the post to reblog                      | +        |
+
+##### What does it return?
+
+This function returns a **Promise** object that resolves into the result of the operation.
+
+##### Example usage
+
+```typescript
+import { broadcastReblog } from 'steemconnect-firebase-functions';
+
+const accessToken = 'access-token';
+const username = 'jakipatryk-dev';
+const postAuthor = 'jakipatryk';
+const postPermlink =
+  'steemconnect-firebase-functions-version-1-1-0-has-just-been-published';
+
+broadcastReblog(accessToken, username, postAuthor, postPermlink).then(
+  result => {
+    console.log(result);
+  }
+);
+```
+
+---
+
+#### broadcastUnfollow
+
+Broadcasts an unfollow to the Steem blockchain and returns the result of the operation.
+
+##### Parameters
+
+| Name             | Type   | Description                                              | Required |
+| ---------------- | ------ | -------------------------------------------------------- | -------- |
+| `accessToken`    | string | the `access_token` of the user                           | +        |
+| `username`       | string | the username of the user that wants to unfollow somebody | +        |
+| `userToUnfollow` | string | the username of the user to unfollow                     | +        |
+
+##### What does it return?
+
+This function returns a **Promise** object that resolves into the result of the operation.
+
+##### Example usage
+
+```typescript
+import { broadcastUnfollow } from 'steemconnect-firebase-functions';
+
+const accessToken = 'access-token';
+const username = 'jakipatryk';
+const userToUnfollow = 'ned';
+
+broadcastUnfollow(accessToken, username, userToUnfollow).then(result => {
   console.log(result);
 });
 ```
@@ -435,6 +536,51 @@ refreshAccessToken(clientId, clientSecret, redirectUri, code).then(
 ### Firebase specific functions
 
 These function can be used only on the Firebase:
+
+#### createFirebaseAccount
+
+Creates or updates Firebase auth user account.
+
+##### Parameters
+
+| Name            | Type    | Description                                                  | Required |
+| --------------- | ------- | ------------------------------------------------------------ | -------- |
+| `admin`         | object  | the configurated `firebase-admin` object                     | +        |
+| `uid`           | string  | the uid of the user                                          | +        |
+| `username`      | string  | the username of the user                                     | +        |
+| `photoURL`      | string  | optional user's photo URL                                    | -        |
+| `email`         | string  | optional user's email                                        | -        |
+| `emailVerified` | boolean | optional boolean whether or not the user's email is verified | -        |
+| `phoneNumber`   | string  | optional user's phone number                                 | -        |
+| `disabled`      | boolean | optional boolean whether or not the user is disabled         | -        |
+
+##### What does it return?
+
+This function returns a **Promise** object.
+
+##### Example usage
+
+```typescript
+import { createFirebaseAccount } from 'steemconnect-firebase-functions';
+
+import * as admin from 'firebase-admin';
+
+const serviceAccount = require('../serviceAccountKey.json');
+
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount)
+});
+
+const uid = 'steemconnect:jakipatryk';
+const username = 'jakipatryk';
+const photoURL = 'https://some-uri.com/avatar.jpg';
+
+createFirebaseAccount(admin, uid, username, photoURL).then(() => {
+  console.log(5 * 20 + 11);
+});
+```
+
+---
 
 #### getAccessTokenFromFirestore
 

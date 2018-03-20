@@ -602,6 +602,38 @@ refreshAccessToken(clientId, clientSecret, redirectUri, code).then(
 
 ---
 
+#### setUserMetadata
+
+Sets user metadata and returns the data of this user.
+
+##### Parameters
+
+| Name          | Type   | Description                    | Required |
+| ------------- | ------ | ------------------------------ | -------- |
+| `accessToken` | string | the `access_token` of the user | +        |
+| `metadata`    | object | the metadata to set            | +        |
+
+##### What does it return?
+
+This function returns a **Promise** object that resolves into user data object.
+
+##### Example usage
+
+```typescript
+import { setUserMetadata } from 'steemconnect-firebase-functions';
+
+const accessToken = '432432543njn5k43b5hj23hjbhj423.543nbrj43btjhb4';
+const metadata = {
+  testData: 'some-data'
+};
+
+setUserMetadata(accessToken, metadata).then(userData => {
+  console.log(userData);
+});
+```
+
+---
+
 ### Firebase specific functions
 
 These function can be used only on the Firebase:

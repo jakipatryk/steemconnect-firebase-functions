@@ -406,6 +406,38 @@ const options = createOptions(author, permlink, null, null, null, allowVotes);
 
 ---
 
+#### createVote
+
+Creates and returns the `vote` operation.
+
+##### Parameters
+
+| Name       | Type   | Description                                                                                                                         | Required |
+| ---------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| `voter`    | string | the username of the voter                                                                                                           | +        |
+| `author`   | string | the username of the author of a comment/post that you want to create a vote operation on                                            | +        |
+| `permlink` | string | the permlink of a comment/post that you want to create a vote operation on                                                          | +        |
+| `weight`   | number | the weight of the vote (ex. 10000 is going to create a 100% upvote operation and -1000 is going to create a 10% downvote operation) | +        |
+
+##### What does it return?
+
+This function returns a single `vote` operation in the form of an array.
+
+##### Example usage
+
+```typescript
+import { createVote } from 'steemconnect-firebase-functions';
+
+const voter = 'jakipatryk';
+const author = 'ned';
+const permlink = 'i-am-ned-and-i-like-smts';
+const weight = 500; // will create a 5% upvote operation
+
+const voteOperation = createVote(voter, author, permlink, weight);
+```
+
+---
+
 #### getAccessToken
 
 Exchanges the OAuth2 code for an access token and its details (username, expiration time and optionally refresh token) and returns them.

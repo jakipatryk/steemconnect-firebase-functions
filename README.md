@@ -98,6 +98,42 @@ broadcastComment(
 
 ---
 
+#### broadcastDownvote
+
+Broadcasts a downvote to the Steem blockchain and returns the result of the operation.
+
+##### Parameters
+
+| Name          | Type   | Description                                                              | Required |
+| ------------- | ------ | ------------------------------------------------------------------------ | -------- |
+| `accessToken` | string | the `access_token` of the user                                           | +        |
+| `voter`       | string | the username of the voter                                                | +        |
+| `author`      | string | the username of the author of a comment/post that user wants to downvote | +        |
+| `permlink`    | string | the permlink of a comment/post that user wants to downvote               | +        |
+| `weight`      | number | the weight of the vote (ex. 5000 is going to broadcast a 50% downvote)   | +        |
+
+##### What does it return?
+
+This function returns a **Promise** object that resolves into the result of the operation.
+
+##### Example usage
+
+```typescript
+import { broadcastDownvote } from 'steemconnect-firebase-functions';
+
+const accessToken = 'access-token';
+const voter = 'jakipatryk';
+const author = 'ned';
+const permlink = 'steemfest2-closing-dinner';
+const weight = 10000; // 100% downvote
+
+broadcastDownvote(accessToken, voter, author, permlink, weight).then(result => {
+  console.log(result);
+});
+```
+
+---
+
 #### broadcastFollow
 
 Broadcasts a follow to the Steem blockchain and returns the result of the operation.
@@ -349,6 +385,7 @@ Broadcasts an upvote to the Steem blockchain and returns the result of the opera
 | `voter`       | string | the username of the voter                                              | +        |
 | `author`      | string | the username of the author of a comment/post that user wants to upvote | +        |
 | `permlink`    | string | the permlink of a comment/post that user wants to upvote               | +        |
+| `weight`      | number | the weight of the vote (ex. 10000 is going to broadcast a 100% upvote) | +        |
 
 ##### What does it return?
 
@@ -402,6 +439,38 @@ const permlink = '12-iq-overload-hendrik-lorentz';
 const allowVotes = false;
 
 const options = createOptions(author, permlink, null, null, null, allowVotes);
+```
+
+---
+
+#### createVote
+
+Creates and returns the `vote` operation.
+
+##### Parameters
+
+| Name       | Type   | Description                                                                                                                         | Required |
+| ---------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| `voter`    | string | the username of the voter                                                                                                           | +        |
+| `author`   | string | the username of the author of a comment/post that you want to create a vote operation on                                            | +        |
+| `permlink` | string | the permlink of a comment/post that you want to create a vote operation on                                                          | +        |
+| `weight`   | number | the weight of the vote (ex. 10000 is going to create a 100% upvote operation and -1000 is going to create a 10% downvote operation) | +        |
+
+##### What does it return?
+
+This function returns a single `vote` operation in the form of an array.
+
+##### Example usage
+
+```typescript
+import { createVote } from 'steemconnect-firebase-functions';
+
+const voter = 'jakipatryk';
+const author = 'ned';
+const permlink = 'i-am-ned-and-i-like-smts';
+const weight = 500; // will create a 5% upvote operation
+
+const voteOperation = createVote(voter, author, permlink, weight);
 ```
 
 ---

@@ -98,6 +98,42 @@ broadcastComment(
 
 ---
 
+#### broadcastDownvote
+
+Broadcasts a downvote to the Steem blockchain and returns the result of the operation.
+
+##### Parameters
+
+| Name          | Type   | Description                                                              | Required |
+| ------------- | ------ | ------------------------------------------------------------------------ | -------- |
+| `accessToken` | string | the `access_token` of the user                                           | +        |
+| `voter`       | string | the username of the voter                                                | +        |
+| `author`      | string | the username of the author of a comment/post that user wants to downvote | +        |
+| `permlink`    | string | the permlink of a comment/post that user wants to downvote               | +        |
+| `weight`      | number | the weight of the vote (ex. 5000 is going to broadcast a 50% downvote)   | +        |
+
+##### What does it return?
+
+This function returns a **Promise** object that resolves into the result of the operation.
+
+##### Example usage
+
+```typescript
+import { broadcastDownvote } from 'steemconnect-firebase-functions';
+
+const accessToken = 'access-token';
+const voter = 'jakipatryk';
+const author = 'ned';
+const permlink = 'steemfest2-closing-dinner';
+const weight = 10000; // 100% downvote
+
+broadcastDownvote(accessToken, voter, author, permlink, weight).then(result => {
+  console.log(result);
+});
+```
+
+---
+
 #### broadcastFollow
 
 Broadcasts a follow to the Steem blockchain and returns the result of the operation.

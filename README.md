@@ -385,6 +385,7 @@ Broadcasts an upvote to the Steem blockchain and returns the result of the opera
 | `voter`       | string | the username of the voter                                              | +        |
 | `author`      | string | the username of the author of a comment/post that user wants to upvote | +        |
 | `permlink`    | string | the permlink of a comment/post that user wants to upvote               | +        |
+| `weight`      | number | the weight of the vote (ex. 10000 is going to broadcast a 100% upvote) | +        |
 
 ##### What does it return?
 

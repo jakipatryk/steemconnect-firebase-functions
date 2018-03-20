@@ -17,3 +17,7 @@ export { broadcastFollow } from './broadcastFollow';
 export { broadcastUnfollow } from './broadcastUnfollow';
 export { broadcastReblog } from './broadcastReblog';
 export { createFirebaseAccount } from './createFirebaseAccount';
+export { createVote } from './createVote';
+export { broadcastDownvote } from './broadcastDownvote';
+export { setUserMetadata } from './setUserMetadata';
+export { revokeAccessToken } from './revokeAccessToken';

@@ -1,4 +1,5 @@
 import * as broadcaster from './broadcastOperations';
+import { createVote } from './createVote';
 
 import { Operation } from './interfaces/Operation';
 
@@ -18,15 +19,7 @@ export function broadcastUpvote(
   permlink: string,
   weight: number
 ): Promise<any> {
-  const operation: Operation = [
-    'vote',
-    {
-      voter,
-      author,
-      permlink,
-      weight
-    }
-  ];
+  const operation: Operation = createVote(voter, author, permlink, weight);
 
   return broadcaster.broadcastOperations(accessToken, [operation]);
 }

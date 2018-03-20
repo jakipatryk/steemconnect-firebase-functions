@@ -602,6 +602,34 @@ refreshAccessToken(clientId, clientSecret, redirectUri, code).then(
 
 ---
 
+#### revokeAccessToken
+
+Revokes given access token.
+
+##### Parameters
+
+| Name          | Type   | Description                  | Required |
+| ------------- | ------ | ---------------------------- | -------- |
+| `accessToken` | string | the `access_token` to revoke | +        |
+
+##### What does it return?
+
+This function returns a **Promise** object that resolves into the result of revoking token.
+
+##### Example usage
+
+```typescript
+import { revokeAccessToken } from 'steemconnect-firebase-functions';
+
+const accessToken = '432432543njn5k43b5hj23hjbhj423.543nbrj43btjhb4';
+
+revokeAccessToken(accessToken).then(result => {
+  console.log(result);
+});
+```
+
+---
+
 #### setUserMetadata
 
 Sets user metadata and returns the data of this user.

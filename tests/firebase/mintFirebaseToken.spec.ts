@@ -1,4 +1,4 @@
-import { mintFirebaseToken } from '../src/mintFirebaseToken';
+import { mintFirebaseToken } from '../../src/firebase/mintFirebaseToken';
 
 import { expect } from 'chai';
 

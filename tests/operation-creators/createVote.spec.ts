@@ -1,4 +1,4 @@
-import { createVote } from '../src/createVote';
+import { createVote } from '../../src/operation-creators/createVote';
 
 import { expect } from 'chai';
 

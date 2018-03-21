@@ -1,10 +1,10 @@
-import { broadcastUpvote } from '../src/broadcastUpvote';
-import * as broadcaster from '../src/broadcastOperations';
+import { broadcastDownvote } from '../../src/broadcasting/broadcastDownvote';
+import * as broadcaster from '../../src/broadcasting/broadcastOperations';
 
 import { expect } from 'chai';
 import * as sinon from 'sinon';
 
-describe('broadcastUpvote', function() {
+describe('broadcastDownvote', function() {
   beforeEach(function() {
     this.broadcastOperations = sinon.stub(broadcaster, 'broadcastOperations');
   });
@@ -14,20 +14,20 @@ describe('broadcastUpvote', function() {
     const voter = 'jakipatrikko';
     const author = 'whoever';
     const permlink = 'some-permlink';
-    const weight = 10000;
+    const weight = 500;
     const operations = [
       [
         'vote',
         {
-          voter,
-          author,
-          permlink,
-          weight
+          voter: 'jakipatrikko',
+          author: 'whoever',
+          permlink: 'some-permlink',
+          weight: -500
         }
       ]
     ];
 
-    await broadcastUpvote(accessToken, voter, author, permlink, weight);
+    await broadcastDownvote(accessToken, voter, author, permlink, weight);
 
     expect(this.broadcastOperations.calledWith(accessToken, operations)).to.be
       .true;

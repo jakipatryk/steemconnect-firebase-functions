@@ -1,4 +1,4 @@
-import { saveAccessToken } from '../src/saveAccessToken';
+import { saveAccessToken } from '../../src/firebase/saveAccessToken';
 
 import { expect } from 'chai';
 import * as sinon from 'sinon';

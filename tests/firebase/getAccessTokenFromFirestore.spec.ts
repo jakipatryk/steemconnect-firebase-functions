@@ -1,4 +1,4 @@
-import { getAccessTokenFromFirestore } from '../src/getAccessTokenFromFirestore';
+import { getAccessTokenFromFirestore } from '../../src/firebase/getAccessTokenFromFirestore';
 
 import { expect } from 'chai';
 

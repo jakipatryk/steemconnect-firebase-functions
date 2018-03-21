@@ -1,5 +1,5 @@
-import { broadcastComment } from '../src/broadcastComment';
-import * as broadcaster from '../src/broadcastOperations';
+import { broadcastComment } from '../../src/broadcasting/broadcastComment';
+import * as broadcaster from '../../src/broadcasting/broadcastOperations';
 
 import { expect } from 'chai';
 import * as sinon from 'sinon';

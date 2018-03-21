@@ -1,5 +1,5 @@
-import { broadcastPostWithBeneficiaries } from '../src/broadcastPostWithBeneficiaries';
-import * as broadcaster from '../src/broadcastOperations';
+import { broadcastPostWithBeneficiaries } from '../../src/broadcasting/broadcastPostWithBeneficiaries';
+import * as broadcaster from '../../src/broadcasting/broadcastOperations';
 
 import { expect } from 'chai';
 import * as sinon from 'sinon';

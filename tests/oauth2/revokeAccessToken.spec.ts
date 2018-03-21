@@ -1,4 +1,4 @@
-import { revokeAccessToken } from '../src/revokeAccessToken';
+import { revokeAccessToken } from '../../src/oauth2/revokeAccessToken';
 
 import { expect } from 'chai';
 import * as nock from 'nock';

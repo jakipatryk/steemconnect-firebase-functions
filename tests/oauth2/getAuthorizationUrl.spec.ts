@@ -1,4 +1,4 @@
-import { getAuthorizationUrl } from '../src/getAuthorizationUrl';
+import { getAuthorizationUrl } from '../../src/oauth2/getAuthorizationUrl';
 
 import { expect } from 'chai';
 

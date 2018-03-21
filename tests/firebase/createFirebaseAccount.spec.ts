@@ -1,4 +1,4 @@
-import { createFirebaseAccount } from '../src/createFirebaseAccount';
+import { createFirebaseAccount } from '../../src/firebase/createFirebaseAccount';
 
 import { expect } from 'chai';
 import * as sinon from 'sinon';

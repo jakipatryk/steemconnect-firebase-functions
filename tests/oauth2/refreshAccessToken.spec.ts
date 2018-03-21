@@ -1,4 +1,4 @@
-import { refreshAccessToken } from '../src/refreshAccessToken';
+import { refreshAccessToken } from '../../src/oauth2/refreshAccessToken';
 
 import { expect } from 'chai';
 import * as nock from 'nock';

@@ -1,4 +1,4 @@
-import { getUserData } from '../src/getUserData';
+import { getUserData } from '../../src/oauth2/getUserData';
 
 import { expect } from 'chai';
 import * as nock from 'nock';

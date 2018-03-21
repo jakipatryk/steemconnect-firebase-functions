@@ -1,4 +1,4 @@
-import { createOptions } from '../src/createOptions';
+import { createOptions } from '../../src/operation-creators/createOptions';
 
 import { expect } from 'chai';
 

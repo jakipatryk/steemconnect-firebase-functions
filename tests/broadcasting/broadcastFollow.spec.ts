@@ -1,19 +1,19 @@
-import { broadcastUnfollow } from '../src/broadcastUnfollow';
-import * as broadcaster from '../src/broadcastOperations';
+import { broadcastFollow } from '../../src/broadcasting/broadcastFollow';
+import * as broadcaster from '../../src/broadcasting/broadcastOperations';
 
 import { expect } from 'chai';
 import * as sinon from 'sinon';
 
-describe('broadcastUnfollow', function() {
+describe('broadcastFollow', function() {
   const accessToken = 'fdsgfdew';
   const username = 'jakipatryk-dev';
-  const userToUnfollow = 'jakipatryk';
+  const userToFollow = 'jakipatryk';
 
   beforeEach(function() {
     this.broadcastOperations = sinon.stub(broadcaster, 'broadcastOperations');
   });
 
-  it('should call broadcastOperations with correct data of the user and user to unfollow', async function() {
+  it('should call broadcastOperations with correct data of the user and user to follow', async function() {
     const operations = [
       [
         'custom_json',
@@ -25,15 +25,15 @@ describe('broadcastUnfollow', function() {
             'follow',
             {
               follower: username,
-              following: userToUnfollow,
-              what: []
+              following: userToFollow,
+              what: ['blog']
             }
           ])
         }
       ]
     ];
 
-    await broadcastUnfollow(accessToken, username, userToUnfollow);
+    await broadcastFollow(accessToken, username, userToFollow);
 
     expect(this.broadcastOperations.calledWith(accessToken, operations)).to.be
       .true;

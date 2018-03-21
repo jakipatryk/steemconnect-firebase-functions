@@ -1,4 +1,4 @@
-import { setUserMetadata } from '../src/setUserMetadata';
+import { setUserMetadata } from '../../src/oauth2/setUserMetadata';
 
 import { expect } from 'chai';
 import * as nock from 'nock';

@@ -1,4 +1,4 @@
-import { getAccessToken } from '../src/getAccessToken';
+import { getAccessToken } from '../../src/oauth2/getAccessToken';
 
 import { expect } from 'chai';
 import * as nock from 'nock';
@@ -13,10 +13,10 @@ describe('getAccessToken', () => {
     nock('https://steemconnect.com')
       .post('/api/oauth2/token')
       .reply(200, {
-          access_token: 'ey.eyJy4MDI5NjU3fQ.lqX2bTkW7R',
-          expires_in: 604800,
-          username: 'dev'
-        });
+        access_token: 'ey.eyJy4MDI5NjU3fQ.lqX2bTkW7R',
+        expires_in: 604800,
+        username: 'dev'
+      });
 
     const result = await getAccessToken(
       clientId,

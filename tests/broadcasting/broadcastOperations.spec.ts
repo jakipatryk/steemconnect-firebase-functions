@@ -1,5 +1,5 @@
-import { broadcastOperations } from '../src/broadcastOperations';
-import { Operations } from '../src/interfaces/Operation';
+import { broadcastOperations } from '../../src/broadcasting/broadcastOperations';
+import { Operations } from '../../src/interfaces/Operation';
 
 import { expect } from 'chai';
 import * as nock from 'nock';

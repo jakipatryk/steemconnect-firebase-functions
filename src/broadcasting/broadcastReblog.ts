@@ -1,6 +1,7 @@
 import * as broadcaster from './broadcastOperations';
 
 import { Operation } from '../interfaces/Operation';
+import { BroadcastResult } from './../interfaces/BroadcastResult';
 
 /**
  * Broadcasts a comment to the Steem blockchain and returns the result of the operation.
@@ -15,7 +16,7 @@ export function broadcastReblog(
   username: string,
   postAuthor: string,
   postPermlink: string
-): Promise<any> {
+): Promise<BroadcastResult> {
   const operation: Operation = [
     'custom_json',
     {

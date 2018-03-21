@@ -1,3 +1,4 @@
+import { BroadcastResult } from './../interfaces/BroadcastResult';
 import { Operations } from '../interfaces/Operation';
 
 import * as rp from 'request-promise';
@@ -11,7 +12,7 @@ import * as rp from 'request-promise';
 export async function broadcastOperations(
   accessToken: string,
   operations: Operations
-): Promise<any> {
+): Promise<BroadcastResult> {
   try {
     const options = {
       uri: 'https://steemconnect.com/api/broadcast',

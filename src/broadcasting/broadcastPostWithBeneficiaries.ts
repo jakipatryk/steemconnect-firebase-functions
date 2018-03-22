@@ -1,6 +1,8 @@
 import * as broadcaster from './broadcastOperations';
 import { createOptions } from '../operation-creators/createOptions';
+
 import { Operation } from '../interfaces/Operation';
+import { BroadcastResult } from './../interfaces/BroadcastResult';
 
 /**
  * Broadcasts a post with beneficiaries details to the Steem blockchain and returns the result of the operation.
@@ -25,7 +27,7 @@ export function broadcastPostWithBeneficiaries(
   beneficiariesAccount: string,
   beneficiariesWeight: number,
   jsonMetadata?: object
-): Promise<any> {
+): Promise<BroadcastResult> {
   const postOperation: Operation = [
     'comment',
     {

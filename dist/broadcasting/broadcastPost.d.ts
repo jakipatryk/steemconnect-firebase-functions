@@ -1,3 +1,4 @@
+import { BroadcastResult } from './../interfaces/BroadcastResult';
 /**
  * Broadcasts a post to the Steem blockchain and returns the result of the operation.
  * @param {string} accessToken The access_token of the user.
@@ -9,4 +10,4 @@
  * @param {Object} [jsonMetadata] Optional additional metadata (ex. the name of the app or additional tags).
  * @returns {Promise} Promise object that resolves into the result of the operation.
  */
-export declare function broadcastPost(accessToken: string, mainTag: string, postAuthor: string, postPermlink: string, postTitle: string, postBody: string, jsonMetadata?: object): Promise<any>;
+export declare function broadcastPost(accessToken: string, mainTag: string, postAuthor: string, postPermlink: string, postTitle: string, postBody: string, jsonMetadata?: object): Promise<BroadcastResult>;

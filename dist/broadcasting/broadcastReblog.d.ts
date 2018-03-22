@@ -1,3 +1,4 @@
+import { BroadcastResult } from './../interfaces/BroadcastResult';
 /**
  * Broadcasts a comment to the Steem blockchain and returns the result of the operation.
  * @param {string} accessToken The access_token of the user.
@@ -6,4 +7,4 @@
  * @param {string} postPermlink The permlink of the post to reblog.
  * @returns {Promise} Promise object that resolves into the result of the operation.
  */
-export declare function broadcastReblog(accessToken: string, username: string, postAuthor: string, postPermlink: string): Promise<any>;
+export declare function broadcastReblog(accessToken: string, username: string, postAuthor: string, postPermlink: string): Promise<BroadcastResult>;

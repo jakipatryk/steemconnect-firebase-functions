@@ -1,3 +1,4 @@
+import { BroadcastResult } from './../interfaces/BroadcastResult';
 import { Operations } from '../interfaces/Operation';
 /**
  * Broadcasts operations to the Steem blockchain.
@@ -5,4 +6,4 @@ import { Operations } from '../interfaces/Operation';
  * @param {Array} operations An array of operations to broadcast.
  * @returns {Promise} Promise object that resolves into the result of the operations.
  */
-export declare function broadcastOperations(accessToken: string, operations: Operations): Promise<any>;
+export declare function broadcastOperations(accessToken: string, operations: Operations): Promise<BroadcastResult>;

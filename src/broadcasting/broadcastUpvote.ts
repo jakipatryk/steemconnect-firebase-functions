@@ -2,6 +2,7 @@ import * as broadcaster from './broadcastOperations';
 import { createVote } from '../operation-creators/createVote';
 
 import { Operation } from '../interfaces/Operation';
+import { BroadcastResult } from './../interfaces/BroadcastResult';
 
 /**
  * Broadcasts an upvote to the Steem blockchain and returns the result of the operation.
@@ -18,7 +19,7 @@ export function broadcastUpvote(
   author: string,
   permlink: string,
   weight: number
-): Promise<any> {
+): Promise<BroadcastResult> {
   const operation: Operation = createVote(voter, author, permlink, weight);
 
   return broadcaster.broadcastOperations(accessToken, [operation]);

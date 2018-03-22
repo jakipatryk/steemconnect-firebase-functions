@@ -409,6 +409,54 @@ broadcastUpvote(accessToken, voter, author, permlink, weight).then(result => {
 
 ---
 
+#### createComment
+
+Creates and returns the `comment` operation.
+
+##### Parameters
+
+| Name             | Type   | Description                                            | Required |
+| ---------------- | ------ | ------------------------------------------------------ | -------- |
+| `parentPermlink` | string | the parent permlink for comments or main tag for posts | +        |
+| `author`         | string | the author of the comment/post                         | +        |
+| `permlink`       | string | the permlink of the comment/post                       | +        |
+| `body`           | string | the content of the comment/post                        | +        |
+| `parentAuthor`   | string | the parent author of the comment                       | -        |
+| `title`          | string | the title of the post                                  | -        |
+| `jsonMetadata`   | object | the additional metadata of the comment/post            | -        |
+
+##### What does it return?
+
+This function returns a single `comment` operation in the form of an array.
+
+##### Example usage
+
+```typescript
+import { createComment } from 'steemconnect-firebase-functions';
+
+const parentAuthor = 'ned';
+const parentPermlink = 'i-am-ned-stark';
+const author = 'jakipatryk';
+const permlink = 'i-am-jakipatryk-from-polska';
+const body = 'Hello! Whats up ppl?';
+const jsonMetadata = {
+  app: 'strimi',
+  community: 'strimi'
+};
+
+const commentOperation = createComment(
+  parentPermlink,
+  author,
+  permlink,
+  body,
+  parentAuthor,
+  null,
+  jsonMetadata
+);
+```
+
+---
+
 #### createOptions
 
 Creates and returns the `comment_option` operation.

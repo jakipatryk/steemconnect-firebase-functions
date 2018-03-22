@@ -1,4 +1,5 @@
 import * as broadcaster from './broadcastOperations';
+import { createComment } from '../operation-creators/createComment';
 
 import { Operation } from '../interfaces/Operation';
 import { BroadcastResult } from './../interfaces/BroadcastResult';
@@ -23,18 +24,15 @@ export function broadcastComment(
   commentBody: string,
   jsonMetadata?: object
 ): Promise<BroadcastResult> {
-  const operation: Operation = [
-    'comment',
-    {
-      parent_author: parentAuthor,
-      parent_permlink: parentPermlink,
-      author: commentAuthor,
-      permlink: commentPermlink,
-      title: '',
-      body: commentBody,
-      json_metadata: JSON.stringify(jsonMetadata) || ''
-    }
-  ];
+  const operation: Operation = createComment(
+    parentPermlink,
+    commentAuthor,
+    commentPermlink,
+    commentBody,
+    parentAuthor,
+    null,
+    jsonMetadata
+  );
 
   return broadcaster.broadcastOperations(accessToken, [operation]);
 }

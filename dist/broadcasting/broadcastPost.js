@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const broadcaster = require("./broadcastOperations");
+const createComment_1 = require("../operation-creators/createComment");
 /**
  * Broadcasts a post to the Steem blockchain and returns the result of the operation.
  * @param {string} accessToken The access_token of the user.
@@ -13,18 +14,7 @@ const broadcaster = require("./broadcastOperations");
  * @returns {Promise} Promise object that resolves into the result of the operation.
  */
 function broadcastPost(accessToken, mainTag, postAuthor, postPermlink, postTitle, postBody, jsonMetadata) {
-    const operation = [
-        'comment',
-        {
-            parent_author: '',
-            parent_permlink: mainTag,
-            author: postAuthor,
-            permlink: postPermlink,
-            title: postTitle,
-            body: postBody,
-            json_metadata: JSON.stringify(jsonMetadata) || ''
-        }
-    ];
+    const operation = createComment_1.createComment(mainTag, postAuthor, postPermlink, postBody, null, postTitle, jsonMetadata);
     return broadcaster.broadcastOperations(accessToken, [operation]);
 }
 exports.broadcastPost = broadcastPost;

@@ -16,9 +16,9 @@ export function createComment(
   author: string,
   permlink: string,
   body: string,
-  parentAuthor?: string,
-  title?: string,
-  jsonMetadata?: object
+  parentAuthor?: string | null | undefined,
+  title?: string | null | undefined,
+  jsonMetadata?: object | null | undefined
 ): Operation {
   const commentOperation: Operation = [
     'comment',

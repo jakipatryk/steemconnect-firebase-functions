@@ -14,11 +14,11 @@ import { Operation } from '../interfaces/Operation';
 export function createOptions(
   author: string,
   permlink: string,
-  extensions?: Array<any>,
-  maxAcceptedPayout?: string,
-  percentSteemDolars?: number,
-  allowVotes?: boolean,
-  allowCurationRewards?: boolean
+  extensions?: Array<any> | null | undefined,
+  maxAcceptedPayout?: string | null | undefined,
+  percentSteemDolars?: number | null | undefined,
+  allowVotes?: boolean | null | undefined,
+  allowCurationRewards?: boolean | null | undefined
 ): Operation {
   const optionsOperation: Operation = [
     'comment_options',

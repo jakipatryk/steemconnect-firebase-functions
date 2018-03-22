@@ -10,4 +10,4 @@ import { Operation } from '../interfaces/Operation';
  * @param {object} [jsonMetadata] The additional metadata of the comment/post.
  * @returns {Array} A single comment operation in the form of an array.
  */
-export declare function createComment(parentPermlink: string, author: string, permlink: string, body: string, parentAuthor?: string, title?: string, jsonMetadata?: object): Operation;
+export declare function createComment(parentPermlink: string, author: string, permlink: string, body: string, parentAuthor?: string | null | undefined, title?: string | null | undefined, jsonMetadata?: object | null | undefined): Operation;

@@ -457,6 +457,47 @@ const commentOperation = createComment(
 
 ---
 
+#### createCommentOptions
+
+Creates and returns the `comment_option` operation.
+
+##### Parameters
+
+| Name                   | Type    | Description                                                                                                     | Required |
+| ---------------------- | ------- | --------------------------------------------------------------------------------------------------------------- | -------- |
+| `author`               | string  | the author of the post/comment                                                                                  | +        |
+| `permlink`             | string  | the permlink of the post/comment                                                                                | +        |
+| `extensions`           | array   | optional extensions (ex. beneficiaries)                                                                         | -        |
+| `maxAcceptedPayout`    | string  | optional maximum accepted payout in the form of string (ex. '300.000 SBD')                                      | -        |
+| `percentSteemDolars`   | number  | optional percent of the rewards in Steem Blockchain Dolars (10000 stands for 50/50 split and it is the default) | -        |
+| `allowVotes`           | boolean | optional boolean that enables/disables upvoting a post/comment                                                  | -        |
+| `allowCurationRewards` | boolean | optional boolean that enables/disables the curation rewards                                                     | -        |
+
+##### What does it return?
+
+This function returns a single `comment_option` operation in the form of an array.
+
+##### Example usage
+
+```typescript
+import { createCommentOptions } from 'steemconnect-firebase-functions';
+
+const author = 'jakipatryk';
+const permlink = '12-iq-overload-hendrik-lorentz';
+const allowVotes = false;
+
+const commentOptionsOperation = createCommentOptions(
+  author,
+  permlink,
+  null,
+  null,
+  null,
+  allowVotes
+);
+```
+
+---
+
 #### createCustomJson
 
 Creates and returns the `custom_json` operation.
@@ -495,40 +536,6 @@ const customJsonOperation = createCustomJson(
   id,
   customJson
 );
-```
-
----
-
-#### createOptions
-
-Creates and returns the `comment_option` operation.
-
-##### Parameters
-
-| Name                   | Type    | Description                                                                                                     | Required |
-| ---------------------- | ------- | --------------------------------------------------------------------------------------------------------------- | -------- |
-| `author`               | string  | the author of the post/comment                                                                                  | +        |
-| `permlink`             | string  | the permlink of the post/comment                                                                                | +        |
-| `extensions`           | array   | optional extensions (ex. beneficiaries)                                                                         | -        |
-| `maxAcceptedPayout`    | string  | optional maximum accepted payout in the form of string (ex. '300.000 SBD')                                      | -        |
-| `percentSteemDolars`   | number  | optional percent of the rewards in Steem Blockchain Dolars (10000 stands for 50/50 split and it is the default) | -        |
-| `allowVotes`           | boolean | optional boolean that enables/disables upvoting a post/comment                                                  | -        |
-| `allowCurationRewards` | boolean | optional boolean that enables/disables the curation rewards                                                     | -        |
-
-##### What does it return?
-
-This function returns a single `comment_option` operation in the form of an array.
-
-##### Example usage
-
-```typescript
-import { createOptions } from 'steemconnect-firebase-functions';
-
-const author = 'jakipatryk';
-const permlink = '12-iq-overload-hendrik-lorentz';
-const allowVotes = false;
-
-const options = createOptions(author, permlink, null, null, null, allowVotes);
 ```
 
 ---

@@ -1,4 +1,4 @@
 export { createComment } from './createComment';
+export { createCommentOptions } from './createCommentOptions';
 export { createCustomJson } from './createCustomJson';
-export { createOptions } from './createOptions';
 export { createVote } from './createVote';

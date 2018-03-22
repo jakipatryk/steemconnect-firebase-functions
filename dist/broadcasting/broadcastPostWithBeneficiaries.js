@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const broadcaster = require("./broadcastOperations");
 const createComment_1 = require("../operation-creators/createComment");
-const createOptions_1 = require("../operation-creators/createOptions");
+const createCommentOptions_1 = require("../operation-creators/createCommentOptions");
 /**
  * Broadcasts a post with beneficiaries details to the Steem blockchain and returns the result of the operation.
  * @param {string} accessToken The access_token of the user.
@@ -31,7 +31,7 @@ function broadcastPostWithBeneficiaries(accessToken, mainTag, postAuthor, postPe
             }
         ]
     ];
-    const postOptionsOperation = createOptions_1.createOptions(postAuthor, postPermlink, extensions);
+    const postOptionsOperation = createCommentOptions_1.createCommentOptions(postAuthor, postPermlink, extensions);
     return broadcaster.broadcastOperations(accessToken, [
         postOperation,
         postOptionsOperation

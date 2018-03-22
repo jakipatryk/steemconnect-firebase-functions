@@ -1,6 +1,6 @@
 import * as broadcaster from './broadcastOperations';
 import { createComment } from '../operation-creators/createComment';
-import { createOptions } from '../operation-creators/createOptions';
+import { createCommentOptions } from '../operation-creators/createCommentOptions';
 
 import { Operation } from '../interfaces/Operation';
 import { BroadcastResult } from './../interfaces/BroadcastResult';
@@ -52,7 +52,7 @@ export function broadcastPostWithBeneficiaries(
       }
     ]
   ];
-  const postOptionsOperation: Operation = createOptions(
+  const postOptionsOperation: Operation = createCommentOptions(
     postAuthor,
     postPermlink,
     extensions

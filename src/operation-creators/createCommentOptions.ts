@@ -11,7 +11,7 @@ import { Operation } from '../interfaces/Operation';
  * @param {boolean} [allowCurationRewards] Optional boolean that enables/disables the curation rewards.
  * @returns {Array} A single comment_option operation in the form of an array.
  */
-export function createOptions(
+export function createCommentOptions(
   author: string,
   permlink: string,
   extensions?: Array<any> | null | undefined,

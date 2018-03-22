@@ -1,8 +1,8 @@
-import { createOptions } from '../../src/operation-creators/createOptions';
+import { createCommentOptions } from '../../src/operation-creators/createCommentOptions';
 
 import { expect } from 'chai';
 
-describe('createOptions', () => {
+describe('createCommentOptions', () => {
   const author = 'ned';
   const permlink = 'i-am-ned';
 
@@ -20,7 +20,7 @@ describe('createOptions', () => {
       }
     ];
 
-    const operation = createOptions(author, permlink);
+    const operation = createCommentOptions(author, permlink);
 
     expect(operation).to.deep.equal(expectedOperation);
   });
@@ -64,7 +64,7 @@ describe('createOptions', () => {
       ]
     ];
 
-    const operation = createOptions(author, permlink, extensions);
+    const operation = createCommentOptions(author, permlink, extensions);
 
     expect(operation).to.deep.equal(expectedOperation);
   });
@@ -84,7 +84,7 @@ describe('createOptions', () => {
     ];
     const percentSteemDollars = 200;
 
-    const operation = createOptions(
+    const operation = createCommentOptions(
       author,
       permlink,
       null,

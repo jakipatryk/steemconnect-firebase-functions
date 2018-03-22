@@ -1,5 +1,5 @@
-import { Operation } from '../interfaces/Operation';
-
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * Creates and returns the comment_option operation.
  * @param {string} author The author of the post/comment.
@@ -11,27 +11,19 @@ import { Operation } from '../interfaces/Operation';
  * @param {boolean} [allowCurationRewards] Optional boolean that enables/disables the curation rewards.
  * @returns {Array} A single comment_option operation in the form of an array.
  */
-export function createOptions(
-  author: string,
-  permlink: string,
-  extensions?: Array<any>,
-  maxAcceptedPayout?: string,
-  percentSteemDolars?: number,
-  allowVotes?: boolean,
-  allowCurationRewards?: boolean
-): Operation {
-  const optionsOperation: Operation = [
-    'comment_options',
-    {
-      author,
-      permlink,
-      max_accepted_payout: maxAcceptedPayout || '1000000.000 SBD',
-      percent_steem_dollars: percentSteemDolars || 10000,
-      allow_votes: allowVotes || true,
-      allow_curation_rewards: allowCurationRewards || true,
-      extensions: extensions || []
-    }
-  ];
-
-  return optionsOperation;
+function createCommentOptions(author, permlink, extensions, maxAcceptedPayout, percentSteemDolars, allowVotes, allowCurationRewards) {
+    const optionsOperation = [
+        'comment_options',
+        {
+            author,
+            permlink,
+            max_accepted_payout: maxAcceptedPayout || '1000000.000 SBD',
+            percent_steem_dollars: percentSteemDolars || 10000,
+            allow_votes: allowVotes || true,
+            allow_curation_rewards: allowCurationRewards || true,
+            extensions: extensions || []
+        }
+    ];
+    return optionsOperation;
 }
+exports.createCommentOptions = createCommentOptions;

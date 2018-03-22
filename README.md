@@ -409,7 +409,55 @@ broadcastUpvote(accessToken, voter, author, permlink, weight).then(result => {
 
 ---
 
-#### createOptions
+#### createComment
+
+Creates and returns the `comment` operation.
+
+##### Parameters
+
+| Name             | Type   | Description                                            | Required |
+| ---------------- | ------ | ------------------------------------------------------ | -------- |
+| `parentPermlink` | string | the parent permlink for comments or main tag for posts | +        |
+| `author`         | string | the author of the comment/post                         | +        |
+| `permlink`       | string | the permlink of the comment/post                       | +        |
+| `body`           | string | the content of the comment/post                        | +        |
+| `parentAuthor`   | string | the parent author of the comment                       | -        |
+| `title`          | string | the title of the post                                  | -        |
+| `jsonMetadata`   | object | the additional metadata of the comment/post            | -        |
+
+##### What does it return?
+
+This function returns a single `comment` operation in the form of an array.
+
+##### Example usage
+
+```typescript
+import { createComment } from 'steemconnect-firebase-functions';
+
+const parentAuthor = 'ned';
+const parentPermlink = 'i-am-ned-stark';
+const author = 'jakipatryk';
+const permlink = 'i-am-jakipatryk-from-polska';
+const body = 'Hello! Whats up ppl?';
+const jsonMetadata = {
+  app: 'strimi',
+  community: 'strimi'
+};
+
+const commentOperation = createComment(
+  parentPermlink,
+  author,
+  permlink,
+  body,
+  parentAuthor,
+  null,
+  jsonMetadata
+);
+```
+
+---
+
+#### createCommentOptions
 
 Creates and returns the `comment_option` operation.
 
@@ -432,13 +480,62 @@ This function returns a single `comment_option` operation in the form of an arra
 ##### Example usage
 
 ```typescript
-import { createOptions } from 'steemconnect-firebase-functions';
+import { createCommentOptions } from 'steemconnect-firebase-functions';
 
 const author = 'jakipatryk';
 const permlink = '12-iq-overload-hendrik-lorentz';
 const allowVotes = false;
 
-const options = createOptions(author, permlink, null, null, null, allowVotes);
+const commentOptionsOperation = createCommentOptions(
+  author,
+  permlink,
+  null,
+  null,
+  null,
+  allowVotes
+);
+```
+
+---
+
+#### createCustomJson
+
+Creates and returns the `custom_json` operation.
+
+##### Parameters
+
+| Name                   | Type   | Description                  | Required |
+| ---------------------- | ------ | ---------------------------- | -------- |
+| `requiredPostingAuths` | Array  | required posting auths array | +        |
+| `id`                   | string | the id of the custom_json    | +        |
+| `customJson`           | Array  | the custom JSON              | +        |
+| `requiredAuths`        | Array  | optional required auths      | -        |
+
+##### What does it return?
+
+This function returns a single `custom_json` operation in the form of an array.
+
+##### Example usage
+
+```typescript
+import { createCustomJson } from 'steemconnect-firebase-functions';
+
+const requiredPostingAuths = ['jakipatryk'];
+const id = 'follow';
+const customJson = [
+  'reblog',
+  {
+    account: 'jakipatryk',
+    author: 'ned',
+    permlink: 'i-am-ned'
+  }
+];
+
+const customJsonOperation = createCustomJson(
+  requiredPostingAuths,
+  id,
+  customJson
+);
 ```
 
 ---

@@ -1,4 +1,5 @@
 import * as broadcaster from './broadcastOperations';
+import { createCustomJson } from '../operation-creators/createCustomJson';
 
 import { Operation } from '../interfaces/Operation';
 import { BroadcastResult } from './../interfaces/BroadcastResult';
@@ -15,22 +16,20 @@ export function broadcastUnfollow(
   username: string,
   userToUnfollow: string
 ): Promise<BroadcastResult> {
-  const operation: Operation = [
-    'custom_json',
+  const customJson = [
+    'follow',
     {
-      required_auths: [],
-      required_posting_auths: [username],
-      id: 'follow',
-      json: JSON.stringify([
-        'follow',
-        {
-          follower: username,
-          following: userToUnfollow,
-          what: []
-        }
-      ])
+      follower: username,
+      following: userToUnfollow,
+      what: []
     }
   ];
+
+  const operation: Operation = createCustomJson(
+    [username],
+    'follow',
+    customJson
+  );
 
   return broadcaster.broadcastOperations(accessToken, [operation]);
 }

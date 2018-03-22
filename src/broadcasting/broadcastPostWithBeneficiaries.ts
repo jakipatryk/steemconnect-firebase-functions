@@ -1,5 +1,6 @@
 import * as broadcaster from './broadcastOperations';
-import { createOptions } from '../operation-creators/createOptions';
+import { createComment } from '../operation-creators/createComment';
+import { createCommentOptions } from '../operation-creators/createCommentOptions';
 
 import { Operation } from '../interfaces/Operation';
 import { BroadcastResult } from './../interfaces/BroadcastResult';
@@ -28,18 +29,15 @@ export function broadcastPostWithBeneficiaries(
   beneficiariesWeight: number,
   jsonMetadata?: object
 ): Promise<BroadcastResult> {
-  const postOperation: Operation = [
-    'comment',
-    {
-      parent_author: '',
-      parent_permlink: mainTag,
-      author: postAuthor,
-      permlink: postPermlink,
-      title: postTitle,
-      body: postBody,
-      json_metadata: JSON.stringify(jsonMetadata) || ''
-    }
-  ];
+  const postOperation: Operation = createComment(
+    mainTag,
+    postAuthor,
+    postPermlink,
+    postBody,
+    null,
+    postTitle,
+    jsonMetadata
+  );
 
   const extensions = [
     [
@@ -54,7 +52,7 @@ export function broadcastPostWithBeneficiaries(
       }
     ]
   ];
-  const postOptionsOperation: Operation = createOptions(
+  const postOptionsOperation: Operation = createCommentOptions(
     postAuthor,
     postPermlink,
     extensions

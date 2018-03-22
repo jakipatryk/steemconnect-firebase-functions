@@ -1,4 +1,5 @@
 import * as broadcaster from './broadcastOperations';
+import { createCustomJson } from '../operation-creators/createCustomJson';
 
 import { Operation } from '../interfaces/Operation';
 import { BroadcastResult } from './../interfaces/BroadcastResult';
@@ -17,22 +18,20 @@ export function broadcastReblog(
   postAuthor: string,
   postPermlink: string
 ): Promise<BroadcastResult> {
-  const operation: Operation = [
-    'custom_json',
+  const customJson = [
+    'reblog',
     {
-      required_auths: [],
-      required_posting_auths: [username],
-      id: 'follow',
-      json: JSON.stringify([
-        'reblog',
-        {
-          account: username,
-          author: postAuthor,
-          permlink: postPermlink
-        }
-      ])
+      account: username,
+      author: postAuthor,
+      permlink: postPermlink
     }
   ];
+
+  const operation: Operation = createCustomJson(
+    [username],
+    'follow',
+    customJson
+  );
 
   return broadcaster.broadcastOperations(accessToken, [operation]);
 }

@@ -1,6 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var createOptions_1 = require("./createOptions");
-exports.createOptions = createOptions_1.createOptions;
+var createComment_1 = require("./createComment");
+exports.createComment = createComment_1.createComment;
+var createCommentOptions_1 = require("./createCommentOptions");
+exports.createCommentOptions = createCommentOptions_1.createCommentOptions;
+var createCustomJson_1 = require("./createCustomJson");
+exports.createCustomJson = createCustomJson_1.createCustomJson;
 var createVote_1 = require("./createVote");
 exports.createVote = createVote_1.createVote;

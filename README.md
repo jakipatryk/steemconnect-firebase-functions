@@ -457,6 +457,48 @@ const commentOperation = createComment(
 
 ---
 
+#### createCustomJson
+
+Creates and returns the `custom_json` operation.
+
+##### Parameters
+
+| Name                   | Type   | Description                  | Required |
+| ---------------------- | ------ | ---------------------------- | -------- |
+| `requiredPostingAuths` | Array  | required posting auths array | +        |
+| `id`                   | string | the id of the custom_json    | +        |
+| `customJson`           | Array  | the custom JSON              | +        |
+| `requiredAuths`        | Array  | optional required auths      | -        |
+
+##### What does it return?
+
+This function returns a single `custom_json` operation in the form of an array.
+
+##### Example usage
+
+```typescript
+import { createCustomJson } from 'steemconnect-firebase-functions';
+
+const requiredPostingAuths = ['jakipatryk'];
+const id = 'follow';
+const customJson = [
+  'reblog',
+  {
+    account: 'jakipatryk',
+    author: 'ned',
+    permlink: 'i-am-ned'
+  }
+];
+
+const customJsonOperation = createCustomJson(
+  requiredPostingAuths,
+  id,
+  customJson
+);
+```
+
+---
+
 #### createOptions
 
 Creates and returns the `comment_option` operation.

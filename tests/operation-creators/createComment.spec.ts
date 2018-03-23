@@ -58,6 +58,33 @@ describe('createComment', () => {
     expect(operation).to.deep.equal(expectedOperation);
   });
 
+  it('should create comment operation if jsonMetadata is null', () => {
+    const expectedOperation = [
+      'comment',
+      {
+        parent_author: 'ned',
+        parent_permlink: 'parentPermlinkOrMainTag',
+        author: 'jakipatryk',
+        permlink: 'i-am-jakipatryk-from-polska',
+        title: '',
+        body: 'Hello! Whats up ppl?',
+        json_metadata: ''
+      }
+    ];
+
+    const operation = createComment(
+      parentPermlink,
+      author,
+      permlink,
+      body,
+      parentAuthor,
+      null,
+      null
+    );
+
+    expect(operation).to.deep.equal(expectedOperation);
+  });
+
   it('should create comment operation if first optional argument is null, but next optional arguments (jsonMetadata and title) are provided', () => {
     const expectedOperation = [
       'comment',

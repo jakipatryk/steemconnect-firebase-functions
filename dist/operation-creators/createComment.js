@@ -12,6 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * @returns {Array} A single comment operation in the form of an array.
  */
 function createComment(parentPermlink, author, permlink, body, parentAuthor, title, jsonMetadata) {
+    jsonMetadata = jsonMetadata || undefined;
     const commentOperation = [
         'comment',
         {

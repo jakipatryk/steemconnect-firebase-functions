@@ -16,10 +16,12 @@ export function createComment(
   author: string,
   permlink: string,
   body: string,
-  parentAuthor?: string | null | undefined,
-  title?: string | null | undefined,
-  jsonMetadata?: object | null | undefined
+  parentAuthor?: string | null,
+  title?: string | null,
+  jsonMetadata?: object | null
 ): Operation {
+  jsonMetadata = jsonMetadata || undefined;
+
   const commentOperation: Operation = [
     'comment',
     {

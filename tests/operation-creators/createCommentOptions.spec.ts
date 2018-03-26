@@ -5,6 +5,19 @@ import { expect } from 'chai';
 describe('createCommentOptions', () => {
   const author = 'ned';
   const permlink = 'i-am-ned';
+  const extensions = [
+    [
+      0,
+      {
+        beneficiaries: [
+          {
+            account: 'utopian.pay',
+            weight: 2500
+          }
+        ]
+      }
+    ]
+  ];
 
   it('should create comment_options operation if only author and permlink provided', () => {
     const expectedOperation = [
@@ -20,12 +33,12 @@ describe('createCommentOptions', () => {
       }
     ];
 
-    const operation = createCommentOptions(author, permlink);
+    const actualOperation = createCommentOptions({ author, permlink });
 
-    expect(operation).to.deep.equal(expectedOperation);
+    expect(actualOperation).to.deep.equal(expectedOperation);
   });
 
-  it('should create comment_options operation if first optional argument (extensions) is provided', () => {
+  it('should create comment_options operation if optional config property (extensions) is provided', () => {
     const expectedOperation = [
       'comment_options',
       {
@@ -50,48 +63,13 @@ describe('createCommentOptions', () => {
         ]
       }
     ];
-    const extensions = [
-      [
-        0,
-        {
-          beneficiaries: [
-            {
-              account: 'utopian.pay',
-              weight: 2500
-            }
-          ]
-        }
-      ]
-    ];
 
-    const operation = createCommentOptions(author, permlink, extensions);
-
-    expect(operation).to.deep.equal(expectedOperation);
-  });
-
-  it('should create comment_options operation if first optional argument is null, but any of next arguments is provided', () => {
-    const expectedOperation = [
-      'comment_options',
-      {
-        author: 'ned',
-        permlink: 'i-am-ned',
-        max_accepted_payout: '1000000.000 SBD',
-        percent_steem_dollars: 200,
-        allow_votes: true,
-        allow_curation_rewards: true,
-        extensions: []
-      }
-    ];
-    const percentSteemDollars = 200;
-
-    const operation = createCommentOptions(
+    const actualOperation = createCommentOptions({
       author,
       permlink,
-      null,
-      null,
-      percentSteemDollars
-    );
+      extensions
+    });
 
-    expect(operation).to.deep.equal(expectedOperation);
+    expect(actualOperation).to.deep.equal(expectedOperation);
   });
 });

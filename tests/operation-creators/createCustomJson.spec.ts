@@ -5,16 +5,16 @@ import { expect } from 'chai';
 describe('createCustomJson', () => {
   const requiredPostingAuths = ['jakipatryk'];
   const id = 'follow';
-  const customJson = [
+  const customJson = JSON.stringify([
     'reblog',
     {
       account: 'jakipatryk',
       author: 'ned',
       permlink: 'i-am-ned'
     }
-  ];
+  ]);
 
-  it('should create custom_json operation if only required parameters are provided', () => {
+  it('should create custom_json operation if only required config properties are provided', () => {
     const expectedOperation = [
       'custom_json',
       {
@@ -32,12 +32,16 @@ describe('createCustomJson', () => {
       }
     ];
 
-    const operation = createCustomJson(requiredPostingAuths, id, customJson);
+    const actualOperation = createCustomJson({
+      required_posting_auths: requiredPostingAuths,
+      id,
+      json: customJson
+    });
 
-    expect(operation).to.deep.equal(expectedOperation);
+    expect(actualOperation).to.deep.equal(expectedOperation);
   });
 
-  it('should create custom_json operation if optional parameter (requiredAuths) is provided', () => {
+  it('should create custom_json operation if optional config property (requiredAuths) is provided', () => {
     const requiredAuths = ['adammalysz'];
     const expectedOperation = [
       'custom_json',
@@ -56,13 +60,13 @@ describe('createCustomJson', () => {
       }
     ];
 
-    const operation = createCustomJson(
-      requiredPostingAuths,
+    const actualOperation = createCustomJson({
+      required_posting_auths: requiredPostingAuths,
       id,
-      customJson,
-      requiredAuths
-    );
+      json: customJson,
+      required_auths: requiredAuths
+    });
 
-    expect(operation).to.deep.equal(expectedOperation);
+    expect(actualOperation).to.deep.equal(expectedOperation);
   });
 });

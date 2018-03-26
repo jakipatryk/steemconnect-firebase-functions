@@ -29,15 +29,15 @@ export function broadcastPostWithBeneficiaries(
   beneficiariesWeight: number,
   jsonMetadata?: object
 ): Promise<BroadcastResult> {
-  const postOperation: Operation = createComment(
-    mainTag,
-    postAuthor,
-    postPermlink,
-    postBody,
-    null,
-    postTitle,
-    jsonMetadata
-  );
+  const json = JSON.stringify(jsonMetadata);
+  const postOperation: Operation = createComment({
+    parent_permlink: mainTag,
+    author: postAuthor,
+    permlink: postPermlink,
+    body: postBody,
+    title: postTitle,
+    json_metadata: json
+  });
 
   const extensions = [
     [
@@ -52,11 +52,11 @@ export function broadcastPostWithBeneficiaries(
       }
     ]
   ];
-  const postOptionsOperation: Operation = createCommentOptions(
-    postAuthor,
-    postPermlink,
+  const postOptionsOperation: Operation = createCommentOptions({
+    author: postAuthor,
+    permlink: postPermlink,
     extensions
-  );
+  });
 
   return broadcaster.broadcastOperations(accessToken, [
     postOperation,

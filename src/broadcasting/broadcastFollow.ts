@@ -16,20 +16,20 @@ export function broadcastFollow(
   username: string,
   userToFollow: string
 ): Promise<BroadcastResult> {
-  const customJson = [
+  const customJson = JSON.stringify([
     'follow',
     {
       follower: username,
       following: userToFollow,
       what: ['blog']
     }
-  ];
+  ]);
 
-  const operation: Operation = createCustomJson(
-    [username],
-    'follow',
-    customJson
-  );
+  const operation: Operation = createCustomJson({
+    required_posting_auths: [username],
+    id: 'follow',
+    json: customJson
+  });
 
   return broadcaster.broadcastOperations(accessToken, [operation]);
 }

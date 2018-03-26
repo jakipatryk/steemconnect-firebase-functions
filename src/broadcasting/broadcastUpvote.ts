@@ -20,7 +20,7 @@ export function broadcastUpvote(
   permlink: string,
   weight: number
 ): Promise<BroadcastResult> {
-  const operation: Operation = createVote(voter, author, permlink, weight);
+  const operation: Operation = createVote({ voter, author, permlink, weight });
 
   return broadcaster.broadcastOperations(accessToken, [operation]);
 }

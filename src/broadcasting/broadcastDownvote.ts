@@ -20,7 +20,12 @@ export function broadcastDownvote(
   permlink: string,
   weight: number
 ): Promise<BroadcastResult> {
-  const operation: Operation = createVote(voter, author, permlink, -weight);
+  const operation: Operation = createVote({
+    voter,
+    author,
+    permlink,
+    weight: -weight
+  });
 
   return broadcaster.broadcastOperations(accessToken, [operation]);
 }

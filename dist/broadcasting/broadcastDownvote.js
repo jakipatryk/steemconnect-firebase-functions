@@ -12,7 +12,12 @@ const createVote_1 = require("../operation-creators/createVote");
  * @returns {Promise} Promise object that resolves into the result of the operation.
  */
 function broadcastDownvote(accessToken, voter, author, permlink, weight) {
-    const operation = createVote_1.createVote(voter, author, permlink, -weight);
+    const operation = createVote_1.createVote({
+        voter,
+        author,
+        permlink,
+        weight: -weight
+    });
     return broadcaster.broadcastOperations(accessToken, [operation]);
 }
 exports.broadcastDownvote = broadcastDownvote;

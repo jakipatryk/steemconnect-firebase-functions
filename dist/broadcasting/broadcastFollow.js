@@ -10,15 +10,19 @@ const createCustomJson_1 = require("../operation-creators/createCustomJson");
  * @returns {Promise} Promise object that resolves into the result of the operation.
  */
 function broadcastFollow(accessToken, username, userToFollow) {
-    const customJson = [
+    const customJson = JSON.stringify([
         'follow',
         {
             follower: username,
             following: userToFollow,
             what: ['blog']
         }
-    ];
-    const operation = createCustomJson_1.createCustomJson([username], 'follow', customJson);
+    ]);
+    const operation = createCustomJson_1.createCustomJson({
+        required_posting_auths: [username],
+        id: 'follow',
+        json: customJson
+    });
     return broadcaster.broadcastOperations(accessToken, [operation]);
 }
 exports.broadcastFollow = broadcastFollow;

@@ -19,9 +19,14 @@ describe('createVote', () => {
       }
     ];
 
-    const operation = createVote(voter, author, permlink, weight);
+    const actualOperation = createVote({
+      voter,
+      author,
+      permlink,
+      weight
+    });
 
-    expect(operation).to.deep.equal(expectedOperation);
+    expect(actualOperation).to.deep.equal(expectedOperation);
   });
 
   it('should create vote operation for downvote if weight is a negative number', () => {
@@ -36,8 +41,13 @@ describe('createVote', () => {
       }
     ];
 
-    const operation = createVote(voter, author, permlink, weight);
+    const actualOperation = createVote({
+      voter,
+      author,
+      permlink,
+      weight
+    });
 
-    expect(operation).to.deep.equal(expectedOperation);
+    expect(actualOperation).to.deep.equal(expectedOperation);
   });
 });

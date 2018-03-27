@@ -14,7 +14,15 @@ const createComment_1 = require("../operation-creators/createComment");
  * @returns {Promise} Promise object that resolves into the result of the operation.
  */
 function broadcastPost(accessToken, mainTag, postAuthor, postPermlink, postTitle, postBody, jsonMetadata) {
-    const operation = createComment_1.createComment(mainTag, postAuthor, postPermlink, postBody, null, postTitle, jsonMetadata);
+    const json = JSON.stringify(jsonMetadata) || '';
+    const operation = createComment_1.createComment({
+        parent_permlink: mainTag,
+        author: postAuthor,
+        permlink: postPermlink,
+        body: postBody,
+        title: postTitle,
+        json_metadata: json
+    });
     return broadcaster.broadcastOperations(accessToken, [operation]);
 }
 exports.broadcastPost = broadcastPost;

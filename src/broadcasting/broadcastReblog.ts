@@ -18,20 +18,20 @@ export function broadcastReblog(
   postAuthor: string,
   postPermlink: string
 ): Promise<BroadcastResult> {
-  const customJson = [
+  const customJson = JSON.stringify([
     'reblog',
     {
       account: username,
       author: postAuthor,
       permlink: postPermlink
     }
-  ];
+  ]);
 
-  const operation: Operation = createCustomJson(
-    [username],
-    'follow',
-    customJson
-  );
+  const operation: Operation = createCustomJson({
+    required_posting_auths: [username],
+    id: 'follow',
+    json: customJson
+  });
 
   return broadcaster.broadcastOperations(accessToken, [operation]);
 }

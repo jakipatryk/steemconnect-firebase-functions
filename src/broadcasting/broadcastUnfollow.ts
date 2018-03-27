@@ -16,20 +16,20 @@ export function broadcastUnfollow(
   username: string,
   userToUnfollow: string
 ): Promise<BroadcastResult> {
-  const customJson = [
+  const customJson = JSON.stringify([
     'follow',
     {
       follower: username,
       following: userToUnfollow,
       what: []
     }
-  ];
+  ]);
 
-  const operation: Operation = createCustomJson(
-    [username],
-    'follow',
-    customJson
-  );
+  const operation: Operation = createCustomJson({
+    required_posting_auths: [username],
+    id: 'follow',
+    json: customJson
+  });
 
   return broadcaster.broadcastOperations(accessToken, [operation]);
 }

@@ -17,7 +17,15 @@ const createCommentOptions_1 = require("../operation-creators/createCommentOptio
  * @returns {Promise} Promise object that resolves into the result of the operation.
  */
 function broadcastPostWithBeneficiaries(accessToken, mainTag, postAuthor, postPermlink, postTitle, postBody, beneficiariesAccount, beneficiariesWeight, jsonMetadata) {
-    const postOperation = createComment_1.createComment(mainTag, postAuthor, postPermlink, postBody, null, postTitle, jsonMetadata);
+    const json = JSON.stringify(jsonMetadata);
+    const postOperation = createComment_1.createComment({
+        parent_permlink: mainTag,
+        author: postAuthor,
+        permlink: postPermlink,
+        body: postBody,
+        title: postTitle,
+        json_metadata: json
+    });
     const extensions = [
         [
             0,
@@ -31,7 +39,11 @@ function broadcastPostWithBeneficiaries(accessToken, mainTag, postAuthor, postPe
             }
         ]
     ];
-    const postOptionsOperation = createCommentOptions_1.createCommentOptions(postAuthor, postPermlink, extensions);
+    const postOptionsOperation = createCommentOptions_1.createCommentOptions({
+        author: postAuthor,
+        permlink: postPermlink,
+        extensions
+    });
     return broadcaster.broadcastOperations(accessToken, [
         postOperation,
         postOptionsOperation

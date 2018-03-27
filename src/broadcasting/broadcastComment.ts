@@ -24,15 +24,15 @@ export function broadcastComment(
   commentBody: string,
   jsonMetadata?: object
 ): Promise<BroadcastResult> {
-  const operation: Operation = createComment(
-    parentPermlink,
-    commentAuthor,
-    commentPermlink,
-    commentBody,
-    parentAuthor,
-    null,
-    jsonMetadata
-  );
+  const json = JSON.stringify(jsonMetadata);
+  const operation: Operation = createComment({
+    parent_permlink: parentPermlink,
+    author: commentAuthor,
+    permlink: commentPermlink,
+    body: commentBody,
+    parent_author: parentAuthor,
+    json_metadata: json
+  });
 
   return broadcaster.broadcastOperations(accessToken, [operation]);
 }

@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const createOperation_1 = require("./createOperation");
 /**
  * Creates and returns the comment_option operation.
- * @param {Object} config The configuration object for vote operation.
+ * @param {Object} config The configuration object for comment_options operation.
  * @param {string} config.author The author of the post/comment.
  * @param {string} config.permlink The permlink of the post/comment.
  * @param {Array} [config.extensions] Optional extensions (ex. beneficiaries).

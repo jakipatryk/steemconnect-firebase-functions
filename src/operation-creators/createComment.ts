@@ -4,7 +4,7 @@ import { Operation } from '../interfaces/Operation';
 
 /**
  * Creates and returns the comment operation.
- * @param {Object} config The configuration object for vote operation.
+ * @param {Object} config The configuration object for comment operation.
  * @param {string} config.parent_permlink The parent permlink for comments or main tag for posts.
  * @param {string} config.author The author of the comment/post.
  * @param {string} config.permlink The permlink of the comment/post.

@@ -4,8 +4,8 @@ import { Operation } from '../interfaces/Operation';
 
 /**
  * Creates and returns custom_json operation.
- * @param {Object} config The configuration object for vote operation.
- * @param {Array} required_posting_auths Required posting auths array.
+ * @param {Object} config The configuration object for custom_json operation.
+ * @param {Array} config.required_posting_auths Required posting auths array.
  * @param {string} config.id The id of the custom_json.
  * @param {string} config.json The custom JSON.
  * @param {Array} [config.required_auths] Optional required auths.

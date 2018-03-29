@@ -1,4 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ACCESS_TOKEN_REVOKED = 'invalid_grant';
-exports.ACCESS_TOKEN_REVOKED_DESCRIPTION = 'The access_token has been revoked';
+exports.ACCESS_TOKEN_REVOKED = Object.freeze({
+    error: 'invalid_grant',
+    error_description: 'The access_token has been revoked'
+});

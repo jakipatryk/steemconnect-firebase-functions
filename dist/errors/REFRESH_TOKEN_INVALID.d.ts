@@ -1,2 +1,2 @@
-export declare const REFRESH_TOKEN_INVALID = "invalid_grant";
-export declare const REFRESH_TOKEN_INVALID_DESCRIPTION = "The token has invalid role";
+import { OAuth2Error } from '../interfaces/OAuth2Error';
+export declare const REFRESH_TOKEN_INVALID: OAuth2Error;

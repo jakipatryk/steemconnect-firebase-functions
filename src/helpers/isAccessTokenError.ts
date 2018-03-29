@@ -5,7 +5,7 @@ import { OAuth2Error } from '../interfaces/OAuth2Error';
 
 /**
  * Checks if OAuth2 error is caused by access token.
- * @param {object} oAuth2Error The object of OAuth2 error.
+ * @param {Object} oAuth2Error The object of OAuth2 error.
  */
 export const isAccessTokenError = ({
   error,

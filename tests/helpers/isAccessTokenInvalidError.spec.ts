@@ -1,19 +1,12 @@
 import { isAccessTokenInvalidError } from '../../src/helpers/isAccessTokenInvalidError';
 import { OAuth2Error } from './../../src/interfaces/OAuth2Error';
-
-import {
-  ACCESS_TOKEN_INVALID,
-  ACCESS_TOKEN_INVALID_DESCRIPTION
-} from './../../src/errors/ACCESS_TOKEN_INVALID';
+import { ACCESS_TOKEN_INVALID } from './../../src/errors/ACCESS_TOKEN_INVALID';
 
 import { expect } from 'chai';
 
 describe('isAccessTokenInvalidError', () => {
   it('should return true if provided OAuth2 error is the error of invalid access token', () => {
-    const oAuth2Error: OAuth2Error = {
-      error: ACCESS_TOKEN_INVALID,
-      error_description: ACCESS_TOKEN_INVALID_DESCRIPTION
-    };
+    const oAuth2Error: OAuth2Error = ACCESS_TOKEN_INVALID;
 
     expect(isAccessTokenInvalidError(oAuth2Error)).to.be.true;
   });

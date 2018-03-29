@@ -1,4 +1,4 @@
-export { checkError } from './checkError';
+export { checkOAuth2Error } from './checkOAuth2Error';
 export { isAccessTokenError } from './isAccessTokenError';
 export { isAccessTokenExpiredError } from './isAccessTokenExpiredError';
 export { isAccessTokenInvalidError } from './isAccessTokenInvalidError';

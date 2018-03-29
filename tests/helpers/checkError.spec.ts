@@ -1,10 +1,10 @@
-import { checkError } from '../../src/helpers/checkError';
+import { checkOAuth2Error } from '../../src/helpers/checkOAuth2Error';
 import { OAuth2Error } from './../../src/interfaces/OAuth2Error';
 import { ACCESS_TOKEN_INVALID } from './../../src/errors/ACCESS_TOKEN_INVALID';
 
 import { expect } from 'chai';
 
-describe('checkError', () => {
+describe('checkOAuth2Error', () => {
   const oAuth2Error: OAuth2Error = {
     error: 'invalid_grant',
     error_description: 'The token has invalid role'
@@ -13,7 +13,7 @@ describe('checkError', () => {
   it('should return true if provided OAuth2 error is equal to provided error constants', () => {
     const errorToCheckAgainst: OAuth2Error = ACCESS_TOKEN_INVALID;
 
-    expect(checkError(oAuth2Error, errorToCheckAgainst)).to.be.true;
+    expect(checkOAuth2Error(oAuth2Error, errorToCheckAgainst)).to.be.true;
   });
 
   it('should return true if provided OAuth2 error is NOT equal to provided error constants', () => {
@@ -22,6 +22,6 @@ describe('checkError', () => {
       error_description: 'car'
     };
 
-    expect(checkError(oAuth2Error, errorToCheckAgainst)).to.be.false;
+    expect(checkOAuth2Error(oAuth2Error, errorToCheckAgainst)).to.be.false;
   });
 });

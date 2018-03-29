@@ -1,4 +1,4 @@
-import { checkError } from './checkError';
+import { checkOAuth2Error } from './checkOAuth2Error';
 import { OAuth2Error } from '../interfaces/OAuth2Error';
 import { CODE_INVALID } from '../errors/CODE_INVALID';
 
@@ -10,4 +10,4 @@ export const isCodeError = ({
   error,
   error_description
 }: OAuth2Error): boolean =>
-  checkError({ error, error_description }, CODE_INVALID);
+  checkOAuth2Error({ error, error_description }, CODE_INVALID);

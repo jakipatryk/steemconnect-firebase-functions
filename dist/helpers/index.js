@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var checkError_1 = require("./checkError");
-exports.checkError = checkError_1.checkError;
+var checkOAuth2Error_1 = require("./checkOAuth2Error");
+exports.checkOAuth2Error = checkOAuth2Error_1.checkOAuth2Error;
 var isAccessTokenError_1 = require("./isAccessTokenError");
 exports.isAccessTokenError = isAccessTokenError_1.isAccessTokenError;
 var isAccessTokenExpiredError_1 = require("./isAccessTokenExpiredError");

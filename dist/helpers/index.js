@@ -10,3 +10,5 @@ var isAccessTokenInvalidError_1 = require("./isAccessTokenInvalidError");
 exports.isAccessTokenInvalidError = isAccessTokenInvalidError_1.isAccessTokenInvalidError;
 var isAccessTokenRevokedError_1 = require("./isAccessTokenRevokedError");
 exports.isAccessTokenRevokedError = isAccessTokenRevokedError_1.isAccessTokenRevokedError;
+var isRefreshTokenError_1 = require("./isRefreshTokenError");
+exports.isRefreshTokenError = isRefreshTokenError_1.isRefreshTokenError;

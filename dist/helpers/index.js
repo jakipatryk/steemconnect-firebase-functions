@@ -1,4 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+var checkError_1 = require("./checkError");
+exports.checkError = checkError_1.checkError;
 var isAccessTokenError_1 = require("./isAccessTokenError");
 exports.isAccessTokenError = isAccessTokenError_1.isAccessTokenError;
+var isAccessTokenExpiredError_1 = require("./isAccessTokenExpiredError");
+exports.isAccessTokenExpiredError = isAccessTokenExpiredError_1.isAccessTokenExpiredError;
+var isAccessTokenInvalidError_1 = require("./isAccessTokenInvalidError");
+exports.isAccessTokenInvalidError = isAccessTokenInvalidError_1.isAccessTokenInvalidError;
+var isAccessTokenRevokedError_1 = require("./isAccessTokenRevokedError");
+exports.isAccessTokenRevokedError = isAccessTokenRevokedError_1.isAccessTokenRevokedError;

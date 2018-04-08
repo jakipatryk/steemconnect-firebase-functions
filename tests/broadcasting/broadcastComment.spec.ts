@@ -1,84 +1,102 @@
 import { broadcastComment } from '../../src/broadcasting/broadcastComment';
-import * as broadcaster from '../../src/broadcasting/broadcastOperations';
 
 import { expect } from 'chai';
-import * as sinon from 'sinon';
+import * as nock from 'nock';
 
 describe('broadcastComment', function() {
-  const accessToken = 'fdsgfdew';
-  const parentAuthor = 'whoever';
-  const parentPermlink = 'some-permlink';
-  const commentAuthor = 'jakiaptryk-dev';
-  const commentPermlink = '';
-  const commentBody = 'some comment';
+  const accessToken = {
+    access_token: 'fdsgfdew',
+    expires_in: 34234,
+    username: 'ned'
+  };
 
-  beforeEach(function() {
-    this.broadcastOperations = sinon.stub(broadcaster, 'broadcastOperations');
-  });
+  const comment = {
+    parentAuthor: 'whoever',
+    parentPermlink: 'some-permlink',
+    commentPermlink: 'comment-permlink',
+    commentAuthor: 'jakiaptryk-dev',
+    commentBody: 'some comment'
+  };
+  const commentMetadata = {
+    anything: 'blabla'
+  };
 
-  it('should call broadcastOperations with correct data of the comment to broadcast if jsonMetadata provided', async function() {
-    const jsonMetadata = {
-      anything: 'blabla'
-    };
+  it('should broadcast comment and return result if comment metadata provided', async function() {
+    nock('https://steemconnect.com')
+      .post('/api/broadcast')
+      .reply(200, (uri, req) => ({
+        result: {
+          id: '43523bhbbv543hv5345',
+          block_num: 6546765,
+          trx_num: 1,
+          expired: false,
+          ref_block_num: 43223,
+          ref_block_prefix: 654645645,
+          expiration: '2018-02-11T01:12:42',
+          operations: req.operations,
+          extensions: [],
+          signatures: [
+            '4234bjhbhjbhjbhjbh5jb4325uiph235io45ioh3b45ug435b3hb5j3m5k23nm5j3nih5b34h5bn32on'
+          ]
+        }
+      }));
+    const commentWithMetadata = Object.assign({}, comment, { commentMetadata });
+
+    const result = await broadcastComment(commentWithMetadata)(accessToken);
+
     const operations = [
       [
         'comment',
         {
-          parent_author: parentAuthor,
-          parent_permlink: parentPermlink,
-          author: commentAuthor,
-          permlink: commentPermlink,
+          parent_author: 'whoever',
+          parent_permlink: 'some-permlink',
+          author: 'jakiaptryk-dev',
+          permlink: 'comment-permlink',
           title: '',
-          body: commentBody,
-          json_metadata: JSON.stringify(jsonMetadata)
+          body: 'some comment',
+          json_metadata: JSON.stringify(commentMetadata)
         }
       ]
     ];
-
-    await broadcastComment(
-      accessToken,
-      parentAuthor,
-      parentPermlink,
-      commentAuthor,
-      commentPermlink,
-      commentBody,
-      jsonMetadata
-    );
-
-    expect(this.broadcastOperations.calledWith(accessToken, operations)).to.be
-      .true;
+    expect(result.result.operations).to.deep.equal(operations);
   });
 
-  it('should call broadcastOperations with correct data of the comment to broadcast if jsonMetadata NOT provided', async function() {
+  it('should broadcast comment and return result if comment metadata NOT provided', async function() {
+    nock('https://steemconnect.com')
+      .post('/api/broadcast')
+      .reply(200, (uri, req) => ({
+        result: {
+          id: '43523bhbbv543hv5345',
+          block_num: 6546765,
+          trx_num: 1,
+          expired: false,
+          ref_block_num: 43223,
+          ref_block_prefix: 654645645,
+          expiration: '2018-02-11T01:12:42',
+          operations: req.operations,
+          extensions: [],
+          signatures: [
+            '4234bjhbhjbhjbhjbh5jb4325uiph235io45ioh3b45ug435b3hb5j3m5k23nm5j3nih5b34h5bn32on'
+          ]
+        }
+      }));
+
+    const result = await broadcastComment(comment)(accessToken);
+
     const operations = [
       [
         'comment',
         {
-          parent_author: parentAuthor,
-          parent_permlink: parentPermlink,
-          author: commentAuthor,
-          permlink: commentPermlink,
+          parent_author: 'whoever',
+          parent_permlink: 'some-permlink',
+          author: 'jakiaptryk-dev',
+          permlink: 'comment-permlink',
           title: '',
-          body: commentBody,
+          body: 'some comment',
           json_metadata: ''
         }
       ]
     ];
-
-    await broadcastComment(
-      accessToken,
-      parentAuthor,
-      parentPermlink,
-      commentAuthor,
-      commentPermlink,
-      commentBody
-    );
-
-    expect(this.broadcastOperations.calledWith(accessToken, operations)).to.be
-      .true;
-  });
-
-  afterEach(function() {
-    this.broadcastOperations.restore();
+    expect(result.result.operations).to.deep.equal(operations);
   });
 });

@@ -1,35 +1,28 @@
-import { BroadcastResult } from './../interfaces/BroadcastResult';
-import { Operations } from '../interfaces/Operation';
+import { BroadcastResult } from './interfaces/BroadcastResult';
+import { Operations } from '../shared/interfaces/Operation';
+import { AccessTokenResponse } from '../shared/interfaces/AccessTokenResponse';
 
 import * as rp from 'request-promise';
 
-/**
- * Broadcasts operations to the Steem blockchain.
- * @param {string} accessToken The access_token of the user.
- * @param {Array} operations An array of operations to broadcast.
- * @returns {Promise} Promise object that resolves into the result of the operations.
- */
-export async function broadcastOperations(
-  accessToken: string,
-  operations: Operations
-): Promise<BroadcastResult> {
-  try {
-    const options = {
-      uri: 'https://steemconnect.com/api/broadcast',
-      headers: {
-        Authorization: accessToken,
-        'Content-Type': 'application/json',
-        Accept: 'application/json'
-      },
-      body: {
-        operations: operations
-      },
-      json: true
-    };
-
-    const result = await rp.post(options);
-    return result;
-  } catch (e) {
-    throw e.error;
-  }
+export function broadcastOperations([...operations]: Operations) {
+  return async function broadcast({
+    access_token
+  }: AccessTokenResponse): Promise<BroadcastResult> {
+    return rp
+      .post({
+        uri: 'https://steemconnect.com/api/broadcast',
+        headers: {
+          Authorization: access_token,
+          'Content-Type': 'application/json',
+          Accept: 'application/json'
+        },
+        body: {
+          operations: [...operations]
+        },
+        json: true
+      })
+      .catch(err => {
+        throw err.error;
+      });
+  };
 }

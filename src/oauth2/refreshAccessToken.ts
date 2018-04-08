@@ -1,4 +1,4 @@
-import { AccessTokenResponse } from '../interfaces/AccessTokenResponse';
+import { AccessTokenResponse } from '../shared/interfaces/AccessTokenResponse';
 
 import * as rp from 'request-promise';
 

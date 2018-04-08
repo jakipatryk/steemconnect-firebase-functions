@@ -1,4 +1,4 @@
-import { UserData } from '../interfaces/UserData';
+import { UserData } from '../shared/interfaces/UserData';
 
 import * as rp from 'request-promise';
 

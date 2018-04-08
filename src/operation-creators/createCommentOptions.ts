@@ -1,6 +1,6 @@
 import { createOperation } from './createOperation';
-import { CommentOptionsConfig } from './../interfaces/CommentOptionsConfig';
-import { Operation } from '../interfaces/Operation';
+import { CommentOptionsConfig } from './../shared/interfaces/CommentOptionsConfig';
+import { Operation } from '../shared/interfaces/Operation';
 
 /**
  * Creates and returns the comment_option operation.

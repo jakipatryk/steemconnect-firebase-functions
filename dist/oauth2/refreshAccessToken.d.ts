@@ -1,4 +1,4 @@
-import { AccessTokenResponse } from '../interfaces/AccessTokenResponse';
+import { AccessTokenResponse } from '../shared/interfaces/AccessTokenResponse';
 /**
  * Exchanges the refresh token for the new access token and its details (username, expiration time and refresh token) and returns them.
  * @param {string} clientId The client id of the SteemConnect app.

@@ -1,4 +1,4 @@
-import { AccessTokenResponse } from '../interfaces/AccessTokenResponse';
+import { AccessTokenResponse } from '../shared/interfaces/AccessTokenResponse';
 /**
  * Saves access token and its details in the Firestore.
  * @param admin The configurated firebase-admin object.

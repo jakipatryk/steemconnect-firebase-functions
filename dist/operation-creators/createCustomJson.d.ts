@@ -1,5 +1,5 @@
-import { CustomJsonConfig } from './../interfaces/CustomJsonConfig';
-import { Operation } from '../interfaces/Operation';
+import { CustomJsonConfig } from './../shared/interfaces/CustomJsonConfig';
+import { Operation } from '../shared/interfaces/Operation';
 /**
  * Creates and returns custom_json operation.
  * @param {Object} config The configuration object for custom_json operation.

@@ -6,6 +6,6 @@
     "outDir": "./dist",
     "strict": true
   },
-  "include": ["src/*"],
-  "exclude": ["node_modules", "tests/*.spec.ts"]
+  "exclude": ["node_modules", "tests/*.spec.ts"],
+  "include": ["src/*", "src/shared/errors/*"]
 }

@@ -6,8 +6,5 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * @param {Object} errorToCheckAgainst The error constant to check whether it is a provided OAuth2 error.
  * @returns {boolean} Returns boolean determining whether provided OAuth2 error is the errorToCheck.
  */
-exports.checkOAuth2Error = function (_a, errorToCheckAgainst) {
-    var error = _a.error, error_description = _a.error_description;
-    return error === errorToCheckAgainst.error &&
-        error_description === errorToCheckAgainst.error_description;
-};
+exports.checkOAuth2Error = ({ error, error_description }, errorToCheckAgainst) => error === errorToCheckAgainst.error &&
+    error_description === errorToCheckAgainst.error_description;

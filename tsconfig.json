@@ -7,5 +7,5 @@
     "strict": true
   },
   "exclude": ["node_modules", "tests/*.spec.ts"],
-  "include": ["src/*", "src/shared/errors/*"]
+  "include": ["src/*", "src/shared/", "src/shared/errors/*"]
 }

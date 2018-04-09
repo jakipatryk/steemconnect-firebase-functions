@@ -1,5 +1,5 @@
-import { VoteConfig } from './../interfaces/VoteConfig';
-import { Operation } from '../interfaces/Operation';
+import { VoteConfig } from './../shared/interfaces/VoteConfig';
+import { Operation } from '../shared/interfaces/Operation';
 /**
  * Creates and returns the vote operation.
  * @param {Object} config The configuration object for vote operation.

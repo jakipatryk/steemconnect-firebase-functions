@@ -9,33 +9,26 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const rp = require("request-promise");
-/**
- * Broadcasts operations to the Steem blockchain.
- * @param {string} accessToken The access_token of the user.
- * @param {Array} operations An array of operations to broadcast.
- * @returns {Promise} Promise object that resolves into the result of the operations.
- */
-function broadcastOperations(accessToken, operations) {
-    return __awaiter(this, void 0, void 0, function* () {
-        try {
-            const options = {
+function broadcastOperations([...operations]) {
+    return function broadcast({ access_token }) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rp
+                .post({
                 uri: 'https://steemconnect.com/api/broadcast',
                 headers: {
-                    Authorization: accessToken,
+                    Authorization: access_token,
                     'Content-Type': 'application/json',
                     Accept: 'application/json'
                 },
                 body: {
-                    operations: operations
+                    operations: [...operations]
                 },
                 json: true
-            };
-            const result = yield rp.post(options);
-            return result;
-        }
-        catch (e) {
-            throw e.error;
-        }
-    });
+            })
+                .catch(err => {
+                throw err.error;
+            });
+        });
+    };
 }
 exports.broadcastOperations = broadcastOperations;

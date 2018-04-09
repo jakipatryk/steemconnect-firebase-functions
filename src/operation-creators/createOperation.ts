@@ -1,4 +1,4 @@
-import { Operation } from '../interfaces/Operation';
+import { Operation } from '../shared/interfaces/Operation';
 
 /**
  * Creates and returns operation.

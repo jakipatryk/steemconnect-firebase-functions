@@ -1,0 +1,13 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const utils_1 = require("../utils");
+const broadcastOperations_1 = require("../../broadcasting/broadcastOperations");
+const createComment_1 = require("./../../operation-creators/createComment");
+const createCommentOptions_1 = require("./../../operation-creators/createCommentOptions");
+const createCustomJson_1 = require("./../../operation-creators/createCustomJson");
+const createVote_1 = require("../../operation-creators/createVote");
+exports.combineCommentWithOptions = utils_1.combine(createComment_1.createComment, createCommentOptions_1.createCommentOptions);
+exports.createBroadcastableVote = utils_1.pipe(createVote_1.createVote, Array.of, broadcastOperations_1.broadcastOperations);
+exports.createBroadcastableComment = utils_1.pipe(createComment_1.createComment, Array.of, broadcastOperations_1.broadcastOperations);
+exports.createBroadcastableCommentWithOptions = utils_1.pipe(exports.combineCommentWithOptions, broadcastOperations_1.broadcastOperations);
+exports.createBroadcastableCustomJson = utils_1.pipe(createCustomJson_1.createCustomJson, Array.of, broadcastOperations_1.broadcastOperations);

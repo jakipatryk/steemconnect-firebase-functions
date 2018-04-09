@@ -1,5 +1,5 @@
-import { CommentConfig } from './../interfaces/CommentConfig';
-import { Operation } from '../interfaces/Operation';
+import { CommentConfig } from './../shared/interfaces/CommentConfig';
+import { Operation } from '../shared/interfaces/Operation';
 /**
  * Creates and returns the comment operation.
  * @param {Object} config The configuration object for comment operation.

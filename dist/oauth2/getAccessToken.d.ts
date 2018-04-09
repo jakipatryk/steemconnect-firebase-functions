@@ -1,4 +1,4 @@
-import { AccessTokenResponse } from '../interfaces/AccessTokenResponse';
+import { AccessTokenResponse } from '../shared/interfaces/AccessTokenResponse';
 /**
  * Exchanges the OAuth2 code for an access token and its details (username, expiration time and optionally refresh token) and returns them.
  * @param {string} clientId The client id of the SteemConnect app.

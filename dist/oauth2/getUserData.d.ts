@@ -1,4 +1,4 @@
-import { UserData } from '../interfaces/UserData';
+import { UserData } from '../shared/interfaces/UserData';
 /**
  * Gets and returns the user data of the user.
  * @param {string} accessToken The access_token of the user.

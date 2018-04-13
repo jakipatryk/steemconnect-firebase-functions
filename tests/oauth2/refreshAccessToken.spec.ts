@@ -18,11 +18,11 @@ describe('refreshAccessToken', () => {
       });
     const refreshToken = 'valid.refresh.token';
 
-    const newAccessToken = await refreshAccessToken(
+    const newAccessToken = await refreshAccessToken({
       clientId,
       clientSecret,
       refreshToken
-    );
+    });
 
     expect(newAccessToken).to.exist.and.have.property('access_token');
   });
@@ -36,8 +36,8 @@ describe('refreshAccessToken', () => {
       });
     const refreshToken = 'invalid.refresh.token';
 
-    return refreshAccessToken(clientId, clientSecret, refreshToken).catch(err =>
-      expect(err).to.exist.and.have.property('error_description')
+    return refreshAccessToken({ clientId, clientSecret, refreshToken }).catch(
+      err => expect(err).to.exist.and.have.property('error_description')
     );
   });
 });

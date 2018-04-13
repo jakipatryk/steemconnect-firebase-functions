@@ -9,11 +9,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const rp = require("request-promise");
-/**
- * Revokes given access token.
- * @param {string} accessToken The access token to revoke.
- * @returns {Promise} Promise object that resolves into the result of revoking token.
- */
 function revokeAccessToken(accessToken) {
     return __awaiter(this, void 0, void 0, function* () {
         try {

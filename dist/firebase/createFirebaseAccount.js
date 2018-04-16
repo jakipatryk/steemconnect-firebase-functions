@@ -8,19 +8,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-/**
- * Creates or updates Firebase auth user account.
- * @param admin The configurated admin object.
- * @param {string} uid The uid of the user.
- * @param {string} username The username of the user.
- * @param {string} [photoURL] Optional user's photo URL.
- * @param {string} [email] Optional user's email.
- * @param {boolean} [emailVerified] Optional boolean whether or not the user's email is verified.
- * @param {string} [phoneNumber] Optional user's phone number.
- * @param {boolean} [disabled] Optional boolean whether or not the user is disabled.
- * @returns {Promise} Promise object.
- */
-function createFirebaseAccount(admin, uid, username, photoURL, email, emailVerified, phoneNumber, disabled) {
+function createFirebaseAccount(admin, { uid, username, photoURL, email, emailVerified, phoneNumber, disabled }) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             return yield admin.auth().updateUser(uid, {

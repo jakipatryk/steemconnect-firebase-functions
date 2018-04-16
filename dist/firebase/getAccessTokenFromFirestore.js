@@ -8,12 +8,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-/**
- * Gets and returns the access token + details object from the Firestore.
- * @param admin The configurated firebase-admin object.
- * @param {string} uid The uid of the user you want to get access token for.
- * @returns {Promise} Promise object that resolves into the access token + its details object.
- */
 function getAccessTokenFromFirestore(admin, uid) {
     return __awaiter(this, void 0, void 0, function* () {
         try {

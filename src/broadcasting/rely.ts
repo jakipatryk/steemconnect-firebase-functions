@@ -1,24 +1,30 @@
+import { BroadcastResult } from './interfaces/BroadcastResult';
 import { refreshAccessToken } from '../oauth2/refreshAccessToken';
-import { pipe } from './../shared/utils';
-import { isAccessTokenError } from './../shared/errors/isAccessTokenError';
+import { ClientCredenctials } from './../oauth2/interfaces/ClientCredentials';
+import { isAccessTokenExpiredError } from './../shared/errors/isAccessTokenExpiredError';
 import { AccessTokenResponse } from './../shared/interfaces/AccessTokenResponse';
 
-export const rely = ({ clientId, clientSecret }) => ({
+export const rely = ({ clientId, clientSecret }: ClientCredenctials) => ({
   access_token,
-  refresh_token
-}: AccessTokenResponse) => async (broadcastable: Function) => {
+  refresh_token = ''
+}: AccessTokenResponse) => async (
+  broadcastable: Function
+): Promise<BroadcastResult & Partial<AccessTokenResponse>> => {
   try {
     return await broadcastable({ access_token });
   } catch (err) {
-    if (isAccessTokenError(err)) {
+    if (isAccessTokenExpiredError(err)) {
       const refreshedTokens = await refreshAccessToken({
-        client_id,
-        client_secret,
-        refresh_token
+        clientId,
+        clientSecret,
+        refreshToken: refresh_token
       });
-      return await broadcastable({
+
+      const broadcastResult = await broadcastable({
         access_token: refreshedTokens.access_token
       });
+
+      return { ...refreshedTokens, ...broadcastResult };
     }
     throw err;
   }

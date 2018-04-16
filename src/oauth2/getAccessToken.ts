@@ -1,3 +1,4 @@
+import { ClientCredenctials } from './interfaces/ClientCredentials';
 import { AccessTokenResponse } from '../shared/interfaces/AccessTokenResponse';
 
 import * as rp from 'request-promise';
@@ -7,9 +8,7 @@ export async function getAccessToken({
   clientSecret,
   redirectUri,
   code
-}: {
-  clientId: string;
-  clientSecret: string;
+}: ClientCredenctials & {
   redirectUri: string;
   code: string;
 }): Promise<AccessTokenResponse> {

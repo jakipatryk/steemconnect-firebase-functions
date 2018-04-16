@@ -1,3 +1,4 @@
+import { ClientCredenctials } from './interfaces/ClientCredentials';
 import * as qs from 'querystring';
 
 export function getAuthorizationUrl({
@@ -5,8 +6,7 @@ export function getAuthorizationUrl({
   redirectUri,
   scope,
   state
-}: {
-  clientId: string;
+}: ClientCredenctials & {
   redirectUri: string;
   scope: Array<string>;
   state?: string;

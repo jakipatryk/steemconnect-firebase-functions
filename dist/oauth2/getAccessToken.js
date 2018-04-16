@@ -9,15 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const rp = require("request-promise");
-/**
- * Exchanges the OAuth2 code for an access token and its details (username, expiration time and optionally refresh token) and returns them.
- * @param {string} clientId The client id of the SteemConnect app.
- * @param {string} clientSecret The client secret of the SteemConnect app.
- * @param {string} redirectUri The redirect URI used in the getAuthorizationUrl function.
- * @param {string} code The OAuth2 code.
- * @returns {Promise} Promise object that resolves into the access token + its details object.
- */
-function getAccessToken(clientId, clientSecret, redirectUri, code) {
+function getAccessToken({ clientId, clientSecret, redirectUri, code }) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             const options = {

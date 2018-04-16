@@ -18,12 +18,12 @@ describe('getAccessToken', () => {
         username: 'dev'
       });
 
-    const result = await getAccessToken(
+    const result = await getAccessToken({
       clientId,
       clientSecret,
       redirectUri,
       code
-    );
+    });
 
     expect(result.username).to.equal('dev');
     expect(result.access_token).to.equal('ey.eyJy4MDI5NjU3fQ.lqX2bTkW7R');
@@ -37,7 +37,7 @@ describe('getAccessToken', () => {
         error_description: 'The token has invalid role'
       });
 
-    return getAccessToken(clientId, clientSecret, redirectUri, code).catch(
+    return getAccessToken({ clientId, clientSecret, redirectUri, code }).catch(
       err => {
         expect(err).to.exist.and.have.property('error');
       }

@@ -9,13 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const rp = require("request-promise");
-/**
- * Sets user metadata and returns the user data of this user.
- * @param {string} accessToken The access_token of the user.
- * @param {object} metadata The metadata to set.
- * @returns {Promise} Promise object that resolves into user data object.
- */
-function setUserMetadata(accessToken, metadata) {
+function setUserMetadata({ accessToken, metadata }) {
     return __awaiter(this, void 0, void 0, function* () {
         const metadataClone = Object.assign({}, metadata);
         const userMetadata = {

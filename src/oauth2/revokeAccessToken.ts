@@ -1,10 +1,5 @@
 import * as rp from 'request-promise';
 
-/**
- * Revokes given access token.
- * @param {string} accessToken The access token to revoke.
- * @returns {Promise} Promise object that resolves into the result of revoking token.
- */
 export async function revokeAccessToken(accessToken: string) {
   try {
     const options = {
@@ -17,7 +12,7 @@ export async function revokeAccessToken(accessToken: string) {
       json: true
     };
 
-    const result = await rp.delete(options);
+    const result = await rp.post(options);
     return result;
   } catch (e) {
     throw e.error;

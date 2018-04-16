@@ -6,8 +6,8 @@ import { AccessTokenResponse } from './../shared/interfaces/AccessTokenResponse'
 
 export const rely = ({ clientId, clientSecret }: ClientCredenctials) => ({
   access_token,
-  refresh_token = ''
-}: AccessTokenResponse) => async (
+  refresh_token
+}: Required<AccessTokenResponse>) => async (
   broadcastable: Function
 ): Promise<BroadcastResult & Partial<AccessTokenResponse>> => {
   try {

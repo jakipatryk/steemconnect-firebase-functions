@@ -7,5 +7,13 @@
     "strict": true
   },
   "exclude": ["node_modules", "tests/*.spec.ts"],
-  "include": ["src/*", "src/shared/", "src/shared/errors/*"]
+  "include": [
+    "src/*",
+    "src/broadcasting",
+    "src/firebase",
+    "src/oauth2",
+    "src/operation-creators",
+    "src/shared/",
+    "src/shared/errors/*"
+  ]
 }

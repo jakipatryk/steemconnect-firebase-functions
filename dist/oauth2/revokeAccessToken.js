@@ -21,7 +21,7 @@ function revokeAccessToken(accessToken) {
                 },
                 json: true
             };
-            const result = yield rp.delete(options);
+            const result = yield rp.post(options);
             return result;
         }
         catch (e) {

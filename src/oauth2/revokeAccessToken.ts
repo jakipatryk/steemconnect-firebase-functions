@@ -12,7 +12,7 @@ export async function revokeAccessToken(accessToken: string) {
       json: true
     };
 
-    const result = await rp.delete(options);
+    const result = await rp.post(options);
     return result;
   } catch (e) {
     throw e.error;

@@ -5,7 +5,7 @@ export function getAuthorizationUrl({
   clientId,
   redirectUri,
   scope,
-  state
+  state = ''
 }: ClientCredenctials & {
   redirectUri: string;
   scope: Array<string>;
@@ -17,7 +17,7 @@ export function getAuthorizationUrl({
     response_type: 'code',
     redirect_uri: redirectUri,
     scope: scope.join(','),
-    state: state || null
+    state
   };
   const endpoint = base + qs.stringify(queryParams);
   return endpoint;

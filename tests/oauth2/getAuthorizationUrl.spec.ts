@@ -1,3 +1,4 @@
+import { Scope } from './../../src/oauth2/interfaces/Scope';
 import { getAuthorizationUrl } from '../../src/oauth2/getAuthorizationUrl';
 
 import { expect } from 'chai';
@@ -6,7 +7,7 @@ describe('getAuthorizationUrl', () => {
   it('should return a correct url when scope has one element', () => {
     const clientId = 'test.app';
     const redirectUri = 'https://wykop.pl/redirect';
-    const scope = ['vote'];
+    const scope: Array<Scope> = ['vote'];
 
     const authorizationUrl = getAuthorizationUrl({
       clientId,
@@ -22,7 +23,7 @@ describe('getAuthorizationUrl', () => {
   it('should return a correct url when scope has more than one element', () => {
     const clientId = 'test.app';
     const redirectUri = 'https://adam.malysz/redirect';
-    const scope = ['vote', 'comment'];
+    const scope: Array<Scope> = ['vote', 'comment'];
 
     const authorizationUrl = getAuthorizationUrl({
       clientId,
@@ -38,7 +39,7 @@ describe('getAuthorizationUrl', () => {
   it('should return a correct url when state provided', () => {
     const clientId = 'test.app';
     const redirectUri = 'https://myapp.com/redirect';
-    const scope = ['vote'];
+    const scope: Array<Scope> = ['vote'];
     const state = 'state342343243242';
 
     const authorizationUrl = getAuthorizationUrl({

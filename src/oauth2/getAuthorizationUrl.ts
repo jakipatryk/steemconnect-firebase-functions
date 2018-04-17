@@ -1,5 +1,6 @@
-import { ClientCredenctials } from './interfaces/ClientCredentials';
 import * as qs from 'querystring';
+import { ClientCredenctials } from './interfaces/ClientCredentials';
+import { Scope } from './interfaces/Scope';
 
 export function getAuthorizationUrl({
   clientId,
@@ -8,7 +9,7 @@ export function getAuthorizationUrl({
   state = ''
 }: ClientCredenctials & {
   redirectUri: string;
-  scope: Array<string>;
+  scope: Array<Scope>;
   state?: string;
 }): string {
   const base = 'https://steemconnect.com/oauth2/authorize?';

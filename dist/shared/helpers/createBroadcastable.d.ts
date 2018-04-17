@@ -1,10 +1,12 @@
-import { Operation } from './../interfaces/Operation';
+import { VoteConfig } from '../interfaces/VoteConfig';
 import { CommentConfig } from './../interfaces/CommentConfig';
 import { CommentOptionsConfig } from './../interfaces/CommentOptionsConfig';
 import { CustomJsonConfig } from './../interfaces/CustomJsonConfig';
-import { VoteConfig } from '../interfaces/VoteConfig';
+import { DeleteCommentConfig } from './../interfaces/DeleteCommentConfig';
+import { Operation } from './../interfaces/Operation';
 export declare const combineCommentWithOptions: (...args: (CommentConfig & CommentOptionsConfig)[]) => Operation[];
 export declare const createBroadcastableVote: (x: VoteConfig) => any;
 export declare const createBroadcastableComment: (x: CommentConfig) => any;
 export declare const createBroadcastableCommentWithOptions: (x: CommentConfig & CommentOptionsConfig) => any;
 export declare const createBroadcastableCustomJson: (x: CustomJsonConfig) => any;
+export declare const createBroadcastableDeleteComment: (x: DeleteCommentConfig) => any;

@@ -1,14 +1,16 @@
-import { pipe, combine } from '../utils';
 import { broadcastOperations } from '../../broadcasting/broadcastOperations';
+import { createDeleteComment } from '../../operation-creators/createDeleteComment';
+import { createVote } from '../../operation-creators/createVote';
+import { VoteConfig } from '../interfaces/VoteConfig';
+import { combine, pipe } from '../utils';
 import { createComment } from './../../operation-creators/createComment';
 import { createCommentOptions } from './../../operation-creators/createCommentOptions';
 import { createCustomJson } from './../../operation-creators/createCustomJson';
-import { createVote } from '../../operation-creators/createVote';
-import { Operation } from './../interfaces/Operation';
 import { CommentConfig } from './../interfaces/CommentConfig';
 import { CommentOptionsConfig } from './../interfaces/CommentOptionsConfig';
 import { CustomJsonConfig } from './../interfaces/CustomJsonConfig';
-import { VoteConfig } from '../interfaces/VoteConfig';
+import { DeleteCommentConfig } from './../interfaces/DeleteCommentConfig';
+import { Operation } from './../interfaces/Operation';
 
 export const combineCommentWithOptions = combine<
   CommentConfig & CommentOptionsConfig,
@@ -33,6 +35,12 @@ export const createBroadcastableCommentWithOptions = pipe<
 
 export const createBroadcastableCustomJson = pipe<CustomJsonConfig>(
   createCustomJson,
+  Array.of,
+  broadcastOperations
+);
+
+export const createBroadcastableDeleteComment = pipe<DeleteCommentConfig>(
+  createDeleteComment,
   Array.of,
   broadcastOperations
 );

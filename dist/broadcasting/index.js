@@ -18,3 +18,5 @@ var broadcastUnfollow_1 = require("./broadcastUnfollow");
 exports.broadcastUnfollow = broadcastUnfollow_1.broadcastUnfollow;
 var broadcastUpvote_1 = require("./broadcastUpvote");
 exports.broadcastUpvote = broadcastUpvote_1.broadcastUpvote;
+var rely_1 = require("./rely");
+exports.rely = rely_1.rely;

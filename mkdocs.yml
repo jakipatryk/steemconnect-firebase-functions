@@ -1,5 +1,13 @@
 site_name: steemconnect-firebase-functions
 theme:
   name: 'material'
+  language: 'en'
+  palette:
+    primary: 'pink'
+    accent: 'indigo'
+  font:
+    text: 'Roboto'
+    code: 'Roboto Mono'
 repo_name: 'jakipatryk/steemconnect-firebase-functions'
 repo_url: 'https://github.com/jakipatryk/steemconnect-firebase-functions'
+

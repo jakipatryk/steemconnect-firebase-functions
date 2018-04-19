@@ -1,17 +1,20 @@
-# Welcome to MkDocs
+# **Welcome** to the documentation of...
 
-For full documentation visit [mkdocs.org](http://mkdocs.org).
+**steemconnect-firebase-function** - a TypeScript library that can help you build applications with _SteemConnect_ and _Firebase_.
 
-## Commands
+## What can you do with this tool?
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs help` - Print this help message.
+* **implement** OAuth2 Authorization Code Grant
+* **broadcast** operations to the Steem blockchain
+* **check** OAuth2 error types
+* **mint** Firebase Custom Tokens
+* **create** Firebase Auth accounts for your users with additional data
+* **store** tokens in the Firebase Cloud Firestore
 
-## Project layout
+## Quick start
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+To get started started, you simply have to install it via **NPM**:
+
+```cmd
+npm i steemconnect-firebase-functions@next
+```

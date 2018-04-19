@@ -1,3 +1,5 @@
 site_name: steemconnect-firebase-functions
 theme:
   name: 'material'
+repo_name: 'jakipatryk/steemconnect-firebase-functions'
+repo_url: 'https://github.com/jakipatryk/steemconnect-firebase-functions'

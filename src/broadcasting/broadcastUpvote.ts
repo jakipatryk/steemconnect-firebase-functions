@@ -1,11 +1,11 @@
 import { createBroadcastableVote } from '../shared/helpers/createBroadcastable';
-import { Vote } from './interfaces/Vote';
-import { BroadcastResult } from './interfaces/BroadcastResult';
 import { AccessTokenResponse } from './../shared/interfaces/AccessTokenResponse';
+import { BroadcastResult } from './interfaces/BroadcastResult';
+import { Vote } from './interfaces/Vote';
 
 export const broadcastUpvote = ({ voter, author, permlink, weight }: Vote) => ({
   access_token
-}: AccessTokenResponse) =>
+}: AccessTokenResponse): Promise<BroadcastResult> =>
   createBroadcastableVote({
     voter,
     author,

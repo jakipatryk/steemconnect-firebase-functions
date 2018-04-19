@@ -1,7 +1,7 @@
 import { createBroadcastableComment } from '../shared/helpers/createBroadcastable';
-import { Post } from './interfaces/Post';
 import { AccessTokenResponse } from './../shared/interfaces/AccessTokenResponse';
 import { BroadcastResult } from './interfaces/BroadcastResult';
+import { Post } from './interfaces/Post';
 
 export const broadcastPost = ({
   mainTag,
@@ -10,7 +10,7 @@ export const broadcastPost = ({
   title,
   body,
   metadata
-}: Post) => ({ access_token }: AccessTokenResponse): BroadcastResult =>
+}: Post) => ({ access_token }: AccessTokenResponse): Promise<BroadcastResult> =>
   createBroadcastableComment({
     parent_permlink: mainTag,
     author: author,

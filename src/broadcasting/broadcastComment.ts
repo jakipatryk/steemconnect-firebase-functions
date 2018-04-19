@@ -1,7 +1,7 @@
 import { createBroadcastableComment } from '../shared/helpers/createBroadcastable';
-import { Comment } from './interfaces/Comment';
 import { AccessTokenResponse } from './../shared/interfaces/AccessTokenResponse';
 import { BroadcastResult } from './interfaces/BroadcastResult';
+import { Comment } from './interfaces/Comment';
 
 export const broadcastComment = ({
   parentPermlink,
@@ -11,7 +11,9 @@ export const broadcastComment = ({
   parentAuthor = '',
   commentTitle = '',
   commentMetadata
-}: Comment) => ({ access_token }: AccessTokenResponse): BroadcastResult =>
+}: Comment) => ({
+  access_token
+}: AccessTokenResponse): Promise<BroadcastResult> =>
   createBroadcastableComment({
     parent_permlink: parentPermlink,
     author: commentAuthor,

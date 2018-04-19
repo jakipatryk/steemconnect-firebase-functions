@@ -1,7 +1,7 @@
 import { createBroadcastableCommentWithOptions } from '../shared/helpers/createBroadcastable';
-import { PostWithBeneficiaries } from './interfaces/PostWithBeneficiaries';
 import { AccessTokenResponse } from './../shared/interfaces/AccessTokenResponse';
 import { BroadcastResult } from './interfaces/BroadcastResult';
+import { PostWithBeneficiaries } from './interfaces/PostWithBeneficiaries';
 
 export const broadcastPostWithBeneficiaries = ({
   mainTag,
@@ -14,7 +14,7 @@ export const broadcastPostWithBeneficiaries = ({
   metadata
 }: PostWithBeneficiaries) => ({
   access_token
-}: AccessTokenResponse): BroadcastResult =>
+}: AccessTokenResponse): Promise<BroadcastResult> =>
   createBroadcastableCommentWithOptions({
     parent_permlink: mainTag,
     author: author,

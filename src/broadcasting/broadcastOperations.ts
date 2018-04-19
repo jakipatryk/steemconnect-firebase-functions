@@ -1,8 +1,7 @@
-import { BroadcastResult } from './interfaces/BroadcastResult';
-import { Operations } from '../shared/interfaces/Operation';
-import { AccessTokenResponse } from '../shared/interfaces/AccessTokenResponse';
-
 import * as rp from 'request-promise';
+import { AccessTokenResponse } from '../shared/interfaces/AccessTokenResponse';
+import { Operations } from '../shared/interfaces/Operation';
+import { BroadcastResult } from './interfaces/BroadcastResult';
 
 export function broadcastOperations([...operations]: Operations) {
   return async function broadcast({

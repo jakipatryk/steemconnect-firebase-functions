@@ -1,3 +1,4 @@
-import { Vote } from './interfaces/Vote';
 import { AccessTokenResponse } from './../shared/interfaces/AccessTokenResponse';
-export declare const broadcastDownvote: ({ voter, author, permlink, weight }: Vote) => ({ access_token }: AccessTokenResponse) => any;
+import { BroadcastResult } from './interfaces/BroadcastResult';
+import { Vote } from './interfaces/Vote';
+export declare const broadcastDownvote: ({ voter, author, permlink, weight }: Vote) => ({ access_token }: AccessTokenResponse) => Promise<BroadcastResult>;

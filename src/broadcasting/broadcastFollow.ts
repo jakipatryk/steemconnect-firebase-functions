@@ -1,11 +1,11 @@
 import { createBroadcastableCustomJson } from '../shared/helpers/createBroadcastable';
-import { Follow } from './interfaces/Follow';
 import { AccessTokenResponse } from './../shared/interfaces/AccessTokenResponse';
 import { BroadcastResult } from './interfaces/BroadcastResult';
+import { Follow } from './interfaces/Follow';
 
 export const broadcastFollow = ({ username, userToFollow }: Follow) => ({
   access_token
-}: AccessTokenResponse): BroadcastResult =>
+}: AccessTokenResponse): Promise<BroadcastResult> =>
   createBroadcastableCustomJson({
     required_posting_auths: [username],
     id: 'follow',

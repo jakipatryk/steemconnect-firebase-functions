@@ -4,5 +4,5 @@ export interface Comment {
   commentPermlink: string;
   commentBody: string;
   commentTitle?: string;
-  commentMetadata?: object | string;
+  commentMetadata?: object;
 }

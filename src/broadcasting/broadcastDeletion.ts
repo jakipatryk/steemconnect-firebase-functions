@@ -3,10 +3,11 @@ import { AccessTokenResponse } from './../shared/interfaces/AccessTokenResponse'
 import { BroadcastResult } from './interfaces/BroadcastResult';
 import { Deletion } from './interfaces/Deletion';
 
-export const broadcastDeletion = ({ author, permlink }: Deletion) => ({
-  access_token
+export const broadcastDeletion = ({ permlink }: Deletion) => ({
+  access_token,
+  username
 }: AccessTokenResponse): Promise<BroadcastResult> =>
   createBroadcastableDeleteComment({
-    author,
+    author: username,
     permlink
   })({ access_token });

@@ -5,13 +5,12 @@ import * as nock from 'nock';
 
 describe('broadcastUpvote', function() {
   const deleteCommentConfig = {
-    author: 'whoever',
     permlink: 'some-permlink'
   };
   const accessToken = {
     access_token: 'fdsfertre',
     expires_in: 4323432,
-    username: 'ned'
+    username: 'whoever'
   };
 
   it('should broadcast deletion of either post or comment and return result', async function() {

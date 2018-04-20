@@ -7,12 +7,11 @@ describe('broadcastPostWithBeneficiaries', function() {
   const accessToken = {
     access_token: 'fdsgfdew',
     expires_in: 34234,
-    username: 'ned'
+    username: 'whoever'
   };
 
   const post = {
     mainTag: 'test-tag',
-    author: 'whoever',
     permlink: 'some-permlink',
     title: 'title',
     body: 'some post',

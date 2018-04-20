@@ -5,7 +5,7 @@ import { PostWithBeneficiaries } from './interfaces/PostWithBeneficiaries';
 
 export const broadcastPostWithBeneficiaries = ({
   mainTag,
-  author,
+
   permlink,
   title,
   body,
@@ -13,11 +13,12 @@ export const broadcastPostWithBeneficiaries = ({
   beneficiariesWeight,
   metadata
 }: PostWithBeneficiaries) => ({
-  access_token
+  access_token,
+  username
 }: AccessTokenResponse): Promise<BroadcastResult> =>
   createBroadcastableCommentWithOptions({
     parent_permlink: mainTag,
-    author: author,
+    author: username,
     permlink: permlink,
     body: body,
     parent_author: '',

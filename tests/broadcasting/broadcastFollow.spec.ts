@@ -11,7 +11,6 @@ describe('broadcastFollow', function() {
   };
 
   const follow = {
-    username: 'jakipatryk',
     userToFollow: 'ned'
   };
 

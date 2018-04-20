@@ -11,7 +11,6 @@ describe('broadcastReblog', function() {
   };
 
   const reblog = {
-    username: 'jakipatryk',
     postAuthor: 'ned',
     postPermlink: 'i-am-ned'
   };

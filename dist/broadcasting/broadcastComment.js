@@ -1,9 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const createBroadcastable_1 = require("../shared/helpers/createBroadcastable");
-exports.broadcastComment = ({ parentPermlink, commentAuthor, commentPermlink, commentBody, parentAuthor = '', commentTitle = '', commentMetadata }) => ({ access_token }) => createBroadcastable_1.createBroadcastableComment({
+exports.broadcastComment = ({ parentPermlink, commentPermlink, commentBody, parentAuthor = '', commentTitle = '', commentMetadata }) => ({ access_token, username }) => createBroadcastable_1.createBroadcastableComment({
     parent_permlink: parentPermlink,
-    author: commentAuthor,
+    author: username,
     permlink: commentPermlink,
     body: commentBody,
     parent_author: parentAuthor,

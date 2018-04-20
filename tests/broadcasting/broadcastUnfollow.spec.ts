@@ -11,7 +11,6 @@ describe('broadcastUnfollow', function() {
   };
 
   const unfollow = {
-    username: 'jakipatryk',
     userToUnfollow: 'ned'
   };
 

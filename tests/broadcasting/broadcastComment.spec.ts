@@ -7,14 +7,13 @@ describe('broadcastComment', function() {
   const accessToken = {
     access_token: 'fdsgfdew',
     expires_in: 34234,
-    username: 'ned'
+    username: 'jakipatryk-dev'
   };
 
   const comment = {
     parentAuthor: 'whoever',
     parentPermlink: 'some-permlink',
     commentPermlink: 'comment-permlink',
-    commentAuthor: 'jakiaptryk-dev',
     commentBody: 'some comment'
   };
   const commentMetadata = {
@@ -50,7 +49,7 @@ describe('broadcastComment', function() {
         {
           parent_author: 'whoever',
           parent_permlink: 'some-permlink',
-          author: 'jakiaptryk-dev',
+          author: 'jakipatryk-dev',
           permlink: 'comment-permlink',
           title: '',
           body: 'some comment',
@@ -89,7 +88,7 @@ describe('broadcastComment', function() {
         {
           parent_author: 'whoever',
           parent_permlink: 'some-permlink',
-          author: 'jakiaptryk-dev',
+          author: 'jakipatryk-dev',
           permlink: 'comment-permlink',
           title: '',
           body: 'some comment',

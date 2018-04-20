@@ -16,7 +16,6 @@ describe('rely', () => {
     refresh_token: '3rk3m2krl3'
   };
   const voteConfig = {
-    voter: 'jakipatrikko',
     author: 'whoever',
     permlink: 'some-permlink',
     weight: 10000

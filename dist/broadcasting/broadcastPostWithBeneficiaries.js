@@ -1,9 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const createBroadcastable_1 = require("../shared/helpers/createBroadcastable");
-exports.broadcastPostWithBeneficiaries = ({ mainTag, author, permlink, title, body, beneficiariesAccount, beneficiariesWeight, metadata }) => ({ access_token }) => createBroadcastable_1.createBroadcastableCommentWithOptions({
+exports.broadcastPostWithBeneficiaries = ({ mainTag, permlink, title, body, beneficiariesAccount, beneficiariesWeight, metadata }) => ({ access_token, username }) => createBroadcastable_1.createBroadcastableCommentWithOptions({
     parent_permlink: mainTag,
-    author: author,
+    author: username,
     permlink: permlink,
     body: body,
     parent_author: '',

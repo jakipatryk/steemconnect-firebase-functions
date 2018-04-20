@@ -5,15 +5,17 @@ import { Post } from './interfaces/Post';
 
 export const broadcastPost = ({
   mainTag,
-  author,
   permlink,
   title,
   body,
   metadata
-}: Post) => ({ access_token }: AccessTokenResponse): Promise<BroadcastResult> =>
+}: Post) => ({
+  access_token,
+  username
+}: AccessTokenResponse): Promise<BroadcastResult> =>
   createBroadcastableComment({
     parent_permlink: mainTag,
-    author: author,
+    author: username,
     permlink: permlink,
     body: body,
     parent_author: '',

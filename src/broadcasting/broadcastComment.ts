@@ -5,18 +5,18 @@ import { Comment } from './interfaces/Comment';
 
 export const broadcastComment = ({
   parentPermlink,
-  commentAuthor,
   commentPermlink,
   commentBody,
   parentAuthor = '',
   commentTitle = '',
   commentMetadata
 }: Comment) => ({
-  access_token
+  access_token,
+  username
 }: AccessTokenResponse): Promise<BroadcastResult> =>
   createBroadcastableComment({
     parent_permlink: parentPermlink,
-    author: commentAuthor,
+    author: username,
     permlink: commentPermlink,
     body: commentBody,
     parent_author: parentAuthor,

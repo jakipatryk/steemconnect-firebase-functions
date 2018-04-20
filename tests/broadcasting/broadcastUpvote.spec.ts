@@ -5,7 +5,6 @@ import * as nock from 'nock';
 
 describe('broadcastUpvote', function() {
   const voteConfig = {
-    voter: 'jakipatrikko',
     author: 'whoever',
     permlink: 'some-permlink',
     weight: 10000
@@ -13,7 +12,7 @@ describe('broadcastUpvote', function() {
   const accessToken = {
     access_token: 'fdsfertre',
     expires_in: 4323432,
-    username: 'ned'
+    username: 'jakipatrikko'
   };
 
   it('should broadcast upvote and return result', async function() {

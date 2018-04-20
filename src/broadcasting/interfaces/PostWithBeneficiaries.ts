@@ -1,6 +1,5 @@
 export interface PostWithBeneficiaries {
   mainTag: string;
-  author: string;
   permlink: string;
   title: string;
   body: string;

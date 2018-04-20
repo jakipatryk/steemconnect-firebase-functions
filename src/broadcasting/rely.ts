@@ -6,12 +6,13 @@ import { BroadcastResult } from './interfaces/BroadcastResult';
 
 export const rely = ({ clientId, clientSecret }: ClientCredenctials) => ({
   access_token,
-  refresh_token
+  refresh_token,
+  username
 }: Required<AccessTokenResponse>) => async (
   broadcastable: Function
 ): Promise<BroadcastResult & Partial<AccessTokenResponse>> => {
   try {
-    return await broadcastable({ access_token });
+    return await broadcastable({ access_token, username });
   } catch (err) {
     if (isAccessTokenExpiredError(err)) {
       const refreshedTokens = await refreshAccessToken({
@@ -20,7 +21,8 @@ export const rely = ({ clientId, clientSecret }: ClientCredenctials) => ({
         refreshToken: refresh_token
       });
       const broadcastResult = await broadcastable({
-        access_token: refreshedTokens.access_token
+        access_token: refreshedTokens.access_token,
+        username
       });
       return { ...refreshedTokens, ...broadcastResult };
     }

@@ -10,9 +10,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 const refreshAccessToken_1 = require("../oauth2/refreshAccessToken");
 const isAccessTokenExpiredError_1 = require("./../shared/errors/isAccessTokenExpiredError");
-exports.rely = ({ clientId, clientSecret }) => ({ access_token, refresh_token }) => (broadcastable) => __awaiter(this, void 0, void 0, function* () {
+exports.rely = ({ clientId, clientSecret }) => ({ access_token, refresh_token, username }) => (broadcastable) => __awaiter(this, void 0, void 0, function* () {
     try {
-        return yield broadcastable({ access_token });
+        return yield broadcastable({ access_token, username });
     }
     catch (err) {
         if (isAccessTokenExpiredError_1.isAccessTokenExpiredError(err)) {
@@ -22,7 +22,8 @@ exports.rely = ({ clientId, clientSecret }) => ({ access_token, refresh_token })
                 refreshToken: refresh_token
             });
             const broadcastResult = yield broadcastable({
-                access_token: refreshedTokens.access_token
+                access_token: refreshedTokens.access_token,
+                username
             });
             return Object.assign({}, refreshedTokens, broadcastResult);
         }

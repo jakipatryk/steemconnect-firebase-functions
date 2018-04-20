@@ -3,5 +3,5 @@ export interface Post {
     permlink: string;
     title: string;
     body: string;
-    metadata?: object | string;
+    metadata?: object;
 }

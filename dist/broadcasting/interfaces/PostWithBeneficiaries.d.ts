@@ -5,5 +5,5 @@ export interface PostWithBeneficiaries {
     body: string;
     beneficiariesAccount: string;
     beneficiariesWeight: number;
-    metadata?: object | string;
+    metadata?: object;
 }

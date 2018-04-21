@@ -4,7 +4,7 @@ import { Operations } from '../shared/interfaces/Operation';
 import { BroadcastResult } from './interfaces/BroadcastResult';
 
 export function broadcastOperations([...operations]: Operations) {
-  return async function broadcast({
+  return async function broadcastable({
     access_token
   }: AccessTokenResponse): Promise<BroadcastResult> {
     return rp

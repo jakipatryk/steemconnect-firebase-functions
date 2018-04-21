@@ -1,5 +1,5 @@
 export interface Comment {
-  parentAuthor?: string;
+  parentAuthor: string;
   parentPermlink: string;
   commentPermlink: string;
   commentBody: string;

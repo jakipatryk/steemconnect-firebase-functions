@@ -10,7 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 const rp = require("request-promise");
 function broadcastOperations([...operations]) {
-    return function broadcast({ access_token }) {
+    return function broadcastable({ access_token }) {
         return __awaiter(this, void 0, void 0, function* () {
             return rp
                 .post({

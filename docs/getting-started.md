@@ -49,3 +49,29 @@ const authorizationUrl = getAuthorizationUrl({
 });
 // 'https://steemconnect.com/oauth2/authorize?client_id=strimi.app&response_type=code&redirect_uri=https%3A%2F%2Fstrimi.it%2Fredirect&scope=vote&state=state342343243242'
 ```
+
+## Glossary
+
+Here are a few terms widely used in this documentation that might be confusing at first:
+
+#### _broadcast_
+
+> Event where signed transaction is broadcasted to the network, so that witnesses could validate and include in block.
+
+**Source**: [Steem Developer Portal](https://developers.steem.io/glossary/#transactions)
+
+---
+
+#### _broadcastable_
+
+A **function** which takes `AccessTokenResponse` object as a parameter and broadcasts any type of operations to the Steem blockchain.
+
+Always returns `Promise` which resolves with the `BroadcastResult` object or rejects with the `OAuth2Error` object.
+
+Typically used as an **inner function** for other functions.
+
+---
+
+#### _operation_
+
+An object (to be more precise, an array) which holds information about **data** we want to include in a transaction.

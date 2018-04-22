@@ -1,31 +1,3 @@
-## Glossary
-
-Here are a few terms widely used in this section that might be confusing at first:
-
-#### _broadcast_
-
-> Event where signed transaction is broadcasted to the network, so that witnesses could validate and include in block.
-
-**Source**: [Steem Developer Portal](https://developers.steem.io/glossary/#transactions)
-
----
-
-#### _broadcastable_
-
-A **function** which takes `AccessTokenResponse` object as a parameter and broadcasts any type of operations to the Steem blockchain.
-
-Always returns `Promise` which resolves with the `BroadcastResult` object or rejects with the `OAuth2Error` object.
-
-Typically used as an **inner function** for other functions.
-
----
-
-#### _operation_
-
-An object (to be more precise, an array) which holds information about **data** we want to include in a transaction.
-
----
-
 ## What is this module for?
 
 Broadcasting module was created for **handling** broadcasting operations to the Steem blockchain using **SteemConnect's tokens**.
@@ -78,7 +50,7 @@ Broadcasts given operations to the Steem blockchain.
 
 **Step one** (from the outer function):
 
-* (_[broadcastable](#broadcastable)_): an inner function
+* (_[broadcastable](getting-started.md#broadcastable)_): an inner function
 
 **Step two** (from the inner function):
 
@@ -136,7 +108,7 @@ export declare const rely: (
 
 ##### Definition
 
-A wrapper function for [_broadcastables_](#broadcastable) which ensures that broadcast is successful if `refresh_token` is correct.
+A wrapper function for [_broadcastables_](getting-started.md#broadcastable) which ensures that broadcast is successful if `refresh_token` is correct.
 
 ##### Parameters
 
@@ -150,7 +122,7 @@ A wrapper function for [_broadcastables_](#broadcastable) which ensures that bro
 
 **Step three** (for the inner function)
 
-* [`broadcastable`](#broadcastable): the broadcastable function
+* [`broadcastable`](getting-started.md#broadcastable): the broadcastable function
 
 ##### Returns
 
@@ -253,7 +225,7 @@ Broadcasts comment for a given user to the Steem blockchain.
 
 **Step one** (from the outer function):
 
-* (_[broadcastable](#broadcastable)_): an inner function
+* (_[broadcastable](getting-started.md#broadcastable)_): an inner function
 
 **Step two** (from the inner function):
 
@@ -324,7 +296,7 @@ Broadcasts deletion of either comment or post to the Steem blockchain.
 
 **Step one** (from the outer function):
 
-* (_[broadcastable](#broadcastable)_): an inner function
+* (_[broadcastable](getting-started.md#broadcastable)_): an inner function
 
 **Step two** (from the inner function):
 
@@ -388,7 +360,7 @@ Broadcasts downvote to the Steem blockchain.
 
 **Step one** (from the outer function):
 
-* (_[broadcastable](#broadcastable)_): an inner function
+* (_[broadcastable](getting-started.md#broadcastable)_): an inner function
 
 **Step two** (from the inner function):
 
@@ -454,7 +426,7 @@ Broadcasts follow to the Steem blockchain.
 
 **Step one** (from the outer function):
 
-* (_[broadcastable](#broadcastable)_): an inner function
+* (_[broadcastable](getting-started.md#broadcastable)_): an inner function
 
 **Step two** (from the inner function):
 
@@ -518,7 +490,7 @@ Broadcasts post to the Steem blockchain.
 
 **Step one** (from the outer function):
 
-* (_[broadcastable](#broadcastable)_): an inner function
+* (_[broadcastable](getting-started.md#broadcastable)_): an inner function
 
 **Step two** (from the inner function):
 
@@ -596,7 +568,7 @@ Broadcasts post along with beneficiaries config to the Steem blockchain.
 
 **Step one** (from the outer function):
 
-* (_[broadcastable](#broadcastable)_): an inner function
+* (_[broadcastable](getting-started.md#broadcastable)_): an inner function
 
 **Step two** (from the inner function):
 
@@ -670,7 +642,7 @@ Broadcasts reblog to the Steem blockchain.
 
 **Step one** (from the outer function):
 
-* (_[broadcastable](#broadcastable)_): an inner function
+* (_[broadcastable](getting-started.md#broadcastable)_): an inner function
 
 **Step two** (from the inner function):
 
@@ -735,7 +707,7 @@ Broadcasts unfollow to the Steem blockchain.
 
 **Step one** (from the outer function):
 
-* (_[broadcastable](#broadcastable)_): an inner function
+* (_[broadcastable](getting-started.md#broadcastable)_): an inner function
 
 **Step two** (from the inner function):
 
@@ -799,7 +771,7 @@ Broadcasts upvote to the Steem blockchain.
 
 **Step one** (from the outer function):
 
-* (_[broadcastable](#broadcastable)_): an inner function
+* (_[broadcastable](getting-started.md#broadcastable)_): an inner function
 
 **Step two** (from the inner function):
 

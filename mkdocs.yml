@@ -22,7 +22,6 @@ pages:
     - OAuth2: oauth2.md
     - Operation Creators: operation-creators.md
     - Shared: shared.md
-  - Contributing: contributing.md
   
 markdown_extensions:
   - codehilite

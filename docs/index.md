@@ -16,5 +16,5 @@
 To get started started, you simply have to install it via **NPM**:
 
 ```cmd
-npm i steemconnect-firebase-functions@next
+npm i steemconnect-firebase-functions@beta
 ```

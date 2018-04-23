@@ -15,7 +15,7 @@ pages:
   - Home: index.md
   - Getting Started: getting-started.md
   - Tutorials:
-    - How To Authenticate Users: authentication.md
+    - Authentication with Angular: authentication.md
   - Modules:
     - Broadcasting: broadcasting.md
     - Firebase: firebase.md

@@ -1,5 +1,3 @@
-**TO DO: UPDATE TUTORIAL & APP**
-
 #### What will you learn?
 
 * how OAuth2 authorization code grant works
@@ -141,7 +139,8 @@ Once done, open your favorite code editor and paste the code below to _src/index
 import {
   getAuthorizationUrl,
   getAccessToken,
-  mintFirebaseToken
+  mintFirebaseToken,
+  Scope
 } from 'steemconnect-firebase-functions';
 
 import * as functions from 'firebase-functions';
@@ -160,7 +159,7 @@ admin.initializeApp({
 });
 
 const redirectUri = 'http://localhost:4200/redirect';
-const scope = ['login'];
+const scope: Array<Scope> = ['login'];
 
 const clientId = 'YOUR_CLIENT_ID';
 const clientSecret = 'YOUR_CLIENT_SECRET';
@@ -168,7 +167,7 @@ const clientSecret = 'YOUR_CLIENT_SECRET';
 // FUNCTIONS
 
 export const redirect = functions.https.onRequest((req, res) => {
-  const endpoint = getAuthorizationUrl(clientId, redirectUri, scope);
+  const endpoint = getAuthorizationUrl({ clientId, redirectUri, scope });
   res.redirect(endpoint);
 });
 
@@ -185,12 +184,12 @@ export const callback = functions.https.onRequest((req, res) => {
 async function handleCallback(req) {
   const code = req.query.code;
 
-  const accessToken = await getAccessToken(
+  const accessToken = await getAccessToken({
     clientId,
     clientSecret,
     redirectUri,
     code
-  );
+  });
   const uid = `steemconnect:${accessToken.username}`;
 
   const firebaseToken = await mintFirebaseToken(admin, uid);

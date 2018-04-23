@@ -8,7 +8,7 @@ export async function getAccessToken({
   clientSecret,
   redirectUri,
   code
-}: ClientCredentials & {
+}: Required<ClientCredentials> & {
   redirectUri: string;
   code: string;
 }): Promise<AccessTokenResponse> {

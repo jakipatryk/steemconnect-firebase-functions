@@ -1,5 +1,6 @@
 export { BroadcastResult } from './BroadcastResult';
 export { Comment } from './Comment';
+export { Deletion } from './Deletion';
 export { Follow } from './Follow';
 export { Post } from './Post';
 export { PostWithBeneficiaries } from './PostWithBeneficiaries';

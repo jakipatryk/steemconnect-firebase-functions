@@ -1,5 +1,5 @@
 import * as qs from 'querystring';
-import { ClientCredenctials } from './interfaces/ClientCredentials';
+import { ClientCredentials } from './interfaces/ClientCredentials';
 import { Scope } from './interfaces/Scope';
 
 export function getAuthorizationUrl({
@@ -7,7 +7,7 @@ export function getAuthorizationUrl({
   redirectUri,
   scope,
   state = ''
-}: ClientCredenctials & {
+}: ClientCredentials & {
   redirectUri: string;
   scope: Array<Scope>;
   state?: string;

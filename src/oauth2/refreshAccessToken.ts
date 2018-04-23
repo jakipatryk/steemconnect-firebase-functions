@@ -1,4 +1,4 @@
-import { ClientCredenctials } from './interfaces/ClientCredentials';
+import { ClientCredentials } from './interfaces/ClientCredentials';
 import { AccessTokenResponse } from '../shared/interfaces/AccessTokenResponse';
 import * as rp from 'request-promise';
 
@@ -6,7 +6,7 @@ export async function refreshAccessToken({
   clientId,
   clientSecret,
   refreshToken
-}: ClientCredenctials & {
+}: ClientCredentials & {
   refreshToken: string;
 }): Promise<AccessTokenResponse> {
   try {

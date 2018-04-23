@@ -14,20 +14,6 @@ This module is for helping developers who want to use **Firebase** with **SteemC
 
 It contains functions for **minting** custom auth tokens, **saving** access token in the Firestore, **getting** access token from Firestore, and **creating** or **updating** user auth account.
 
-## How to use it?
-
-To use any of the function from this module you have to import it. You can either import it directly from this module:
-
-```typescript
-import { saveAccessToken } from 'steemconnect-firebase-functions/firebase';
-```
-
-or from library's main module:
-
-```typescript
-import { saveAccessToken } from 'steemconnect-firebase-functions';
-```
-
 ## API reference
 
 ### Functions
@@ -68,7 +54,7 @@ Creates or updates Firebase auth user account.
 import {
   createFirebaseAccount,
   FirebaseAccount
-} from 'steemconnect-firebase-functions/firebase';
+} from 'steemconnect-firebase-functions';
 import * as admin from 'firebase-admin';
 
 const serviceAccount = require('../serviceAccountKey.json');
@@ -119,7 +105,7 @@ Creates and returns Firebase custom auth token.
 ##### Example Usage
 
 ```typescript
-import { mintFirebaseToken } from 'steemconnect-firebase-functions/firebase';
+import { mintFirebaseToken } from 'steemconnect-firebase-functions';
 import * as admin from 'firebase-admin';
 
 const serviceAccount = require('../serviceAccountKey.json');
@@ -168,7 +154,7 @@ Saves access token and its details in the Firestore.
 ##### Example Usage
 
 ```typescript
-import { saveAccessToken } from 'steemconnect-firebase-functions/firebase';
+import { saveAccessToken } from 'steemconnect-firebase-functions';
 import * as admin from 'firebase-admin';
 
 const serviceAccount = require('../serviceAccountKey.json');
@@ -221,7 +207,7 @@ Gets and returns the access token + details object from the Firestore.
 ##### Example Usage
 
 ```typescript
-import { getAccessTokenFromFirestore } from 'steemconnect-firebase-functions/firebase';
+import { getAccessTokenFromFirestore } from 'steemconnect-firebase-functions';
 import * as admin from 'firebase-admin';
 
 const serviceAccount = require('../serviceAccountKey.json');

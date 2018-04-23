@@ -4,22 +4,6 @@ This module is a helper in the process of implementing the **OAuth2 Authorizatio
 
 Functions available here make it easy to generate URL to SteemConnect with correct scope and other details, get tokens from SteemConnect, refresh and revoke an access token, and set and get user metadata.
 
-## How to use it?
-
-To use any of the functions from this module, you have to import it. Your can import directly from this module:
-
-```typescript
-import { getAccessToken } from 'steemconnect-firebase-functions/oauth2';
-```
-
-or from library's main module:
-
-```typescript
-import { getAccessToken } from 'steemconnect-firebase-functions';
-```
-
----
-
 ## API reference
 
 ### Functions
@@ -58,10 +42,7 @@ Generates authorization URL to SteemConnect service.
 ##### Example Usage
 
 ```typescript
-import {
-  getAuthorizationUrl,
-  Scope
-} from 'steemconnect-firebase-functions/oauth2';
+import { getAuthorizationUrl, Scope } from 'steemconnect-firebase-functions';
 
 const clientId: string = 'strimi.app';
 const redirectUri: string = 'https://strimi.pl/redirect';
@@ -115,7 +96,7 @@ Gets access token for a user (`access_token`, `expires_in`, `username`, and opti
 ##### Example Usage
 
 ```typescript
-import { getAccessToken, ClientCredentials } from 'steemconnect-firebase-functions/oauth2';
+import { getAccessToken, ClientCredentials } from 'steemconnect-firebase-functions';
 
 const clientCredentials: ClientCredentials = {
     clientId: 'strimi.app',
@@ -173,9 +154,9 @@ Uses `refresh_token` to get new `AccessTokenResponse` object.
 ```typescript
 import {
   refreshAccessToken,
-  ClientCredentials
-} from 'steemconnect-firebase-functions/oauth2';
-import { AccessTokenResponse } from 'steemconnect-firebase-functions/shared';
+  ClientCredentials,
+  AccessTokenResponse
+} from 'steemconnect-firebase-functions';
 
 const clientCredentials: ClientCredentials = {
   clientId: 'strimi.app',
@@ -228,8 +209,10 @@ Gets user data from a SteemConnect.
 ##### Example Usage
 
 ```typescript
-import { getUserData } from 'steemconnect-firebase-functions/oauth2';
-import { AccessTokenResponse } from 'steemconnect-firebase-functions/shared';
+import {
+  getUserData,
+  AccessTokenResponse
+} from 'steemconnect-firebase-functions';
 
 const accessToken: AccessTokenResponse = {
   access_token: 'fdskfe.4324234',
@@ -272,8 +255,10 @@ Sets user metadata in a SteemConnect.
 ##### Example Usage
 
 ```typescript
-import { setUserMetadata } from 'steemconnect-firebase-functions/oauth2';
-import { AccessTokenResponse } from 'steemconnect-firebase-functions/shared';
+import {
+  setUserMetadata,
+  AccessTokenResponse
+} from 'steemconnect-firebase-functions';
 
 const accessToken: AccessTokenResponse = {
   access_token: 'smt432fdsokdswpw.432jieod',
@@ -318,8 +303,10 @@ Revokes access token.
 ##### Example Usage
 
 ```typescript
-import { revokeAccessToken } from 'steemconnect-firebase-functions/oauth2';
-import { AccessTokenResponse } from 'steemconnect-firebase-functions/shared';
+import {
+  revokeAccessToken,
+  AccessTokenResponse
+} from 'steemconnect-firebase-functions';
 
 const accessToken: AccessTokenResponse = {
   access_token: 'smt432fdsokdswpw.432jieod',

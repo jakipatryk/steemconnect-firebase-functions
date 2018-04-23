@@ -28,7 +28,7 @@ npm --version
 Once ensured, you can install the library with a single command:
 
 ```
-npm i steemconnect-firebase-functions@beta
+npm i steemconnect-firebase-functions
 ```
 
 ## Example usage

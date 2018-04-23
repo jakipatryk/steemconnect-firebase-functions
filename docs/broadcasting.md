@@ -4,20 +4,6 @@ Broadcasting module was created for **handling** broadcasting operations to the 
 
 There is one **general** function ([`broadcastOperations`](#broadcastoperations)), several **operation-specific** functions (for example, [`broadcastPost`](#broadcastpost)), and one **wrapper** function for handling access token refreshing if the provided one had expired ([`rely`](#rely)).
 
-## How to use it?
-
-To use any of the functions, you have to import it. There are two main ways to do it, you can either import it directly from the broadcasting module:
-
-```typescript
-import { broadcastOperations } from 'steemconnect-firebase-functions/broadcasting';
-```
-
-or from the main module:
-
-```typescript
-import { broadcastOperations } from 'steemconnect-firebase-functions';
-```
-
 ---
 
 ## API reference
@@ -59,11 +45,11 @@ Broadcasts given operations to the Steem blockchain.
 ##### Example Usage
 
 ```typescript
-import { broadcastOperations } from 'steemconnect-firebase-functions/broadcasting';
 import {
+  broadcastOperations,
   AccessTokenResponse,
   Operations
-} from 'steemconnect-firebase-functions/shared';
+} from 'steemconnect-firebase-functions';
 
 const accessToken: AccessTokenResponse = {
   access_token: '435tfgfdgdfg.434342',
@@ -146,12 +132,12 @@ A wrapper function for [_broadcastables_](getting-started.md#broadcastable) whic
 ##### Example Usage
 
 ```typescript
-import { rely } from 'steemconnect-firebase-functions/broadcasting';
-import { ClientCredentials } from 'steemconnect-firebase-functions/oauth2';
 import {
+  rely,
   AccessTokenResponse,
-  Operations
-} from 'steemconnect-firebase-functions/shared';
+  Operations,
+  ClientCredentials
+} from 'steemconnect-firebase-functions/broadcasting';
 
 const clientCredentials: ClientCredentials = {
   clientId: 'strimi.app',
@@ -241,9 +227,9 @@ Broadcasts comment for a given user to the Steem blockchain.
 ```typescript
 import {
   broadcastComment,
-  Comment
-} from 'steemconnect-firebase-functions/broadcasting';
-import { AccessTokenResponse } from 'steemconnect-firebase-functions/shared';
+  Comment,
+  AccessTokenResponse
+} from 'steemconnect-firebase-functions';
 
 const commentConfig: Comment = {
   parentAuthor: 'ned',
@@ -312,9 +298,9 @@ Broadcasts deletion of either comment or post to the Steem blockchain.
 ```typescript
 import {
   broadcastDeletion,
-  Deletion
-} from 'steemconnect-firebase-functions/broadcasting';
-import { AccessTokenResponse } from 'steemconnect-firebase-functions/shared';
+  Deletion,
+  AccessTokenResponse
+} from 'steemconnect-firebase-functions';
 
 const deletionConfig: Deletion = {
   permlink: 'my-bad-post'
@@ -376,9 +362,9 @@ Broadcasts downvote to the Steem blockchain.
 ```typescript
 import {
   broadcastDownvote,
-  Vote
-} from 'steemconnect-firebase-functions/broadcasting';
-import { AccessTokenResponse } from 'steemconnect-firebase-functions/shared';
+  Vote,
+  AccessTokenResponse
+} from 'steemconnect-firebase-functions';
 
 const downvoteConfig: Vote = {
   author: 'ned',
@@ -442,9 +428,9 @@ Broadcasts follow to the Steem blockchain.
 ```typescript
 import {
   broadcastFollow,
-  Follow
-} from 'steemconnect-firebase-functions/broadcasting';
-import { AccessTokenResponse } from 'steemconnect-firebase-functions/shared';
+  Follow,
+  AccessTokenResponse
+} from 'steemconnect-firebase-functions';
 
 const followConfig: Follow = {
   userToFollow: 'jakipatryk'
@@ -506,9 +492,9 @@ Broadcasts post to the Steem blockchain.
 ```typescript
 import {
   broadcastPost,
-  Post
-} from 'steemconnect-firebase-functions/broadcasting';
-import { AccessTokenResponse } from 'steemconnect-firebase-functions/shared';
+  Post,
+  AccessTokenResponse
+} from 'steemconnect-firebase-functions';
 
 const postConfig: Post = {
   mainTag: 'life',
@@ -584,9 +570,9 @@ Broadcasts post along with beneficiaries config to the Steem blockchain.
 ```typescript
 import {
   broadcastPostWithBeneficiaries,
-  PostWithBeneficiaries
-} from 'steemconnect-firebase-functions/broadcasting';
-import { AccessTokenResponse } from 'steemconnect-firebase-functions/shared';
+  PostWithBeneficiaries,
+  AccessTokenResponse
+} from 'steemconnect-firebase-functions';
 
 const postWithBeneficiariesConfig: PostWithBeneficiaries = {
   mainTag: 'life',
@@ -658,9 +644,9 @@ Broadcasts reblog to the Steem blockchain.
 ```typescript
 import {
   broadcastReblog,
-  Reblog
-} from 'steemconnect-firebase-functions/broadcasting';
-import { AccessTokenResponse } from 'steemconnect-firebase-functions/shared';
+  Reblog,
+  AccessTokenResponse
+} from 'steemconnect-firebase-functions';
 
 const reblogConfig: Vote = {
   postAuthor: 'ned',
@@ -723,9 +709,9 @@ Broadcasts unfollow to the Steem blockchain.
 ```typescript
 import {
   broadcastUnfollow,
-  Unfollow
-} from 'steemconnect-firebase-functions/broadcasting';
-import { AccessTokenResponse } from 'steemconnect-firebase-functions/shared';
+  Unfollow,
+  AccessTokenResponse
+} from 'steemconnect-firebase-functions';
 
 const unfollowConfig: Unfollow = {
   userToUnfollow: 'ned'
@@ -787,9 +773,9 @@ Broadcasts upvote to the Steem blockchain.
 ```typescript
 import {
   broadcastUpvote,
-  Vote
-} from 'steemconnect-firebase-functions/broadcasting';
-import { AccessTokenResponse } from 'steemconnect-firebase-functions/shared';
+  Vote,
+  AccessTokenResponse
+} from 'steemconnect-firebase-functions';
 
 const downvoteConfig: Vote = {
   author: 'ned',

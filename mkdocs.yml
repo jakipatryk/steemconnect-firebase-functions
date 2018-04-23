@@ -1,0 +1,27 @@
+site_name: steemconnect-firebase-functions
+theme:
+  name: 'material'
+  language: 'en'
+  palette:
+    primary: 'pink'
+    accent: 'indigo'
+  font:
+    text: 'Roboto'
+    code: 'Roboto Mono'
+repo_name: 'jakipatryk/steemconnect-firebase-functions'
+repo_url: 'https://github.com/jakipatryk/steemconnect-firebase-functions'
+
+pages:
+  - Home: index.md
+  - Getting Started: getting-started.md
+  - Tutorials:
+    - Authentication with Angular: authentication.md
+  - Modules:
+    - Broadcasting: broadcasting.md
+    - Firebase: firebase.md
+    - OAuth2: oauth2.md
+    - Operation Creators: operation-creators.md
+    - Shared: shared.md
+  
+markdown_extensions:
+  - codehilite

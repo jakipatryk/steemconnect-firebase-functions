@@ -98,7 +98,7 @@ The implementation is available on [Github](https://github.com/jakipatryk/steemc
 
 ```typescript
 export declare const rely: (
-  { clientId, clientSecret }: ClientCredenctials
+  { clientId, clientSecret }: ClientCredentials
 ) => (
   { access_token, refresh_token, username }: Required<AccessTokenResponse>
 ) => (

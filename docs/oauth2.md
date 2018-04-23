@@ -32,7 +32,7 @@ export declare function getAuthorizationUrl({
   redirectUri,
   scope,
   state
-}: ClientCredenctials & {
+}: ClientCredentials & {
   redirectUri: string;
   scope: Array<Scope>;
   state?: string;
@@ -45,7 +45,7 @@ Generates authorization URL to SteemConnect service.
 
 ##### Parameters
 
-* `config` ([_ClientCredenctials_](#clientcredentials) +  
+* `config` ([_ClientCredentials_](#clientcredentials) +  
    `redirectUri` (_string_): the URI you want your user to be redirected to after logging in to SteemConnect  
    `scope` (_Array<[Scope](#scope)>_): the array of scopes you want to get access for your user to  
    `state?` (_string_): optional state variable):  
@@ -91,7 +91,7 @@ export declare function getAccessToken({
   clientSecret,
   redirectUri,
   code
-}: ClientCredenctials & {
+}: ClientCredentials & {
   redirectUri: string;
   code: string;
 }): Promise<AccessTokenResponse>;
@@ -151,7 +151,7 @@ export declare function refreshAccessToken({
   clientId,
   clientSecret,
   refreshToken
-}: Required<ClientCredenctials> & Required<AccessTokenResponse>): Promise<
+}: Required<ClientCredentials> & Required<AccessTokenResponse>): Promise<
   AccessTokenResponse
 >;
 ```
@@ -349,7 +349,7 @@ Defines an object with client credentials.
 ##### Implementation
 
 ```typescript
-export interface ClientCredenctials {
+export interface ClientCredentials {
   clientId: string;
   clientSecret?: string;
 }

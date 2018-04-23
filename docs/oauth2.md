@@ -150,7 +150,7 @@ The implementation is available on [Github](https://github.com/jakipatryk/steemc
 export declare function refreshAccessToken({
   clientId,
   clientSecret,
-  refreshToken
+  refresh_token
 }: Required<ClientCredentials> & Required<AccessTokenResponse>): Promise<
   AccessTokenResponse
 >;

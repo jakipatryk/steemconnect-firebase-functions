@@ -98,9 +98,14 @@ The implementation is available on [Github](https://github.com/jakipatryk/steemc
 
 ```typescript
 export declare const rely: (
-  { clientId, clientSecret }: ClientCredentials
+  { clientId, clientSecret }: Required<ClientCredentials>
 ) => (
-  { access_token, refresh_token, username }: Required<AccessTokenResponse>
+  {
+    access_token,
+    refresh_token,
+    username,
+    expires_in
+  }: Required<AccessTokenResponse>
 ) => (
   broadcastable: Function
 ) => Promise<BroadcastResult & Partial<AccessTokenResponse>>;

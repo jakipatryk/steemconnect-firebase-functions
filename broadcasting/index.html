@@ -1,0 +1,3037 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.2">
+    
+    
+      
+        <title>Broadcasting - steemconnect-firebase-functions</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.8d40d89b.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.6079476c.css">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="pink" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <a href="#what-is-this-module-for" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="steemconnect-firebase-functions" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                steemconnect-firebase-functions
+              </span>
+              <span class="md-header-nav__topic">
+                Broadcasting
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/jakipatryk/steemconnect-firebase-functions/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      jakipatryk/steemconnect-firebase-functions
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <span class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </span>
+    steemconnect-firebase-functions
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/jakipatryk/steemconnect-firebase-functions/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      jakipatryk/steemconnect-firebase-functions
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../getting-started/" title="Getting Started" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Tutorials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Tutorials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../authentication/" title="Authentication with Angular" class="md-nav__link">
+      Authentication with Angular
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      Modules
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Modules
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Broadcasting
+      </label>
+    
+    <a href="./" title="Broadcasting" class="md-nav__link md-nav__link--active">
+      Broadcasting
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-this-module-for" title="What is this module for?" class="md-nav__link">
+    What is this module for?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use-it" title="How to use it?" class="md-nav__link">
+    How to use it?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-reference" title="API reference" class="md-nav__link">
+    API reference
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#functions" title="Functions" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#broadcastoperations" title="broadcastOperations" class="md-nav__link">
+    broadcastOperations
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition" title="Definition" class="md-nav__link">
+    Definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns" title="Returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-usage" title="Example Usage" class="md-nav__link">
+    Example Usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation" title="Implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rely" title="rely" class="md-nav__link">
+    rely
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition_1" title="Definition" class="md-nav__link">
+    Definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_1" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_1" title="Returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-usage_1" title="Example Usage" class="md-nav__link">
+    Example Usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation_1" title="Implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#broadcastcomment" title="broadcastComment" class="md-nav__link">
+    broadcastComment
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition_2" title="Definition" class="md-nav__link">
+    Definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_2" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_2" title="Returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-usage_2" title="Example Usage" class="md-nav__link">
+    Example Usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation_2" title="Implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#broadcastdeletion" title="broadcastDeletion" class="md-nav__link">
+    broadcastDeletion
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition_3" title="Definition" class="md-nav__link">
+    Definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_3" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_3" title="Returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-usage_3" title="Example Usage" class="md-nav__link">
+    Example Usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation_3" title="Implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#broadcastdownvote" title="broadcastDownvote" class="md-nav__link">
+    broadcastDownvote
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition_4" title="Definition" class="md-nav__link">
+    Definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_4" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_4" title="Returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-usage_4" title="Example Usage" class="md-nav__link">
+    Example Usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation_4" title="Implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#broadcastfollow" title="broadcastFollow" class="md-nav__link">
+    broadcastFollow
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition_5" title="Definition" class="md-nav__link">
+    Definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_5" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_5" title="Returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-usage_5" title="Example Usage" class="md-nav__link">
+    Example Usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation_5" title="Implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#broadcastpost" title="broadcastPost" class="md-nav__link">
+    broadcastPost
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition_6" title="Definition" class="md-nav__link">
+    Definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_6" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_6" title="Returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-usage_6" title="Example Usage" class="md-nav__link">
+    Example Usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation_6" title="Implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#broadcastpostwithbeneficiaries" title="broadcastPostWithBeneficiaries" class="md-nav__link">
+    broadcastPostWithBeneficiaries
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition_7" title="Definition" class="md-nav__link">
+    Definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_7" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_7" title="Returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-usage_7" title="Example Usage" class="md-nav__link">
+    Example Usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation_7" title="Implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#broadcastreblog" title="broadcastReblog" class="md-nav__link">
+    broadcastReblog
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition_8" title="Definition" class="md-nav__link">
+    Definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_8" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_8" title="Returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-usage_8" title="Example Usage" class="md-nav__link">
+    Example Usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation_8" title="Implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#broadcastunfollow" title="broadcastUnfollow" class="md-nav__link">
+    broadcastUnfollow
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition_9" title="Definition" class="md-nav__link">
+    Definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_9" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_9" title="Returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-usage_9" title="Example Usage" class="md-nav__link">
+    Example Usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation_9" title="Implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#broadcastupvote" title="broadcastUpvote" class="md-nav__link">
+    broadcastUpvote
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition_10" title="Definition" class="md-nav__link">
+    Definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_10" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_10" title="Returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-usage_10" title="Example Usage" class="md-nav__link">
+    Example Usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation_10" title="Implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interfaces" title="Interfaces" class="md-nav__link">
+    Interfaces
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#broadcastresult" title="BroadcastResult" class="md-nav__link">
+    BroadcastResult
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition_11" title="Definition" class="md-nav__link">
+    Definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation_11" title="Implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#references" title="References" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment" title="Comment" class="md-nav__link">
+    Comment
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition_12" title="Definition" class="md-nav__link">
+    Definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation_12" title="Implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deletion" title="Deletion" class="md-nav__link">
+    Deletion
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition_13" title="Definition" class="md-nav__link">
+    Definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation_13" title="Implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#follow" title="Follow" class="md-nav__link">
+    Follow
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition_14" title="Definition" class="md-nav__link">
+    Definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation_14" title="Implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post" title="Post" class="md-nav__link">
+    Post
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition_15" title="Definition" class="md-nav__link">
+    Definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation_15" title="Implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#postwithbeneficiaries" title="PostWithBeneficiaries" class="md-nav__link">
+    PostWithBeneficiaries
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition_16" title="Definition" class="md-nav__link">
+    Definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation_16" title="Implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reblog" title="Reblog" class="md-nav__link">
+    Reblog
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition_17" title="Definition" class="md-nav__link">
+    Definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation_17" title="Implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unfollow" title="Unfollow" class="md-nav__link">
+    Unfollow
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition_18" title="Definition" class="md-nav__link">
+    Definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation_18" title="Implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vote" title="Vote" class="md-nav__link">
+    Vote
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition_19" title="Definition" class="md-nav__link">
+    Definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation_19" title="Implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../firebase/" title="Firebase" class="md-nav__link">
+      Firebase
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../oauth2/" title="OAuth2" class="md-nav__link">
+      OAuth2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../operation-creators/" title="Operation Creators" class="md-nav__link">
+      Operation Creators
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../shared/" title="Shared" class="md-nav__link">
+      Shared
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-this-module-for" title="What is this module for?" class="md-nav__link">
+    What is this module for?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use-it" title="How to use it?" class="md-nav__link">
+    How to use it?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-reference" title="API reference" class="md-nav__link">
+    API reference
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#functions" title="Functions" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#broadcastoperations" title="broadcastOperations" class="md-nav__link">
+    broadcastOperations
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition" title="Definition" class="md-nav__link">
+    Definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns" title="Returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-usage" title="Example Usage" class="md-nav__link">
+    Example Usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation" title="Implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rely" title="rely" class="md-nav__link">
+    rely
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition_1" title="Definition" class="md-nav__link">
+    Definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_1" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_1" title="Returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-usage_1" title="Example Usage" class="md-nav__link">
+    Example Usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation_1" title="Implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#broadcastcomment" title="broadcastComment" class="md-nav__link">
+    broadcastComment
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition_2" title="Definition" class="md-nav__link">
+    Definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_2" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_2" title="Returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-usage_2" title="Example Usage" class="md-nav__link">
+    Example Usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation_2" title="Implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#broadcastdeletion" title="broadcastDeletion" class="md-nav__link">
+    broadcastDeletion
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition_3" title="Definition" class="md-nav__link">
+    Definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_3" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_3" title="Returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-usage_3" title="Example Usage" class="md-nav__link">
+    Example Usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation_3" title="Implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#broadcastdownvote" title="broadcastDownvote" class="md-nav__link">
+    broadcastDownvote
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition_4" title="Definition" class="md-nav__link">
+    Definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_4" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_4" title="Returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-usage_4" title="Example Usage" class="md-nav__link">
+    Example Usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation_4" title="Implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#broadcastfollow" title="broadcastFollow" class="md-nav__link">
+    broadcastFollow
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition_5" title="Definition" class="md-nav__link">
+    Definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_5" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_5" title="Returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-usage_5" title="Example Usage" class="md-nav__link">
+    Example Usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation_5" title="Implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#broadcastpost" title="broadcastPost" class="md-nav__link">
+    broadcastPost
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition_6" title="Definition" class="md-nav__link">
+    Definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_6" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_6" title="Returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-usage_6" title="Example Usage" class="md-nav__link">
+    Example Usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation_6" title="Implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#broadcastpostwithbeneficiaries" title="broadcastPostWithBeneficiaries" class="md-nav__link">
+    broadcastPostWithBeneficiaries
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition_7" title="Definition" class="md-nav__link">
+    Definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_7" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_7" title="Returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-usage_7" title="Example Usage" class="md-nav__link">
+    Example Usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation_7" title="Implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#broadcastreblog" title="broadcastReblog" class="md-nav__link">
+    broadcastReblog
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition_8" title="Definition" class="md-nav__link">
+    Definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_8" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_8" title="Returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-usage_8" title="Example Usage" class="md-nav__link">
+    Example Usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation_8" title="Implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#broadcastunfollow" title="broadcastUnfollow" class="md-nav__link">
+    broadcastUnfollow
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition_9" title="Definition" class="md-nav__link">
+    Definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_9" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_9" title="Returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-usage_9" title="Example Usage" class="md-nav__link">
+    Example Usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation_9" title="Implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#broadcastupvote" title="broadcastUpvote" class="md-nav__link">
+    broadcastUpvote
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition_10" title="Definition" class="md-nav__link">
+    Definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_10" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_10" title="Returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-usage_10" title="Example Usage" class="md-nav__link">
+    Example Usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation_10" title="Implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interfaces" title="Interfaces" class="md-nav__link">
+    Interfaces
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#broadcastresult" title="BroadcastResult" class="md-nav__link">
+    BroadcastResult
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition_11" title="Definition" class="md-nav__link">
+    Definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation_11" title="Implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#references" title="References" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment" title="Comment" class="md-nav__link">
+    Comment
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition_12" title="Definition" class="md-nav__link">
+    Definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation_12" title="Implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deletion" title="Deletion" class="md-nav__link">
+    Deletion
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition_13" title="Definition" class="md-nav__link">
+    Definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation_13" title="Implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#follow" title="Follow" class="md-nav__link">
+    Follow
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition_14" title="Definition" class="md-nav__link">
+    Definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation_14" title="Implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post" title="Post" class="md-nav__link">
+    Post
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition_15" title="Definition" class="md-nav__link">
+    Definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation_15" title="Implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#postwithbeneficiaries" title="PostWithBeneficiaries" class="md-nav__link">
+    PostWithBeneficiaries
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition_16" title="Definition" class="md-nav__link">
+    Definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation_16" title="Implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reblog" title="Reblog" class="md-nav__link">
+    Reblog
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition_17" title="Definition" class="md-nav__link">
+    Definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation_17" title="Implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unfollow" title="Unfollow" class="md-nav__link">
+    Unfollow
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition_18" title="Definition" class="md-nav__link">
+    Definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation_18" title="Implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vote" title="Vote" class="md-nav__link">
+    Vote
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition_19" title="Definition" class="md-nav__link">
+    Definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation_19" title="Implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/jakipatryk/steemconnect-firebase-functions/edit/master/docs/broadcasting.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                  <h1>Broadcasting</h1>
+                
+                <h2 id="what-is-this-module-for">What is this module for?</h2>
+<p>Broadcasting module was created for <strong>handling</strong> broadcasting operations to the Steem blockchain using <strong>SteemConnect's tokens</strong>.</p>
+<p>There is one <strong>general</strong> function (<a href="#broadcastoperations"><code>broadcastOperations</code></a>), several <strong>operation-specific</strong> functions (for example, <a href="#broadcastpost"><code>broadcastPost</code></a>), and one <strong>wrapper</strong> function for handling access token refreshing if the provided one had expired (<a href="#rely"><code>rely</code></a>).</p>
+<h2 id="how-to-use-it">How to use it?</h2>
+<p>To use any of the functions, you have to import it. There are two main ways to do it, you can either import it directly from the broadcasting module:</p>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">broadcastOperations</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/broadcasting&#39;</span><span class="p">;</span>
+</pre></div>
+
+
+<p>or from the main module:</p>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">broadcastOperations</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions&#39;</span><span class="p">;</span>
+</pre></div>
+
+
+<hr />
+<h2 id="api-reference">API reference</h2>
+<h3 id="functions">Functions</h3>
+<h4 id="broadcastoperations">broadcastOperations</h4>
+<div class="codehilite"><pre><span></span><span class="kr">export</span> <span class="kr">declare</span> <span class="kd">function</span> <span class="nx">broadcastOperations</span><span class="p">([...</span><span class="nx">operations</span><span class="p">]</span><span class="o">:</span> <span class="nx">Operations</span><span class="p">)</span><span class="o">:</span> <span class="p">(</span>
+  <span class="p">{</span> <span class="nx">access_token</span> <span class="p">}</span><span class="o">:</span> <span class="nx">AccessTokenResponse</span>
+<span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="nx">BroadcastResult</span><span class="o">&gt;</span><span class="p">;</span>
+</pre></div>
+
+
+<h5 id="definition">Definition</h5>
+<p>Broadcasts given operations to the Steem blockchain.</p>
+<h5 id="parameters">Parameters</h5>
+<p><strong>Step one</strong> (for the outer function):</p>
+<ul>
+<li><code>operations</code> (<a href="../shared/#operations"><em>Operations</em></a>): an array of operations to broadcast</li>
+</ul>
+<p><strong>Step two</strong> (for the inner function):</p>
+<ul>
+<li><code>accessToken</code> (<a href="../shared/#accesstokenresponse"><em>AccessTokenResponse</em></a>): an object with token details of the user for whom broadcast is requested for</li>
+</ul>
+<h5 id="returns">Returns</h5>
+<p><strong>Step one</strong> (from the outer function):</p>
+<ul>
+<li>(<em><a href="../getting-started/#broadcastable">broadcastable</a></em>): an inner function</li>
+</ul>
+<p><strong>Step two</strong> (from the inner function):</p>
+<ul>
+<li>(<em>Promise&lt;<a href="#broadcastresult">BroadcastResult</a>&gt;</em>): a <code>Promise</code> object which resolves with the result of the broadcast</li>
+</ul>
+<h5 id="example-usage">Example Usage</h5>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">broadcastOperations</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/broadcasting&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span>
+  <span class="nx">AccessTokenResponse</span><span class="p">,</span>
+  <span class="nx">Operations</span>
+<span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/shared&#39;</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">accessToken</span>: <span class="kt">AccessTokenResponse</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">access_token</span><span class="o">:</span> <span class="s1">&#39;435tfgfdgdfg.434342&#39;</span><span class="p">,</span>
+  <span class="nx">expires_in</span>: <span class="kt">3243234</span><span class="p">,</span>
+  <span class="nx">username</span><span class="o">:</span> <span class="s1">&#39;jakipatryk-dev&#39;</span>
+<span class="p">};</span>
+
+<span class="kr">const</span> <span class="nx">operations</span>: <span class="kt">Operations</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">[</span>
+    <span class="s1">&#39;vote&#39;</span><span class="p">,</span>
+    <span class="p">{</span>
+      <span class="nx">voter</span><span class="o">:</span> <span class="s1">&#39;jakipatryk-dev&#39;</span><span class="p">,</span>
+      <span class="nx">author</span><span class="o">:</span> <span class="s1">&#39;ned&#39;</span><span class="p">,</span>
+      <span class="nx">permlink</span><span class="o">:</span> <span class="s1">&#39;i-am-ned&#39;</span><span class="p">,</span>
+      <span class="nx">weight</span>: <span class="kt">10000</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">];</span>
+
+<span class="nx">broadcastOperations</span><span class="p">(</span><span class="nx">operations</span><span class="p">)(</span><span class="nx">accessToken</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">result</span> <span class="o">=&gt;</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span>
+<span class="p">);</span>
+</pre></div>
+
+
+<h5 id="implementation">Implementation</h5>
+<p>The implementation is available on <a href="https://github.com/jakipatryk/steemconnect-firebase-functions/blob/master/src/broadcasting/broadcastOperations.ts">Github</a>.</p>
+<hr />
+<h4 id="rely">rely</h4>
+<div class="codehilite"><pre><span></span><span class="kr">export</span> <span class="kr">declare</span> <span class="kr">const</span> <span class="nx">rely</span><span class="o">:</span> <span class="p">(</span>
+  <span class="p">{</span> <span class="nx">clientId</span><span class="p">,</span> <span class="nx">clientSecret</span> <span class="p">}</span><span class="o">:</span> <span class="nx">Required</span><span class="o">&lt;</span><span class="nx">ClientCredentials</span><span class="o">&gt;</span>
+<span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span>
+  <span class="p">{</span>
+    <span class="nx">access_token</span><span class="p">,</span>
+    <span class="nx">refresh_token</span><span class="p">,</span>
+    <span class="nx">username</span><span class="p">,</span>
+    <span class="nx">expires_in</span>
+  <span class="p">}</span><span class="o">:</span> <span class="nx">Required</span><span class="o">&lt;</span><span class="nx">AccessTokenResponse</span><span class="o">&gt;</span>
+<span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span>
+  <span class="nx">broadcastable</span>: <span class="kt">Function</span>
+<span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="nx">BroadcastResult</span> <span class="o">&amp;</span> <span class="nx">Partial</span><span class="o">&lt;</span><span class="nx">AccessTokenResponse</span><span class="o">&gt;&gt;</span><span class="p">;</span>
+</pre></div>
+
+
+<h5 id="definition_1">Definition</h5>
+<p>A wrapper function for <a href="../getting-started/#broadcastable"><em>broadcastables</em></a> which ensures that broadcast is successful if <code>refresh_token</code> is correct.</p>
+<h5 id="parameters_1">Parameters</h5>
+<p><strong>Step one</strong> (for the outer function):</p>
+<ul>
+<li><code>clientCredentials</code> (<a href="../oauth2/#clientcredentials"><em>ClientCredentails</em></a>): object with client credentials</li>
+</ul>
+<p><strong>Step two</strong> (for the middle function):</p>
+<ul>
+<li><code>accessToken</code> (<a href="../shared/#accesstokenresponse"><em>AccessTokenResponse</em></a>): an object with token details (<code>refresh_token</code> is required there) of the user for whom broadcast is requested for</li>
+</ul>
+<p><strong>Step three</strong> (for the inner function)</p>
+<ul>
+<li><a href="../getting-started/#broadcastable"><code>broadcastable</code></a>: the broadcastable function</li>
+</ul>
+<h5 id="returns_1">Returns</h5>
+<p><strong>Step one</strong> (from the outer function):</p>
+<ul>
+<li>middle function with <code>clientCredentials</code> in a closure</li>
+</ul>
+<p><strong>Step two</strong> (from the middle function):</p>
+<ul>
+<li>inner function with <code>clientCredentials</code> and <code>accessToken</code> in a closue</li>
+</ul>
+<p><strong>Step three</strong> (from the inner function):</p>
+<ul>
+<li>(<em>Promise&lt;<a href="#broadcastresult">BroadcastResult</a> &amp; Partial&lt;<a href="../shared/#accesstokenresponse">AccessTokenResponse</a>&gt;&gt;</em>): a <code>Promise</code> object which resolves with the result of the broadcast and new tokens if refreshed</li>
+</ul>
+<h5 id="example-usage_1">Example Usage</h5>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">rely</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/broadcasting&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">ClientCredentials</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/oauth2&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span>
+  <span class="nx">AccessTokenResponse</span><span class="p">,</span>
+  <span class="nx">Operations</span>
+<span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/shared&#39;</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">clientCredentials</span>: <span class="kt">ClientCredentials</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">clientId</span><span class="o">:</span> <span class="s1">&#39;strimi.app&#39;</span><span class="p">,</span>
+  <span class="nx">clientSecret</span><span class="o">:</span> <span class="s1">&#39;432rnj3nr23nkvfdvdf&#39;</span>
+<span class="p">};</span>
+<span class="kr">const</span> <span class="nx">accessToken</span>: <span class="kt">AccessTokenResponse</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">access_token</span><span class="o">:</span> <span class="s1">&#39;fdsfertre&#39;</span><span class="p">,</span>
+  <span class="nx">expires_in</span>: <span class="kt">4323432</span><span class="p">,</span>
+  <span class="nx">username</span><span class="o">:</span> <span class="s1">&#39;jakipatryk&#39;</span><span class="p">,</span>
+  <span class="nx">refresh_token</span><span class="o">:</span> <span class="s1">&#39;3rk3m2krl3&#39;</span>
+<span class="p">};</span>
+<span class="kr">const</span> <span class="nx">voteOperation</span>: <span class="kt">Operations</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">[</span>
+    <span class="s1">&#39;vote&#39;</span><span class="p">,</span>
+    <span class="p">{</span>
+      <span class="nx">voter</span><span class="o">:</span> <span class="s1">&#39;jakipatryk&#39;</span><span class="p">,</span>
+      <span class="nx">author</span><span class="o">:</span> <span class="s1">&#39;whoever&#39;</span><span class="p">,</span>
+      <span class="nx">permlink</span><span class="o">:</span> <span class="s1">&#39;some-permlink&#39;</span><span class="p">,</span>
+      <span class="nx">weight</span>: <span class="kt">10000</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">];</span>
+
+<span class="kr">const</span> <span class="nx">broadcastableVote</span> <span class="o">=</span> <span class="nx">broadcastOperations</span><span class="p">(</span><span class="nx">voteOperations</span><span class="p">);</span>
+
+<span class="nx">rely</span><span class="p">(</span><span class="nx">clientCredentials</span><span class="p">)(</span><span class="nx">accessToken</span><span class="p">)(</span><span class="nx">broadcastableVote</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span>
+<span class="p">);</span>
+<span class="c1">//  {</span>
+<span class="c1">//    result: { ... }</span>
+<span class="c1">//    access_token: &#39;new access token if refreshed, otherwise undefined`</span>
+<span class="c1">//    refresh_token: &#39;new refresh token if refreshed, otherwise undefined&#39;</span>
+<span class="c1">//    username: ...</span>
+<span class="c1">//    expires: ...</span>
+<span class="c1">//  }</span>
+</pre></div>
+
+
+<h5 id="implementation_1">Implementation</h5>
+<p>The implementation is available on <a href="https://github.com/jakipatryk/steemconnect-firebase-functions/blob/master/src/broadcasting/rely.ts">Github</a>.</p>
+<hr />
+<h4 id="broadcastcomment">broadcastComment</h4>
+<div class="codehilite"><pre><span></span><span class="kr">export</span> <span class="kr">declare</span> <span class="kr">const</span> <span class="nx">broadcastComment</span><span class="o">:</span> <span class="p">(</span>
+  <span class="p">{</span>
+    <span class="nx">parentAuthor</span><span class="p">,</span>
+    <span class="nx">parentPermlink</span><span class="p">,</span>
+    <span class="nx">commentPermlink</span><span class="p">,</span>
+    <span class="nx">commentBody</span><span class="p">,</span>
+    <span class="nx">commentTitle</span><span class="p">,</span>
+    <span class="nx">commentMetadata</span>
+  <span class="p">}</span><span class="o">:</span> <span class="nx">Comment</span>
+<span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span>
+  <span class="p">{</span> <span class="nx">access_token</span><span class="p">,</span> <span class="nx">username</span> <span class="p">}</span><span class="o">:</span> <span class="nx">AccessTokenResponse</span>
+<span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="nx">BroadcastResult</span><span class="o">&gt;</span><span class="p">;</span>
+</pre></div>
+
+
+<h5 id="definition_2">Definition</h5>
+<p>Broadcasts comment for a given user to the Steem blockchain.</p>
+<h5 id="parameters_2">Parameters</h5>
+<p><strong>Step one</strong> (for the outer functions):</p>
+<ul>
+<li><code>commentConfig</code> (<em><a href="#comment">Comment</a></em>): the config object for the comment</li>
+</ul>
+<p><strong>Step two</strong> (for the inner functions):</p>
+<ul>
+<li><code>accessToken</code> (<em><a href="../shared/#accesstokenresponse">AccessTokenResponse</a></em>): an object with token details of the user for whom broadcast is requested for</li>
+</ul>
+<h5 id="returns_2">Returns</h5>
+<p><strong>Step one</strong> (from the outer function):</p>
+<ul>
+<li>(<em><a href="../getting-started/#broadcastable">broadcastable</a></em>): an inner function</li>
+</ul>
+<p><strong>Step two</strong> (from the inner function):</p>
+<ul>
+<li>(<em>Promise&lt;<a href="#broadcastresult">BroadcastResult</a>&gt;</em>): a <code>Promise</code> object which resolves with the result of the broadcast</li>
+</ul>
+<h5 id="example-usage_2">Example Usage</h5>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span>
+  <span class="nx">broadcastComment</span><span class="p">,</span>
+  <span class="nx">Comment</span>
+<span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/broadcasting&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">AccessTokenResponse</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/shared&#39;</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">commentConfig</span>: <span class="kt">Comment</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">parentAuthor</span><span class="o">:</span> <span class="s1">&#39;ned&#39;</span><span class="p">,</span>
+  <span class="nx">parentPermlink</span><span class="o">:</span> <span class="s1">&#39;i-am-ned&#39;</span><span class="p">,</span>
+  <span class="nx">commentPermlink</span><span class="o">:</span> <span class="s1">&#39;permlink-to-comment&#39;</span><span class="p">,</span>
+  <span class="nx">commentBody</span><span class="o">:</span> <span class="s1">&#39;Wow! Such an amazing post!&#39;</span><span class="p">,</span>
+  <span class="nx">commentMetadata</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">app</span><span class="o">:</span> <span class="s1">&#39;strimi/1.0.0&#39;</span><span class="p">,</span>
+    <span class="nx">community</span><span class="o">:</span> <span class="s1">&#39;strimi&#39;</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+<span class="kr">const</span> <span class="nx">accessToken</span>: <span class="kt">AccessTokenResponse</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">access_token</span><span class="o">:</span> <span class="s1">&#39;etfso443nnf3.3423hhf&#39;</span><span class="p">,</span>
+  <span class="nx">expires_in</span>: <span class="kt">640000</span><span class="p">,</span>
+  <span class="nx">username</span><span class="o">:</span> <span class="s1">&#39;jakipatryk&#39;</span>
+<span class="p">};</span>
+
+<span class="nx">broadcastComment</span><span class="p">(</span><span class="nx">commentConfig</span><span class="p">)(</span><span class="nx">accessToken</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span>
+<span class="p">);</span>
+<span class="c1">//  {</span>
+<span class="c1">//    result: { ... }</span>
+<span class="c1">//  }</span>
+</pre></div>
+
+
+<h5 id="implementation_2">Implementation</h5>
+<p>The implementation is available on <a href="https://github.com/jakipatryk/steemconnect-firebase-functions/blob/master/src/broadcasting/broadcastComment.ts">Github</a>.</p>
+<hr />
+<h4 id="broadcastdeletion">broadcastDeletion</h4>
+<div class="codehilite"><pre><span></span><span class="kr">export</span> <span class="kr">declare</span> <span class="kr">const</span> <span class="nx">broadcastDeletion</span><span class="o">:</span> <span class="p">(</span>
+  <span class="p">{</span> <span class="nx">permlink</span> <span class="p">}</span><span class="o">:</span> <span class="nx">Deletion</span>
+<span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span>
+  <span class="p">{</span> <span class="nx">access_token</span><span class="p">,</span> <span class="nx">username</span> <span class="p">}</span><span class="o">:</span> <span class="nx">AccessTokenResponse</span>
+<span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="nx">BroadcastResult</span><span class="o">&gt;</span><span class="p">;</span>
+</pre></div>
+
+
+<h5 id="definition_3">Definition</h5>
+<p>Broadcasts deletion of either comment or post to the Steem blockchain.</p>
+<h5 id="parameters_3">Parameters</h5>
+<ul>
+<li><code>deletionConfig</code> (<em><a href="#deletion">Deletion</a></em>): the config object for the deletion</li>
+</ul>
+<p><strong>Step two</strong> (for the inner functions):</p>
+<ul>
+<li><code>accessToken</code> (<em><a href="../shared/#accesstokenresponse">AccessTokenResponse</a></em>): an object with token details of the user for whom broadcast is requested for</li>
+</ul>
+<h5 id="returns_3">Returns</h5>
+<p><strong>Step one</strong> (from the outer function):</p>
+<ul>
+<li>(<em><a href="../getting-started/#broadcastable">broadcastable</a></em>): an inner function</li>
+</ul>
+<p><strong>Step two</strong> (from the inner function):</p>
+<ul>
+<li>(<em>Promise&lt;<a href="#broadcastresult">BroadcastResult</a>&gt;</em>): a <code>Promise</code> object which resolves with the result of the broadcast</li>
+</ul>
+<h5 id="example-usage_3">Example Usage</h5>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span>
+  <span class="nx">broadcastDeletion</span><span class="p">,</span>
+  <span class="nx">Deletion</span>
+<span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/broadcasting&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">AccessTokenResponse</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/shared&#39;</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">deletionConfig</span>: <span class="kt">Deletion</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">permlink</span><span class="o">:</span> <span class="s1">&#39;my-bad-post&#39;</span>
+<span class="p">};</span>
+<span class="kr">const</span> <span class="nx">accessToken</span>: <span class="kt">AccessTokenResponse</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">access_token</span><span class="o">:</span> <span class="s1">&#39;kj3n4jn2342.432p4k2p&#39;</span><span class="p">,</span>
+  <span class="nx">expires_in</span>: <span class="kt">640000</span><span class="p">,</span>
+  <span class="nx">username</span><span class="o">:</span> <span class="s1">&#39;ned&#39;</span>
+<span class="p">};</span>
+
+<span class="nx">broadcastDeletion</span><span class="p">(</span><span class="nx">deletionConfig</span><span class="p">)(</span><span class="nx">accessToken</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span>
+<span class="p">);</span>
+<span class="c1">//  {</span>
+<span class="c1">//    result: { ... }</span>
+<span class="c1">//  }</span>
+</pre></div>
+
+
+<h5 id="implementation_3">Implementation</h5>
+<p>The implementation is available on <a href="https://github.com/jakipatryk/steemconnect-firebase-functions/blob/master/src/broadcasting/broadcastDeletion.ts">Github</a>.</p>
+<hr />
+<h4 id="broadcastdownvote">broadcastDownvote</h4>
+<div class="codehilite"><pre><span></span><span class="kr">export</span> <span class="kr">declare</span> <span class="kr">const</span> <span class="nx">broadcastDownvote</span><span class="o">:</span> <span class="p">(</span>
+  <span class="p">{</span> <span class="nx">author</span><span class="p">,</span> <span class="nx">permlink</span><span class="p">,</span> <span class="nx">weight</span> <span class="p">}</span><span class="o">:</span> <span class="nx">Vote</span>
+<span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span>
+  <span class="p">{</span> <span class="nx">access_token</span><span class="p">,</span> <span class="nx">username</span> <span class="p">}</span><span class="o">:</span> <span class="nx">AccessTokenResponse</span>
+<span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="nx">BroadcastResult</span><span class="o">&gt;</span><span class="p">;</span>
+</pre></div>
+
+
+<h5 id="definition_4">Definition</h5>
+<p>Broadcasts downvote to the Steem blockchain.</p>
+<h5 id="parameters_4">Parameters</h5>
+<ul>
+<li><code>downvoteConfig</code> (<em><a href="#vote">Vote</a></em>): the config object for the vote (even though you want to broadcast downvote, pass a positive number in the weight)</li>
+</ul>
+<p><strong>Step two</strong> (for the inner functions):</p>
+<ul>
+<li><code>accessToken</code> (<em><a href="../shared/#accesstokenresponse">AccessTokenResponse</a></em>): an object with token details of the user for whom broadcast is requested for</li>
+</ul>
+<h5 id="returns_4">Returns</h5>
+<p><strong>Step one</strong> (from the outer function):</p>
+<ul>
+<li>(<em><a href="../getting-started/#broadcastable">broadcastable</a></em>): an inner function</li>
+</ul>
+<p><strong>Step two</strong> (from the inner function):</p>
+<ul>
+<li>(<em>Promise&lt;<a href="#broadcastresult">BroadcastResult</a>&gt;</em>): a <code>Promise</code> object which resolves with the result of the broadcast</li>
+</ul>
+<h5 id="example-usage_4">Example Usage</h5>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span>
+  <span class="nx">broadcastDownvote</span><span class="p">,</span>
+  <span class="nx">Vote</span>
+<span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/broadcasting&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">AccessTokenResponse</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/shared&#39;</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">downvoteConfig</span>: <span class="kt">Vote</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">author</span><span class="o">:</span> <span class="s1">&#39;ned&#39;</span><span class="p">,</span>
+  <span class="nx">permlink</span><span class="o">:</span> <span class="s1">&#39;i-am-ned&#39;</span><span class="p">,</span>
+  <span class="nx">weight</span>: <span class="kt">10000</span> <span class="c1">// 100% downvote</span>
+<span class="p">};</span>
+<span class="kr">const</span> <span class="nx">accessToken</span>: <span class="kt">AccessTokenResponse</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">access_token</span><span class="o">:</span> <span class="s1">&#39;kj3n4jn2342.432p4k2p&#39;</span><span class="p">,</span>
+  <span class="nx">expires_in</span>: <span class="kt">640000</span><span class="p">,</span>
+  <span class="nx">username</span><span class="o">:</span> <span class="s1">&#39;jakipatryk&#39;</span>
+<span class="p">};</span>
+
+<span class="nx">broadcastDownvote</span><span class="p">(</span><span class="nx">downvoteConfig</span><span class="p">)(</span><span class="nx">accessToken</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span>
+<span class="p">);</span>
+<span class="c1">//  {</span>
+<span class="c1">//    result: { ... }</span>
+<span class="c1">//  }</span>
+</pre></div>
+
+
+<h5 id="implementation_4">Implementation</h5>
+<p>The implementation is available on <a href="https://github.com/jakipatryk/steemconnect-firebase-functions/blob/master/src/broadcasting/broadcastDownvote.ts">Github</a>.</p>
+<hr />
+<h4 id="broadcastfollow">broadcastFollow</h4>
+<div class="codehilite"><pre><span></span><span class="kr">export</span> <span class="kr">declare</span> <span class="kr">const</span> <span class="nx">broadcastFollow</span><span class="o">:</span> <span class="p">(</span>
+  <span class="p">{</span> <span class="nx">userToFollow</span> <span class="p">}</span><span class="o">:</span> <span class="nx">Follow</span>
+<span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span>
+  <span class="p">{</span> <span class="nx">access_token</span><span class="p">,</span> <span class="nx">username</span> <span class="p">}</span><span class="o">:</span> <span class="nx">AccessTokenResponse</span>
+<span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="nx">BroadcastResult</span><span class="o">&gt;</span><span class="p">;</span>
+</pre></div>
+
+
+<h5 id="definition_5">Definition</h5>
+<p>Broadcasts follow to the Steem blockchain.</p>
+<h5 id="parameters_5">Parameters</h5>
+<ul>
+<li><code>followConfig</code> (<em><a href="#follow">Follow</a></em>): the config object for the follow</li>
+</ul>
+<p><strong>Step two</strong> (for the inner functions):</p>
+<ul>
+<li><code>accessToken</code> (<em><a href="../shared/#accesstokenresponse">AccessTokenResponse</a></em>): an object with token details of the user for whom broadcast is requested for</li>
+</ul>
+<h5 id="returns_5">Returns</h5>
+<p><strong>Step one</strong> (from the outer function):</p>
+<ul>
+<li>(<em><a href="../getting-started/#broadcastable">broadcastable</a></em>): an inner function</li>
+</ul>
+<p><strong>Step two</strong> (from the inner function):</p>
+<ul>
+<li>(<em>Promise&lt;<a href="#broadcastresult">BroadcastResult</a>&gt;</em>): a <code>Promise</code> object which resolves with the result of the broadcast</li>
+</ul>
+<h5 id="example-usage_5">Example Usage</h5>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span>
+  <span class="nx">broadcastFollow</span><span class="p">,</span>
+  <span class="nx">Follow</span>
+<span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/broadcasting&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">AccessTokenResponse</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/shared&#39;</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">followConfig</span>: <span class="kt">Follow</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">userToFollow</span><span class="o">:</span> <span class="s1">&#39;jakipatryk&#39;</span>
+<span class="p">};</span>
+<span class="kr">const</span> <span class="nx">accessToken</span>: <span class="kt">AccessTokenResponse</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">access_token</span><span class="o">:</span> <span class="s1">&#39;kj3n4jn2342.432p4k2p&#39;</span><span class="p">,</span>
+  <span class="nx">expires_in</span>: <span class="kt">640000</span><span class="p">,</span>
+  <span class="nx">username</span><span class="o">:</span> <span class="s1">&#39;ned&#39;</span>
+<span class="p">};</span>
+
+<span class="nx">broadcastFollow</span><span class="p">(</span><span class="nx">followConfig</span><span class="p">)(</span><span class="nx">accessToken</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span>
+<span class="p">);</span>
+<span class="c1">//  {</span>
+<span class="c1">//    result: { ... }</span>
+<span class="c1">//  }</span>
+</pre></div>
+
+
+<h5 id="implementation_5">Implementation</h5>
+<p>The implementation is available on <a href="https://github.com/jakipatryk/steemconnect-firebase-functions/blob/master/src/broadcasting/broadcastDownvote.ts">Github</a>.</p>
+<hr />
+<h4 id="broadcastpost">broadcastPost</h4>
+<div class="codehilite"><pre><span></span><span class="kr">export</span> <span class="kr">declare</span> <span class="kr">const</span> <span class="nx">broadcastPost</span><span class="o">:</span> <span class="p">(</span>
+  <span class="p">{</span> <span class="nx">mainTag</span><span class="p">,</span> <span class="nx">permlink</span><span class="p">,</span> <span class="nx">title</span><span class="p">,</span> <span class="nx">body</span><span class="p">,</span> <span class="nx">metadata</span> <span class="p">}</span><span class="o">:</span> <span class="nx">Post</span>
+<span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span>
+  <span class="p">{</span> <span class="nx">access_token</span><span class="p">,</span> <span class="nx">username</span> <span class="p">}</span><span class="o">:</span> <span class="nx">AccessTokenResponse</span>
+<span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="nx">BroadcastResult</span><span class="o">&gt;</span><span class="p">;</span>
+</pre></div>
+
+
+<h5 id="definition_6">Definition</h5>
+<p>Broadcasts post to the Steem blockchain.</p>
+<h5 id="parameters_6">Parameters</h5>
+<ul>
+<li><code>postConfig</code> (<em><a href="#post">Post</a></em>): the config object for the post</li>
+</ul>
+<p><strong>Step two</strong> (for the inner functions):</p>
+<ul>
+<li><code>accessToken</code> (<em><a href="../shared/#accesstokenresponse">AccessTokenResponse</a></em>): an object with token details of the user for whom broadcast is requested for</li>
+</ul>
+<h5 id="returns_6">Returns</h5>
+<p><strong>Step one</strong> (from the outer function):</p>
+<ul>
+<li>(<em><a href="../getting-started/#broadcastable">broadcastable</a></em>): an inner function</li>
+</ul>
+<p><strong>Step two</strong> (from the inner function):</p>
+<ul>
+<li>(<em>Promise&lt;<a href="#broadcastresult">BroadcastResult</a>&gt;</em>): a <code>Promise</code> object which resolves with the result of the broadcast</li>
+</ul>
+<h5 id="example-usage_6">Example Usage</h5>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span>
+  <span class="nx">broadcastPost</span><span class="p">,</span>
+  <span class="nx">Post</span>
+<span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/broadcasting&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">AccessTokenResponse</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/shared&#39;</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">postConfig</span>: <span class="kt">Post</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">mainTag</span><span class="o">:</span> <span class="s1">&#39;life&#39;</span><span class="p">,</span>
+  <span class="nx">permlink</span><span class="o">:</span> <span class="s1">&#39;permlink-for-the-post&#39;</span><span class="p">,</span>
+  <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;Its my life!&#39;</span><span class="p">,</span>
+  <span class="nx">body</span><span class="o">:</span> <span class="s1">&#39;Its my life sheck this out&#39;</span><span class="p">,</span>
+  <span class="nx">metadata</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">app</span><span class="o">:</span> <span class="s1">&#39;strimi/1.0.0&#39;</span><span class="p">,</span>
+    <span class="nx">community</span><span class="o">:</span> <span class="s1">&#39;strimi&#39;</span><span class="p">,</span>
+    <span class="nx">tags</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;life&#39;</span><span class="p">,</span> <span class="s1">&#39;steemit&#39;</span><span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+<span class="kr">const</span> <span class="nx">accessToken</span>: <span class="kt">AccessTokenResponse</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">access_token</span><span class="o">:</span> <span class="s1">&#39;kj3n4jn2342.432p4k2p&#39;</span><span class="p">,</span>
+  <span class="nx">expires_in</span>: <span class="kt">640000</span><span class="p">,</span>
+  <span class="nx">username</span><span class="o">:</span> <span class="s1">&#39;ned&#39;</span>
+<span class="p">};</span>
+
+<span class="nx">broadcastPost</span><span class="p">(</span><span class="nx">postConfig</span><span class="p">)(</span><span class="nx">accessToken</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
+<span class="c1">//  {</span>
+<span class="c1">//    result: { ... }</span>
+<span class="c1">//  }</span>
+</pre></div>
+
+
+<h5 id="implementation_6">Implementation</h5>
+<p>The implementation is available on <a href="https://github.com/jakipatryk/steemconnect-firebase-functions/blob/master/src/broadcasting/broadcastDownvote.ts">Github</a>.</p>
+<hr />
+<h4 id="broadcastpostwithbeneficiaries">broadcastPostWithBeneficiaries</h4>
+<div class="codehilite"><pre><span></span><span class="kr">export</span> <span class="kr">declare</span> <span class="kr">const</span> <span class="nx">broadcastPostWithBeneficiaries</span><span class="o">:</span> <span class="p">(</span>
+  <span class="p">{</span>
+    <span class="nx">mainTag</span><span class="p">,</span>
+    <span class="nx">permlink</span><span class="p">,</span>
+    <span class="nx">title</span><span class="p">,</span>
+    <span class="nx">body</span><span class="p">,</span>
+    <span class="nx">beneficiariesAccount</span><span class="p">,</span>
+    <span class="nx">beneficiariesWeight</span><span class="p">,</span>
+    <span class="nx">metadata</span>
+  <span class="p">}</span><span class="o">:</span> <span class="nx">PostWithBeneficiaries</span>
+<span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span>
+  <span class="p">{</span> <span class="nx">access_token</span><span class="p">,</span> <span class="nx">username</span> <span class="p">}</span><span class="o">:</span> <span class="nx">AccessTokenResponse</span>
+<span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="nx">BroadcastResult</span><span class="o">&gt;</span><span class="p">;</span>
+</pre></div>
+
+
+<h5 id="definition_7">Definition</h5>
+<p>Broadcasts post along with beneficiaries config to the Steem blockchain.</p>
+<h5 id="parameters_7">Parameters</h5>
+<ul>
+<li><code>postWithBeneficiariesConfig</code> (<em><a href="#postwithbeneficiaires">PostWithBeneficiaires</a></em>): the config object for the post with beneficiaries</li>
+</ul>
+<p><strong>Step two</strong> (for the inner functions):</p>
+<ul>
+<li><code>accessToken</code> (<em><a href="../shared/#accesstokenresponse">AccessTokenResponse</a></em>): an object with token details of the user for whom broadcast is requested for</li>
+</ul>
+<h5 id="returns_7">Returns</h5>
+<p><strong>Step one</strong> (from the outer function):</p>
+<ul>
+<li>(<em><a href="../getting-started/#broadcastable">broadcastable</a></em>): an inner function</li>
+</ul>
+<p><strong>Step two</strong> (from the inner function):</p>
+<ul>
+<li>(<em>Promise&lt;<a href="#broadcastresult">BroadcastResult</a>&gt;</em>): a <code>Promise</code> object which resolves with the result of the broadcast</li>
+</ul>
+<h5 id="example-usage_7">Example Usage</h5>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span>
+  <span class="nx">broadcastPostWithBeneficiaries</span><span class="p">,</span>
+  <span class="nx">PostWithBeneficiaries</span>
+<span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/broadcasting&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">AccessTokenResponse</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/shared&#39;</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">postWithBeneficiariesConfig</span>: <span class="kt">PostWithBeneficiaries</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">mainTag</span><span class="o">:</span> <span class="s1">&#39;life&#39;</span><span class="p">,</span>
+  <span class="nx">permlink</span><span class="o">:</span> <span class="s1">&#39;permlink-for-the-post&#39;</span><span class="p">,</span>
+  <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;Its my life!&#39;</span><span class="p">,</span>
+  <span class="nx">body</span><span class="o">:</span> <span class="s1">&#39;Its my life sheck this out&#39;</span><span class="p">,</span>
+  <span class="nx">beneficiariesAccount</span><span class="o">:</span> <span class="s1">&#39;strimi&#39;</span><span class="p">,</span>
+  <span class="nx">beneficiariesWeight</span>: <span class="kt">1000</span><span class="p">,</span> <span class="c1">// 10%</span>
+  <span class="nx">metadata</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">app</span><span class="o">:</span> <span class="s1">&#39;strimi/1.0.0&#39;</span><span class="p">,</span>
+    <span class="nx">community</span><span class="o">:</span> <span class="s1">&#39;strimi&#39;</span><span class="p">,</span>
+    <span class="nx">tags</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;life&#39;</span><span class="p">,</span> <span class="s1">&#39;steemit&#39;</span><span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+<span class="kr">const</span> <span class="nx">accessToken</span>: <span class="kt">AccessTokenResponse</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">access_token</span><span class="o">:</span> <span class="s1">&#39;kj3n4jn2342.432p4k2p&#39;</span><span class="p">,</span>
+  <span class="nx">expires_in</span>: <span class="kt">640000</span><span class="p">,</span>
+  <span class="nx">username</span><span class="o">:</span> <span class="s1">&#39;ned&#39;</span>
+<span class="p">};</span>
+
+<span class="nx">broadcastPostWithBeneficiaries</span><span class="p">(</span><span class="nx">postWithBeneficiariesConfig</span><span class="p">)(</span><span class="nx">accessToken</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span>
+  <span class="nx">response</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span>
+<span class="p">);</span>
+<span class="c1">//  {</span>
+<span class="c1">//    result: { ... }</span>
+<span class="c1">//  }</span>
+</pre></div>
+
+
+<h5 id="implementation_7">Implementation</h5>
+<p>The implementation is available on <a href="https://github.com/jakipatryk/steemconnect-firebase-functions/blob/master/src/broadcasting/broadcastDownvote.ts">Github</a>.</p>
+<hr />
+<h4 id="broadcastreblog">broadcastReblog</h4>
+<div class="codehilite"><pre><span></span><span class="kr">export</span> <span class="kr">declare</span> <span class="kr">const</span> <span class="nx">broadcastReblog</span><span class="o">:</span> <span class="p">(</span>
+  <span class="p">{</span> <span class="nx">postAuthor</span><span class="p">,</span> <span class="nx">postPermlink</span> <span class="p">}</span><span class="o">:</span> <span class="nx">Reblog</span>
+<span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span>
+  <span class="p">{</span> <span class="nx">access_token</span><span class="p">,</span> <span class="nx">username</span> <span class="p">}</span><span class="o">:</span> <span class="nx">AccessTokenResponse</span>
+<span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="nx">BroadcastResult</span><span class="o">&gt;</span><span class="p">;</span>
+</pre></div>
+
+
+<h5 id="definition_8">Definition</h5>
+<p>Broadcasts reblog to the Steem blockchain.</p>
+<h5 id="parameters_8">Parameters</h5>
+<ul>
+<li><code>reblogConfig</code> (<em><a href="#reblog">Reblog</a></em>): the config object for the reblog</li>
+</ul>
+<p><strong>Step two</strong> (for the inner functions):</p>
+<ul>
+<li><code>accessToken</code> (<em><a href="../shared/#accesstokenresponse">AccessTokenResponse</a></em>): an object with token details of the user for whom broadcast is requested for</li>
+</ul>
+<h5 id="returns_8">Returns</h5>
+<p><strong>Step one</strong> (from the outer function):</p>
+<ul>
+<li>(<em><a href="../getting-started/#broadcastable">broadcastable</a></em>): an inner function</li>
+</ul>
+<p><strong>Step two</strong> (from the inner function):</p>
+<ul>
+<li>(<em>Promise&lt;<a href="#broadcastresult">BroadcastResult</a>&gt;</em>): a <code>Promise</code> object which resolves with the result of the broadcast</li>
+</ul>
+<h5 id="example-usage_8">Example Usage</h5>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span>
+  <span class="nx">broadcastReblog</span><span class="p">,</span>
+  <span class="nx">Reblog</span>
+<span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/broadcasting&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">AccessTokenResponse</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/shared&#39;</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">reblogConfig</span>: <span class="kt">Vote</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">postAuthor</span><span class="o">:</span> <span class="s1">&#39;ned&#39;</span><span class="p">,</span>
+  <span class="nx">postPermlink</span><span class="o">:</span> <span class="s1">&#39;i-am-ned&#39;</span>
+<span class="p">};</span>
+<span class="kr">const</span> <span class="nx">accessToken</span>: <span class="kt">AccessTokenResponse</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">access_token</span><span class="o">:</span> <span class="s1">&#39;kj3n4jn2342.432p4k2p&#39;</span><span class="p">,</span>
+  <span class="nx">expires_in</span>: <span class="kt">640000</span><span class="p">,</span>
+  <span class="nx">username</span><span class="o">:</span> <span class="s1">&#39;jakipatryk&#39;</span>
+<span class="p">};</span>
+
+<span class="nx">broadcastReblog</span><span class="p">(</span><span class="nx">reblogConfig</span><span class="p">)(</span><span class="nx">accessToken</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span>
+<span class="p">);</span>
+<span class="c1">//  {</span>
+<span class="c1">//    result: { ... }</span>
+<span class="c1">//  }</span>
+</pre></div>
+
+
+<h5 id="implementation_8">Implementation</h5>
+<p>The implementation is available on <a href="https://github.com/jakipatryk/steemconnect-firebase-functions/blob/master/src/broadcasting/broadcastReblog.ts">Github</a>.</p>
+<hr />
+<h4 id="broadcastunfollow">broadcastUnfollow</h4>
+<div class="codehilite"><pre><span></span><span class="kr">export</span> <span class="kr">declare</span> <span class="kr">const</span> <span class="nx">broadcastUnfollow</span><span class="o">:</span> <span class="p">(</span>
+  <span class="p">{</span> <span class="nx">userToUnfollow</span> <span class="p">}</span><span class="o">:</span> <span class="nx">Unfollow</span>
+<span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span>
+  <span class="p">{</span> <span class="nx">access_token</span><span class="p">,</span> <span class="nx">username</span> <span class="p">}</span><span class="o">:</span> <span class="nx">AccessTokenResponse</span>
+<span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="nx">BroadcastResult</span><span class="o">&gt;</span><span class="p">;</span>
+</pre></div>
+
+
+<h5 id="definition_9">Definition</h5>
+<p>Broadcasts unfollow to the Steem blockchain.</p>
+<h5 id="parameters_9">Parameters</h5>
+<ul>
+<li><code>unfollowConfig</code> (<em><a href="#unfollow">Unfollow</a></em>): the config object for the unfollow</li>
+</ul>
+<p><strong>Step two</strong> (for the inner functions):</p>
+<ul>
+<li><code>accessToken</code> (<em><a href="../shared/#accesstokenresponse">AccessTokenResponse</a></em>): an object with token details of the user for whom broadcast is requested for</li>
+</ul>
+<h5 id="returns_9">Returns</h5>
+<p><strong>Step one</strong> (from the outer function):</p>
+<ul>
+<li>(<em><a href="../getting-started/#broadcastable">broadcastable</a></em>): an inner function</li>
+</ul>
+<p><strong>Step two</strong> (from the inner function):</p>
+<ul>
+<li>(<em>Promise&lt;<a href="#broadcastresult">BroadcastResult</a>&gt;</em>): a <code>Promise</code> object which resolves with the result of the broadcast</li>
+</ul>
+<h5 id="example-usage_9">Example Usage</h5>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span>
+  <span class="nx">broadcastUnfollow</span><span class="p">,</span>
+  <span class="nx">Unfollow</span>
+<span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/broadcasting&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">AccessTokenResponse</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/shared&#39;</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">unfollowConfig</span>: <span class="kt">Unfollow</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">userToUnfollow</span><span class="o">:</span> <span class="s1">&#39;ned&#39;</span>
+<span class="p">};</span>
+<span class="kr">const</span> <span class="nx">accessToken</span>: <span class="kt">AccessTokenResponse</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">access_token</span><span class="o">:</span> <span class="s1">&#39;kj3n4jn2342.432p4k2p&#39;</span><span class="p">,</span>
+  <span class="nx">expires_in</span>: <span class="kt">640000</span><span class="p">,</span>
+  <span class="nx">username</span><span class="o">:</span> <span class="s1">&#39;jakipatryk&#39;</span>
+<span class="p">};</span>
+
+<span class="nx">broadcastUnfollow</span><span class="p">(</span><span class="nx">unfollowConfig</span><span class="p">)(</span><span class="nx">accessToken</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span>
+<span class="p">);</span>
+<span class="c1">//  {</span>
+<span class="c1">//    result: { ... }</span>
+<span class="c1">//  }</span>
+</pre></div>
+
+
+<h5 id="implementation_9">Implementation</h5>
+<p>The implementation is available on <a href="https://github.com/jakipatryk/steemconnect-firebase-functions/blob/master/src/broadcasting/broadcastUnfollow.ts">Github</a>.</p>
+<hr />
+<h4 id="broadcastupvote">broadcastUpvote</h4>
+<div class="codehilite"><pre><span></span><span class="kr">export</span> <span class="kr">declare</span> <span class="kr">const</span> <span class="nx">broadcastUpvote</span><span class="o">:</span> <span class="p">(</span>
+  <span class="p">{</span> <span class="nx">author</span><span class="p">,</span> <span class="nx">permlink</span><span class="p">,</span> <span class="nx">weight</span> <span class="p">}</span><span class="o">:</span> <span class="nx">Vote</span>
+<span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span>
+  <span class="p">{</span> <span class="nx">access_token</span><span class="p">,</span> <span class="nx">username</span> <span class="p">}</span><span class="o">:</span> <span class="nx">AccessTokenResponse</span>
+<span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="nx">BroadcastResult</span><span class="o">&gt;</span><span class="p">;</span>
+</pre></div>
+
+
+<h5 id="definition_10">Definition</h5>
+<p>Broadcasts upvote to the Steem blockchain.</p>
+<h5 id="parameters_10">Parameters</h5>
+<ul>
+<li><code>upvoteConfig</code> (<em><a href="#vote">Vote</a></em>): the config object for the upvote</li>
+</ul>
+<p><strong>Step two</strong> (for the inner functions):</p>
+<ul>
+<li><code>accessToken</code> (<em><a href="../shared/#accesstokenresponse">AccessTokenResponse</a></em>): an object with token details of the user for whom broadcast is requested for</li>
+</ul>
+<h5 id="returns_10">Returns</h5>
+<p><strong>Step one</strong> (from the outer function):</p>
+<ul>
+<li>(<em><a href="../getting-started/#broadcastable">broadcastable</a></em>): an inner function</li>
+</ul>
+<p><strong>Step two</strong> (from the inner function):</p>
+<ul>
+<li>(<em>Promise&lt;<a href="#broadcastresult">BroadcastResult</a>&gt;</em>): a <code>Promise</code> object which resolves with the result of the broadcast</li>
+</ul>
+<h5 id="example-usage_10">Example Usage</h5>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span>
+  <span class="nx">broadcastUpvote</span><span class="p">,</span>
+  <span class="nx">Vote</span>
+<span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/broadcasting&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">AccessTokenResponse</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/shared&#39;</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">downvoteConfig</span>: <span class="kt">Vote</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">author</span><span class="o">:</span> <span class="s1">&#39;ned&#39;</span><span class="p">,</span>
+  <span class="nx">permlink</span><span class="o">:</span> <span class="s1">&#39;i-am-ned&#39;</span><span class="p">,</span>
+  <span class="nx">weight</span>: <span class="kt">10000</span> <span class="c1">// 100% upvote</span>
+<span class="p">};</span>
+<span class="kr">const</span> <span class="nx">accessToken</span>: <span class="kt">AccessTokenResponse</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">access_token</span><span class="o">:</span> <span class="s1">&#39;kj3n4jn2342.432p4k2p&#39;</span><span class="p">,</span>
+  <span class="nx">expires_in</span>: <span class="kt">640000</span><span class="p">,</span>
+  <span class="nx">username</span><span class="o">:</span> <span class="s1">&#39;ned&#39;</span>
+<span class="p">};</span>
+
+<span class="nx">broadcastUpvote</span><span class="p">(</span><span class="nx">downvoteConfig</span><span class="p">)(</span><span class="nx">accessToken</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span>
+<span class="p">);</span>
+<span class="c1">//  {</span>
+<span class="c1">//    result: { ... }</span>
+<span class="c1">//  }</span>
+</pre></div>
+
+
+<h5 id="implementation_10">Implementation</h5>
+<p>The implementation is available on <a href="https://github.com/jakipatryk/steemconnect-firebase-functions/blob/master/src/broadcasting/broadcastUpvote.ts">Github</a>.</p>
+<hr />
+<h3 id="interfaces">Interfaces</h3>
+<h4 id="broadcastresult">BroadcastResult</h4>
+<h5 id="definition_11">Definition</h5>
+<p>Defines an object which is a response to the successful broadcast.</p>
+<h5 id="implementation_11">Implementation</h5>
+<div class="codehilite"><pre><span></span><span class="kr">export</span> <span class="kr">interface</span> <span class="nx">BroadcastResult</span> <span class="p">{</span>
+  <span class="nx">result</span>: <span class="kt">Result</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">export</span> <span class="kr">interface</span> <span class="nx">Result</span> <span class="p">{</span>
+  <span class="nx">id</span>: <span class="kt">string</span><span class="p">;</span>
+  <span class="nx">block_num</span>: <span class="kt">number</span><span class="p">;</span>
+  <span class="nx">trx_num</span>: <span class="kt">number</span><span class="p">;</span>
+  <span class="nx">expired</span>: <span class="kt">boolean</span><span class="p">;</span>
+  <span class="nx">ref_block_num</span>: <span class="kt">number</span><span class="p">;</span>
+  <span class="nx">ref_block_prefix</span>: <span class="kt">number</span><span class="p">;</span>
+  <span class="nx">expiration</span>: <span class="kt">string</span><span class="p">;</span>
+  <span class="nx">operations</span>: <span class="kt">Operations</span><span class="p">;</span>
+  <span class="nx">extensions</span>: <span class="kt">Array</span><span class="o">&lt;</span><span class="nx">any</span><span class="o">&gt;</span><span class="p">;</span>
+  <span class="nx">signatures</span>: <span class="kt">Array</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<h5 id="references">References</h5>
+<ul>
+<li><a href="../shared/#operations"><code>Operations</code></a></li>
+</ul>
+<hr />
+<h4 id="comment">Comment</h4>
+<h5 id="definition_12">Definition</h5>
+<p>In the broadcasting module, it defines a configuration object for a comment.</p>
+<h5 id="implementation_12">Implementation</h5>
+<div class="codehilite"><pre><span></span><span class="kr">export</span> <span class="kr">interface</span> <span class="nx">Comment</span> <span class="p">{</span>
+  <span class="nx">parentAuthor?</span>: <span class="kt">string</span><span class="p">;</span>
+  <span class="nx">parentPermlink</span>: <span class="kt">string</span><span class="p">;</span>
+  <span class="nx">commentPermlink</span>: <span class="kt">string</span><span class="p">;</span>
+  <span class="nx">commentBody</span>: <span class="kt">string</span><span class="p">;</span>
+  <span class="nx">commentTitle?</span>: <span class="kt">string</span><span class="p">;</span>
+  <span class="nx">commentMetadata?</span>: <span class="kt">object</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<hr />
+<h4 id="deletion">Deletion</h4>
+<h5 id="definition_13">Definition</h5>
+<p>In the broadcasting module, it defines a configuration object for a deletion of either comment or post.</p>
+<h5 id="implementation_13">Implementation</h5>
+<div class="codehilite"><pre><span></span><span class="kr">export</span> <span class="kr">interface</span> <span class="nx">Deletion</span> <span class="p">{</span>
+  <span class="nx">permlink</span>: <span class="kt">string</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<hr />
+<h4 id="follow">Follow</h4>
+<h5 id="definition_14">Definition</h5>
+<p>In the broadcasting module, it defines a configuration object for a follow.</p>
+<h5 id="implementation_14">Implementation</h5>
+<div class="codehilite"><pre><span></span><span class="kr">export</span> <span class="kr">interface</span> <span class="nx">Follow</span> <span class="p">{</span>
+  <span class="nx">userToFollow</span>: <span class="kt">string</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<hr />
+<h4 id="post">Post</h4>
+<h5 id="definition_15">Definition</h5>
+<p>In the broadcasting module, it defines a configuration object for a post.</p>
+<h5 id="implementation_15">Implementation</h5>
+<div class="codehilite"><pre><span></span><span class="kr">export</span> <span class="kr">interface</span> <span class="nx">Post</span> <span class="p">{</span>
+  <span class="nx">mainTag</span>: <span class="kt">string</span><span class="p">;</span>
+  <span class="nx">permlink</span>: <span class="kt">string</span><span class="p">;</span>
+  <span class="nx">title</span>: <span class="kt">string</span><span class="p">;</span>
+  <span class="nx">body</span>: <span class="kt">string</span><span class="p">;</span>
+  <span class="nx">metadata?</span>: <span class="kt">object</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<hr />
+<h4 id="postwithbeneficiaries">PostWithBeneficiaries</h4>
+<h5 id="definition_16">Definition</h5>
+<p>In the broadcasting module, it defines a configuration object for a post with beneficiaries.</p>
+<h5 id="implementation_16">Implementation</h5>
+<div class="codehilite"><pre><span></span><span class="kr">export</span> <span class="kr">interface</span> <span class="nx">PostWithBeneficiaries</span> <span class="p">{</span>
+  <span class="nx">mainTag</span>: <span class="kt">string</span><span class="p">;</span>
+  <span class="nx">permlink</span>: <span class="kt">string</span><span class="p">;</span>
+  <span class="nx">title</span>: <span class="kt">string</span><span class="p">;</span>
+  <span class="nx">body</span>: <span class="kt">string</span><span class="p">;</span>
+  <span class="nx">beneficiariesAccount</span>: <span class="kt">string</span><span class="p">;</span>
+  <span class="nx">beneficiariesWeight</span>: <span class="kt">number</span><span class="p">;</span>
+  <span class="nx">metadata?</span>: <span class="kt">object</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<hr />
+<h4 id="reblog">Reblog</h4>
+<h5 id="definition_17">Definition</h5>
+<p>In the broadcasting module, it defines a configuration object for a reblog.</p>
+<h5 id="implementation_17">Implementation</h5>
+<div class="codehilite"><pre><span></span><span class="kr">export</span> <span class="kr">interface</span> <span class="nx">Reblog</span> <span class="p">{</span>
+  <span class="nx">postAuthor</span>: <span class="kt">string</span><span class="p">;</span>
+  <span class="nx">postPermlink</span>: <span class="kt">string</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<hr />
+<h4 id="unfollow">Unfollow</h4>
+<h5 id="definition_18">Definition</h5>
+<p>In the broadcasting module, it defines a configuration object for an unfollow.</p>
+<h5 id="implementation_18">Implementation</h5>
+<div class="codehilite"><pre><span></span><span class="kr">export</span> <span class="kr">interface</span> <span class="nx">Unfollow</span> <span class="p">{</span>
+  <span class="nx">userToUnfollow</span>: <span class="kt">string</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<hr />
+<h4 id="vote">Vote</h4>
+<h5 id="definition_19">Definition</h5>
+<p>In the broadcasting module, it defines a configuration object for either an upvote or a downvote.</p>
+<h5 id="implementation_19">Implementation</h5>
+<div class="codehilite"><pre><span></span><span class="kr">export</span> <span class="kr">interface</span> <span class="nx">Vote</span> <span class="p">{</span>
+  <span class="nx">author</span>: <span class="kt">string</span><span class="p">;</span>
+  <span class="nx">permlink</span>: <span class="kt">string</span><span class="p">;</span>
+  <span class="nx">weight</span>: <span class="kt">number</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../authentication/" title="Authentication with Angular" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Authentication with Angular
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../firebase/" title="Firebase" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Firebase
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="http://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.b438e6c5.js"></script>
+      
+      <script>app.initialize({version:"0.17.3",url:{base:".."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>

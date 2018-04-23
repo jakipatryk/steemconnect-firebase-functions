@@ -347,13 +347,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-use-it" title="How to use it?" class="md-nav__link">
-    How to use it?
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#api-reference" title="API reference" class="md-nav__link">
     API reference
   </a>
@@ -1260,13 +1253,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-use-it" title="How to use it?" class="md-nav__link">
-    How to use it?
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#api-reference" title="API reference" class="md-nav__link">
     API reference
   </a>
@@ -2107,17 +2093,6 @@
                 <h2 id="what-is-this-module-for">What is this module for?</h2>
 <p>Broadcasting module was created for <strong>handling</strong> broadcasting operations to the Steem blockchain using <strong>SteemConnect's tokens</strong>.</p>
 <p>There is one <strong>general</strong> function (<a href="#broadcastoperations"><code>broadcastOperations</code></a>), several <strong>operation-specific</strong> functions (for example, <a href="#broadcastpost"><code>broadcastPost</code></a>), and one <strong>wrapper</strong> function for handling access token refreshing if the provided one had expired (<a href="#rely"><code>rely</code></a>).</p>
-<h2 id="how-to-use-it">How to use it?</h2>
-<p>To use any of the functions, you have to import it. There are two main ways to do it, you can either import it directly from the broadcasting module:</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">broadcastOperations</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/broadcasting&#39;</span><span class="p">;</span>
-</pre></div>
-
-
-<p>or from the main module:</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">broadcastOperations</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions&#39;</span><span class="p">;</span>
-</pre></div>
-
-
 <hr />
 <h2 id="api-reference">API reference</h2>
 <h3 id="functions">Functions</h3>
@@ -2149,11 +2124,11 @@
 <li>(<em>Promise&lt;<a href="#broadcastresult">BroadcastResult</a>&gt;</em>): a <code>Promise</code> object which resolves with the result of the broadcast</li>
 </ul>
 <h5 id="example-usage">Example Usage</h5>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">broadcastOperations</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/broadcasting&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span>
+  <span class="nx">broadcastOperations</span><span class="p">,</span>
   <span class="nx">AccessTokenResponse</span><span class="p">,</span>
   <span class="nx">Operations</span>
-<span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/shared&#39;</span><span class="p">;</span>
+<span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions&#39;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">accessToken</span>: <span class="kt">AccessTokenResponse</span> <span class="o">=</span> <span class="p">{</span>
   <span class="nx">access_token</span><span class="o">:</span> <span class="s1">&#39;435tfgfdgdfg.434342&#39;</span><span class="p">,</span>
@@ -2227,12 +2202,12 @@
 <li>(<em>Promise&lt;<a href="#broadcastresult">BroadcastResult</a> &amp; Partial&lt;<a href="../shared/#accesstokenresponse">AccessTokenResponse</a>&gt;&gt;</em>): a <code>Promise</code> object which resolves with the result of the broadcast and new tokens if refreshed</li>
 </ul>
 <h5 id="example-usage_1">Example Usage</h5>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">rely</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/broadcasting&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">ClientCredentials</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/oauth2&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span>
+  <span class="nx">rely</span><span class="p">,</span>
   <span class="nx">AccessTokenResponse</span><span class="p">,</span>
-  <span class="nx">Operations</span>
-<span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/shared&#39;</span><span class="p">;</span>
+  <span class="nx">Operations</span><span class="p">,</span>
+  <span class="nx">ClientCredentials</span>
+<span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/broadcasting&#39;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">clientCredentials</span>: <span class="kt">ClientCredentials</span> <span class="o">=</span> <span class="p">{</span>
   <span class="nx">clientId</span><span class="o">:</span> <span class="s1">&#39;strimi.app&#39;</span><span class="p">,</span>
@@ -2313,9 +2288,9 @@
 <h5 id="example-usage_2">Example Usage</h5>
 <div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span>
   <span class="nx">broadcastComment</span><span class="p">,</span>
-  <span class="nx">Comment</span>
-<span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/broadcasting&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">AccessTokenResponse</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/shared&#39;</span><span class="p">;</span>
+  <span class="nx">Comment</span><span class="p">,</span>
+  <span class="nx">AccessTokenResponse</span>
+<span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions&#39;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">commentConfig</span>: <span class="kt">Comment</span> <span class="o">=</span> <span class="p">{</span>
   <span class="nx">parentAuthor</span><span class="o">:</span> <span class="s1">&#39;ned&#39;</span><span class="p">,</span>
@@ -2376,9 +2351,9 @@
 <h5 id="example-usage_3">Example Usage</h5>
 <div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span>
   <span class="nx">broadcastDeletion</span><span class="p">,</span>
-  <span class="nx">Deletion</span>
-<span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/broadcasting&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">AccessTokenResponse</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/shared&#39;</span><span class="p">;</span>
+  <span class="nx">Deletion</span><span class="p">,</span>
+  <span class="nx">AccessTokenResponse</span>
+<span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions&#39;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">deletionConfig</span>: <span class="kt">Deletion</span> <span class="o">=</span> <span class="p">{</span>
   <span class="nx">permlink</span><span class="o">:</span> <span class="s1">&#39;my-bad-post&#39;</span>
@@ -2432,9 +2407,9 @@
 <h5 id="example-usage_4">Example Usage</h5>
 <div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span>
   <span class="nx">broadcastDownvote</span><span class="p">,</span>
-  <span class="nx">Vote</span>
-<span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/broadcasting&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">AccessTokenResponse</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/shared&#39;</span><span class="p">;</span>
+  <span class="nx">Vote</span><span class="p">,</span>
+  <span class="nx">AccessTokenResponse</span>
+<span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions&#39;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">downvoteConfig</span>: <span class="kt">Vote</span> <span class="o">=</span> <span class="p">{</span>
   <span class="nx">author</span><span class="o">:</span> <span class="s1">&#39;ned&#39;</span><span class="p">,</span>
@@ -2490,9 +2465,9 @@
 <h5 id="example-usage_5">Example Usage</h5>
 <div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span>
   <span class="nx">broadcastFollow</span><span class="p">,</span>
-  <span class="nx">Follow</span>
-<span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/broadcasting&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">AccessTokenResponse</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/shared&#39;</span><span class="p">;</span>
+  <span class="nx">Follow</span><span class="p">,</span>
+  <span class="nx">AccessTokenResponse</span>
+<span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions&#39;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">followConfig</span>: <span class="kt">Follow</span> <span class="o">=</span> <span class="p">{</span>
   <span class="nx">userToFollow</span><span class="o">:</span> <span class="s1">&#39;jakipatryk&#39;</span>
@@ -2546,9 +2521,9 @@
 <h5 id="example-usage_6">Example Usage</h5>
 <div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span>
   <span class="nx">broadcastPost</span><span class="p">,</span>
-  <span class="nx">Post</span>
-<span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/broadcasting&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">AccessTokenResponse</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/shared&#39;</span><span class="p">;</span>
+  <span class="nx">Post</span><span class="p">,</span>
+  <span class="nx">AccessTokenResponse</span>
+<span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions&#39;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">postConfig</span>: <span class="kt">Post</span> <span class="o">=</span> <span class="p">{</span>
   <span class="nx">mainTag</span><span class="o">:</span> <span class="s1">&#39;life&#39;</span><span class="p">,</span>
@@ -2616,9 +2591,9 @@
 <h5 id="example-usage_7">Example Usage</h5>
 <div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span>
   <span class="nx">broadcastPostWithBeneficiaries</span><span class="p">,</span>
-  <span class="nx">PostWithBeneficiaries</span>
-<span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/broadcasting&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">AccessTokenResponse</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/shared&#39;</span><span class="p">;</span>
+  <span class="nx">PostWithBeneficiaries</span><span class="p">,</span>
+  <span class="nx">AccessTokenResponse</span>
+<span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions&#39;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">postWithBeneficiariesConfig</span>: <span class="kt">PostWithBeneficiaries</span> <span class="o">=</span> <span class="p">{</span>
   <span class="nx">mainTag</span><span class="o">:</span> <span class="s1">&#39;life&#39;</span><span class="p">,</span>
@@ -2682,9 +2657,9 @@
 <h5 id="example-usage_8">Example Usage</h5>
 <div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span>
   <span class="nx">broadcastReblog</span><span class="p">,</span>
-  <span class="nx">Reblog</span>
-<span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/broadcasting&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">AccessTokenResponse</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/shared&#39;</span><span class="p">;</span>
+  <span class="nx">Reblog</span><span class="p">,</span>
+  <span class="nx">AccessTokenResponse</span>
+<span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions&#39;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">reblogConfig</span>: <span class="kt">Vote</span> <span class="o">=</span> <span class="p">{</span>
   <span class="nx">postAuthor</span><span class="o">:</span> <span class="s1">&#39;ned&#39;</span><span class="p">,</span>
@@ -2739,9 +2714,9 @@
 <h5 id="example-usage_9">Example Usage</h5>
 <div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span>
   <span class="nx">broadcastUnfollow</span><span class="p">,</span>
-  <span class="nx">Unfollow</span>
-<span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/broadcasting&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">AccessTokenResponse</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/shared&#39;</span><span class="p">;</span>
+  <span class="nx">Unfollow</span><span class="p">,</span>
+  <span class="nx">AccessTokenResponse</span>
+<span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions&#39;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">unfollowConfig</span>: <span class="kt">Unfollow</span> <span class="o">=</span> <span class="p">{</span>
   <span class="nx">userToUnfollow</span><span class="o">:</span> <span class="s1">&#39;ned&#39;</span>
@@ -2795,9 +2770,9 @@
 <h5 id="example-usage_10">Example Usage</h5>
 <div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span>
   <span class="nx">broadcastUpvote</span><span class="p">,</span>
-  <span class="nx">Vote</span>
-<span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/broadcasting&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">AccessTokenResponse</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/shared&#39;</span><span class="p">;</span>
+  <span class="nx">Vote</span><span class="p">,</span>
+  <span class="nx">AccessTokenResponse</span>
+<span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions&#39;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">downvoteConfig</span>: <span class="kt">Vote</span> <span class="o">=</span> <span class="p">{</span>
   <span class="nx">author</span><span class="o">:</span> <span class="s1">&#39;ned&#39;</span><span class="p">,</span>

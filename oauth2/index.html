@@ -371,13 +371,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-use-it" title="How to use it?" class="md-nav__link">
-    How to use it?
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#api-reference" title="API reference" class="md-nav__link">
     API reference
   </a>
@@ -824,13 +817,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-use-it" title="How to use it?" class="md-nav__link">
-    How to use it?
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#api-reference" title="API reference" class="md-nav__link">
     API reference
   </a>
@@ -1235,18 +1221,6 @@
                 <h2 id="what-is-this-module-for">What is this module for?</h2>
 <p>This module is a helper in the process of implementing the <strong>OAuth2 Authorization Code Grant</strong> flow with <strong>SteemConnect</strong>.</p>
 <p>Functions available here make it easy to generate URL to SteemConnect with correct scope and other details, get tokens from SteemConnect, refresh and revoke an access token, and set and get user metadata.</p>
-<h2 id="how-to-use-it">How to use it?</h2>
-<p>To use any of the functions from this module, you have to import it. Your can import directly from this module:</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">getAccessToken</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/oauth2&#39;</span><span class="p">;</span>
-</pre></div>
-
-
-<p>or from library's main module:</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">getAccessToken</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions&#39;</span><span class="p">;</span>
-</pre></div>
-
-
-<hr />
 <h2 id="api-reference">API reference</h2>
 <h3 id="functions">Functions</h3>
 <h4 id="getauthorizationurl">getAuthorizationUrl</h4>
@@ -1278,10 +1252,7 @@
 <li>(<em>string</em>): the authorization URL</li>
 </ul>
 <h5 id="example-usage">Example Usage</h5>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span>
-  <span class="nx">getAuthorizationUrl</span><span class="p">,</span>
-  <span class="nx">Scope</span>
-<span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/oauth2&#39;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">getAuthorizationUrl</span><span class="p">,</span> <span class="nx">Scope</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions&#39;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">clientId</span>: <span class="kt">string</span> <span class="o">=</span> <span class="s1">&#39;strimi.app&#39;</span><span class="p">;</span>
 <span class="kr">const</span> <span class="nx">redirectUri</span>: <span class="kt">string</span> <span class="o">=</span> <span class="s1">&#39;https://strimi.pl/redirect&#39;</span><span class="p">;</span>
@@ -1328,7 +1299,7 @@
 <li>(<em>Promise&lt;<a href="../shared/#accesstokenresponse">AccessTokenResponse</a>&gt;</em>): the <code>Promise</code> object which resolves with tokens details</li>
 </ul>
 <h5 id="example-usage_1">Example Usage</h5>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">getAccessToken</span><span class="p">,</span> <span class="nx">ClientCredentials</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/oauth2&#39;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">getAccessToken</span><span class="p">,</span> <span class="nx">ClientCredentials</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions&#39;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">clientCredentials</span>: <span class="kt">ClientCredentials</span> <span class="o">=</span> <span class="p">{</span>
     <span class="nx">clientId</span><span class="o">:</span> <span class="s1">&#39;strimi.app&#39;</span><span class="p">,</span>
@@ -1379,9 +1350,9 @@
 <h5 id="example-usage_2">Example Usage</h5>
 <div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span>
   <span class="nx">refreshAccessToken</span><span class="p">,</span>
-  <span class="nx">ClientCredentials</span>
-<span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/oauth2&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">AccessTokenResponse</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/shared&#39;</span><span class="p">;</span>
+  <span class="nx">ClientCredentials</span><span class="p">,</span>
+  <span class="nx">AccessTokenResponse</span>
+<span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions&#39;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">clientCredentials</span>: <span class="kt">ClientCredentials</span> <span class="o">=</span> <span class="p">{</span>
   <span class="nx">clientId</span><span class="o">:</span> <span class="s1">&#39;strimi.app&#39;</span><span class="p">,</span>
@@ -1427,8 +1398,10 @@
 <li>(<em>Promise&lt;<a href="#userdata">UserData</a>&gt;</em>): the <code>Promise</code> object which resolves with user data</li>
 </ul>
 <h5 id="example-usage_3">Example Usage</h5>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">getUserData</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/oauth2&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">AccessTokenResponse</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/shared&#39;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span>
+  <span class="nx">getUserData</span><span class="p">,</span>
+  <span class="nx">AccessTokenResponse</span>
+<span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions&#39;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">accessToken</span>: <span class="kt">AccessTokenResponse</span> <span class="o">=</span> <span class="p">{</span>
   <span class="nx">access_token</span><span class="o">:</span> <span class="s1">&#39;fdskfe.4324234&#39;</span><span class="p">,</span>
@@ -1464,8 +1437,10 @@
 <li>(<em>Promise&lt;<a href="#userdata">UserData</a>&gt;</em>): the <code>Promise</code> object which resolves with updated user data</li>
 </ul>
 <h5 id="example-usage_4">Example Usage</h5>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">setUserMetadata</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/oauth2&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">AccessTokenResponse</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/shared&#39;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span>
+  <span class="nx">setUserMetadata</span><span class="p">,</span>
+  <span class="nx">AccessTokenResponse</span>
+<span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions&#39;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">accessToken</span>: <span class="kt">AccessTokenResponse</span> <span class="o">=</span> <span class="p">{</span>
   <span class="nx">access_token</span><span class="o">:</span> <span class="s1">&#39;smt432fdsokdswpw.432jieod&#39;</span><span class="p">,</span>
@@ -1503,8 +1478,10 @@
 <li>(<em>Promise</em>): a <code>Promise</code> object</li>
 </ul>
 <h5 id="example-usage_5">Example Usage</h5>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">revokeAccessToken</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/oauth2&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">AccessTokenResponse</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/shared&#39;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span>
+  <span class="nx">revokeAccessToken</span><span class="p">,</span>
+  <span class="nx">AccessTokenResponse</span>
+<span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions&#39;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">accessToken</span>: <span class="kt">AccessTokenResponse</span> <span class="o">=</span> <span class="p">{</span>
   <span class="nx">access_token</span><span class="o">:</span> <span class="s1">&#39;smt432fdsokdswpw.432jieod&#39;</span><span class="p">,</span>

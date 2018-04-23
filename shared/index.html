@@ -395,13 +395,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-use-it" title="How to use it?" class="md-nav__link">
-    How to use it?
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#api-reference" title="API reference" class="md-nav__link">
     API reference
   </a>
@@ -1696,13 +1689,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-use-it" title="How to use it?" class="md-nav__link">
-    How to use it?
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#api-reference" title="API reference" class="md-nav__link">
     API reference
   </a>
@@ -2979,16 +2965,6 @@
                 <h2 id="what-is-this-module-for">What is this module for?</h2>
 <p>This module stores these tools that didn't fit other modules or are used by multiple modules.</p>
 <p>You'll find here two <strong>utility functions</strong>, a bunch of <strong>helper functions</strong>, <strong>error constants</strong>, and a lot of <strong>interfaces</strong> (+ one <strong>type</strong>).</p>
-<h2 id="how-to-use-it">How to use it?</h2>
-<p>To use any of the tools from this module, you have to import it directly from this module:</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span>
-  <span class="nx">createBroadcastableVote</span><span class="p">,</span>
-  <span class="nx">VoteConfig</span>
-<span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-funtions/shared&#39;</span><span class="p">;</span>
-</pre></div>
-
-
-<hr />
 <h2 id="api-reference">API reference</h2>
 <h3 id="utilities">Utilities</h3>
 <h4 id="pipe">pipe</h4>
@@ -3069,7 +3045,7 @@
 <li><a href="#operations"><code>Operations</code></a>: two operations - <code>comment</code> and <code>comment_options</code> - in an array</li>
 </ul>
 <h5 id="example-usage_2">Example Usage</h5>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">combineCommentWithOptions</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/shared&#39;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">combineCommentWithOptions</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions&#39;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">combinedCommentWithOptions</span> <span class="o">=</span> <span class="nx">combineCommentWithOptions</span><span class="p">({</span>
   <span class="nx">parent_permlink</span><span class="o">:</span> <span class="s1">&#39;i-am-ned&#39;</span><span class="p">,</span>
@@ -3150,7 +3126,7 @@
 <li><a href="../getting-started/#broadcastable"><code>broadcastable</code></a>: the broadcastable function for a <code>vote</code> operation</li>
 </ul>
 <h5 id="example-usage_3">Example Usage</h5>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">createBroadcastableVote</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/shared&#39;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">createBroadcastableVote</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions&#39;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">broadcastableVote</span> <span class="o">=</span> <span class="nx">createBroadcastableVote</span><span class="p">({</span>
   <span class="nx">voter</span><span class="o">:</span> <span class="s1">&#39;jakipatryk&#39;</span><span class="p">,</span>
@@ -3182,7 +3158,7 @@
 <li><a href="../getting-started/#broadcastable"><code>broadcastable</code></a>: the broadcastable function for a <code>comment</code> operation</li>
 </ul>
 <h5 id="example-usage_4">Example Usage</h5>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">createBroadcastableComment</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/shared&#39;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">createBroadcastableComment</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions&#39;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">broadcastableComment</span> <span class="o">=</span> <span class="nx">createBroadcastableComment</span><span class="p">({</span>
   <span class="nx">parent_author</span><span class="o">:</span> <span class="s1">&#39;ned&#39;</span><span class="p">,</span>
@@ -3215,7 +3191,7 @@
 <li><a href="../getting-started/#broadcastable"><code>broadcastable</code></a>: the broadcastable function for a <code>comment_options</code> operation</li>
 </ul>
 <h5 id="example-usage_5">Example Usage</h5>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">createBroadcastableCommentOptions</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/shared&#39;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">createBroadcastableCommentOptions</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions&#39;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">broadcastableCommentOptions</span> <span class="o">=</span> <span class="nx">createBroadcastableCommentOptions</span><span class="p">({</span>
   <span class="nx">author</span><span class="o">:</span> <span class="s1">&#39;jakipatryk&#39;</span><span class="p">,</span>
@@ -3246,7 +3222,7 @@
 <li><a href="../getting-started/#broadcastable"><code>broadcastable</code></a>: the broadcastable function for a <code>custom_json</code> operation</li>
 </ul>
 <h5 id="example-usage_6">Example Usage</h5>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">createBroadcastableCustomJson</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/shared&#39;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">createBroadcastableCustomJson</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions&#39;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">broadcastableCustomJson</span> <span class="o">=</span> <span class="nx">createBroadcastableCustomJson</span><span class="p">({</span>
   <span class="nx">required_posting_auths</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;jakipatryk&#39;</span><span class="p">],</span>
@@ -3290,8 +3266,7 @@
 <li><code>boolean</code>: true if errors are equal, false otherwise</li>
 </ul>
 <h5 id="example-usage_7">Example Usage</h5>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">checkOAuth2Error</span><span class="p">,</span> <span class="nx">AccessTokenResponse</span><span class="p">,</span> <span class="nx">ACCESS_TOKEN_EXPIRED</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/shared&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">broadcastUpvote</span><span class="p">,</span> <span class="nx">Vote</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/broadcasting&#39;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">checkOAuth2Error</span><span class="p">,</span> <span class="nx">AccessTokenResponse</span><span class="p">,</span> <span class="nx">ACCESS_TOKEN_EXPIRED</span><span class="p">,</span> <span class="nx">broadcastUpvote</span><span class="p">,</span> <span class="nx">Vote</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions&#39;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">accessToken</span>: <span class="kt">AccessTokenResponse</span> <span class="o">=</span> <span class="p">{</span>
   <span class="nx">access_token</span><span class="o">:</span> <span class="s1">&#39;smtnjknfjfnsk342.sddvdskgs&#39;</span><span class="p">,</span>
@@ -3333,8 +3308,7 @@
 <li><code>boolean</code>: true if errors is equal to error caused by expired access token, false otherwise</li>
 </ul>
 <h5 id="example-usage_8">Example Usage</h5>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">isAccessTokenExpiredError</span><span class="p">,</span> <span class="nx">AccessTokenResponse</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/shared&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">broadcastUpvote</span><span class="p">,</span> <span class="nx">Vote</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/broadcasting&#39;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">isAccessTokenExpiredError</span><span class="p">,</span> <span class="nx">AccessTokenResponse</span><span class="p">,</span> <span class="nx">broadcastUpvote</span><span class="p">,</span> <span class="nx">Vote</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions&#39;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">accessToken</span>: <span class="kt">AccessTokenResponse</span> <span class="o">=</span> <span class="p">{</span>
   <span class="nx">access_token</span><span class="o">:</span> <span class="s1">&#39;smtnjknfjfnsk342.sddvdskgs&#39;</span><span class="p">,</span>
@@ -3376,8 +3350,7 @@
 <li><code>boolean</code>: true if errors is equal to error caused by invalid access token, false otherwise</li>
 </ul>
 <h5 id="example-usage_9">Example Usage</h5>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">isAccessTokenInvalidError</span><span class="p">,</span> <span class="nx">AccessTokenResponse</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/shared&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">broadcastUpvote</span><span class="p">,</span> <span class="nx">Vote</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/broadcasting&#39;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">isAccessTokenInvalidError</span><span class="p">,</span> <span class="nx">AccessTokenResponse</span><span class="p">,</span> <span class="nx">broadcastUpvote</span><span class="p">,</span> <span class="nx">Vote</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions&#39;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">accessToken</span>: <span class="kt">AccessTokenResponse</span> <span class="o">=</span> <span class="p">{</span>
   <span class="nx">access_token</span><span class="o">:</span> <span class="s1">&#39;smtnjknfjfnsk342.sddvdskgs&#39;</span><span class="p">,</span>
@@ -3419,8 +3392,7 @@
 <li><code>boolean</code>: true if errors is equal to error caused by revoked access token, false otherwise</li>
 </ul>
 <h5 id="example-usage_10">Example Usage</h5>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">isAccessTokenRevokedError</span><span class="p">,</span> <span class="nx">AccessTokenResponse</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/shared&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">broadcastUpvote</span><span class="p">,</span> <span class="nx">Vote</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/broadcasting&#39;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">isAccessTokenRevokedError</span><span class="p">,</span> <span class="nx">AccessTokenResponse</span><span class="p">,</span> <span class="nx">broadcastUpvote</span><span class="p">,</span> <span class="nx">Vote</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions&#39;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">accessToken</span>: <span class="kt">AccessTokenResponse</span> <span class="o">=</span> <span class="p">{</span>
   <span class="nx">access_token</span><span class="o">:</span> <span class="s1">&#39;smtnjknfjfnsk342.sddvdskgs&#39;</span><span class="p">,</span>
@@ -3462,8 +3434,7 @@
 <li><code>boolean</code>: true if errors is equal to error caused by access token, false otherwise</li>
 </ul>
 <h5 id="example-usage_11">Example Usage</h5>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">isAccessTokenError</span><span class="p">,</span> <span class="nx">AccessTokenResponse</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/shared&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">broadcastUpvote</span><span class="p">,</span> <span class="nx">Vote</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/broadcasting&#39;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">isAccessTokenError</span><span class="p">,</span> <span class="nx">AccessTokenResponse</span><span class="p">,</span> <span class="nx">broadcastUpvote</span><span class="p">,</span> <span class="nx">Vote</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions&#39;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">accessToken</span>: <span class="kt">AccessTokenResponse</span> <span class="o">=</span> <span class="p">{</span>
   <span class="nx">access_token</span><span class="o">:</span> <span class="s1">&#39;smtnjknfjfnsk342.sddvdskgs&#39;</span><span class="p">,</span>
@@ -3507,11 +3478,11 @@
 <li><code>boolean</code>: true if errors is equal to error caused by refresh token, false otherwise</li>
 </ul>
 <h5 id="example-usage_12">Example Usage</h5>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">isRefreshTokenError</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/shared&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span>
+  <span class="nx">isRefreshTokenError</span><span class="p">,</span>
   <span class="nx">refreshAccessToken</span><span class="p">,</span>
   <span class="nx">ClientCredentials</span>
-<span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/oauth2&#39;</span><span class="p">;</span>
+<span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions&#39;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">clientCredentials</span>: <span class="kt">ClientCredentials</span> <span class="o">=</span> <span class="p">{</span>
   <span class="nx">clientId</span><span class="o">:</span> <span class="s1">&#39;strimi.app&#39;</span><span class="p">,</span>
@@ -3551,11 +3522,11 @@
 <li><code>boolean</code>: true if errors is equal to error caused by code, false otherwise</li>
 </ul>
 <h5 id="example-usage_13">Example Usage</h5>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">isCodeError</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/shared&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span>
+  <span class="nx">isCodeError</span><span class="p">,</span>
   <span class="nx">getAccessToken</span><span class="p">,</span>
   <span class="nx">ClientCredentials</span>
-<span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/oauth2&#39;</span><span class="p">;</span>
+<span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions&#39;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">clientCredentials</span>: <span class="kt">ClientCredentials</span> <span class="o">=</span> <span class="p">{</span>
   <span class="nx">clientId</span><span class="o">:</span> <span class="s1">&#39;strimi.app&#39;</span><span class="p">,</span>
@@ -3596,7 +3567,7 @@
 <li><a href="../getting-started/#broadcastable"><code>broadcastable</code></a>: the broadcastable function for a <code>delete_comment</code> operation</li>
 </ul>
 <h5 id="example-usage_14">Example Usage</h5>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">createBroadcastableDeleteComment</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/shared&#39;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">createBroadcastableDeleteComment</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions&#39;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">broadcastableDeleteComment</span> <span class="o">=</span> <span class="nx">createBroadcastableDeleteComment</span><span class="p">({</span>
   <span class="nx">author</span><span class="o">:</span> <span class="s1">&#39;jakipatryk&#39;</span><span class="p">,</span>

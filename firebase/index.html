@@ -379,13 +379,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-use-it" title="How to use it?" class="md-nav__link">
-    How to use it?
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#api-reference" title="API reference" class="md-nav__link">
     API reference
   </a>
@@ -741,13 +734,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-use-it" title="How to use it?" class="md-nav__link">
-    How to use it?
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#api-reference" title="API reference" class="md-nav__link">
     API reference
   </a>
@@ -1036,17 +1022,6 @@
 <h2 id="what-is-this-module-for">What is this module for?</h2>
 <p>This module is for helping developers who want to use <strong>Firebase</strong> with <strong>SteemConnect</strong>.</p>
 <p>It contains functions for <strong>minting</strong> custom auth tokens, <strong>saving</strong> access token in the Firestore, <strong>getting</strong> access token from Firestore, and <strong>creating</strong> or <strong>updating</strong> user auth account.</p>
-<h2 id="how-to-use-it">How to use it?</h2>
-<p>To use any of the function from this module you have to import it. You can either import it directly from this module:</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">saveAccessToken</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/firebase&#39;</span><span class="p">;</span>
-</pre></div>
-
-
-<p>or from library's main module:</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">saveAccessToken</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions&#39;</span><span class="p">;</span>
-</pre></div>
-
-
 <h2 id="api-reference">API reference</h2>
 <h3 id="functions">Functions</h3>
 <h4 id="createfirebaseaccount">createFirebaseAccount</h4>
@@ -1080,7 +1055,7 @@
 <div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span>
   <span class="nx">createFirebaseAccount</span><span class="p">,</span>
   <span class="nx">FirebaseAccount</span>
-<span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/firebase&#39;</span><span class="p">;</span>
+<span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions&#39;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="o">*</span> <span class="kr">as</span> <span class="nx">admin</span> <span class="nx">from</span> <span class="s1">&#39;firebase-admin&#39;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">serviceAccount</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;../serviceAccountKey.json&#39;</span><span class="p">);</span>
@@ -1122,7 +1097,7 @@
 <h5 id="returns_1">Returns</h5>
 <p>(<em>Promise<string></em>): the <code>Promise</code> object which resolves with Firebase custom auth token</p>
 <h5 id="example-usage_1">Example Usage</h5>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">mintFirebaseToken</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/firebase&#39;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">mintFirebaseToken</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions&#39;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="o">*</span> <span class="kr">as</span> <span class="nx">admin</span> <span class="nx">from</span> <span class="s1">&#39;firebase-admin&#39;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">serviceAccount</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;../serviceAccountKey.json&#39;</span><span class="p">);</span>
@@ -1164,7 +1139,7 @@
 <li>(<em>Promise</em>): the <code>Promise</code> object</li>
 </ul>
 <h5 id="example-usage_2">Example Usage</h5>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">saveAccessToken</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/firebase&#39;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">saveAccessToken</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions&#39;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="o">*</span> <span class="kr">as</span> <span class="nx">admin</span> <span class="nx">from</span> <span class="s1">&#39;firebase-admin&#39;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">serviceAccount</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;../serviceAccountKey.json&#39;</span><span class="p">);</span>
@@ -1210,7 +1185,7 @@
 <li>(<em>Promise&lt;<a href="../shared/#accesstokenresponse">AccessTokenResponse</a>&gt;</em>): the <code>Promise</code> object which resolves with the <code>AccessTokenResponse</code> object</li>
 </ul>
 <h5 id="example-usage_3">Example Usage</h5>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">getAccessTokenFromFirestore</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/firebase&#39;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">getAccessTokenFromFirestore</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions&#39;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="o">*</span> <span class="kr">as</span> <span class="nx">admin</span> <span class="nx">from</span> <span class="s1">&#39;firebase-admin&#39;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">serviceAccount</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;../serviceAccountKey.json&#39;</span><span class="p">);</span>

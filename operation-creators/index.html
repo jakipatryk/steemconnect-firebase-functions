@@ -383,13 +383,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-use-it" title="How to use it?" class="md-nav__link">
-    How to use it?
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#api-reference" title="API reference" class="md-nav__link">
     API reference
   </a>
@@ -757,13 +750,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-use-it" title="How to use it?" class="md-nav__link">
-    How to use it?
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#api-reference" title="API reference" class="md-nav__link">
     API reference
   </a>
@@ -1102,18 +1088,6 @@
 <p>This module contains functions called <strong>operation creators</strong>. Their name is self-descriptive - they create <a href="../shared/#operation">operations</a>.</p>
 <p>Created operations can be then broadcasted to the Steem network using the <a href="../broadcasting/#broadcastoperations"><code>broadcastOperations</code></a> function from <a href="../broadcasting/"><em>broadcasting</em></a> module.</p>
 <p>Most likely you will use this module for creating operations that aren't implemented yet in the <a href="../broadcasting/"><em>broadcasting</em></a> module.</p>
-<h2 id="how-to-use-it">How to use it?</h2>
-<p>To use any of the functions below, you have to import it. You can either import it directly from this module:</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">createOperation</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/operation-creators&#39;</span><span class="p">;</span>
-</pre></div>
-
-
-<p>or from the library's main module:</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">createOperation</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions&#39;</span><span class="p">;</span>
-</pre></div>
-
-
-<hr />
 <h2 id="api-reference">API reference</h2>
 <h3 id="functions">Functions</h3>
 <h4 id="createoperation">createOperation</h4>
@@ -1140,8 +1114,7 @@
 <li><a href="../shared/#operation"><code>Operation</code></a>: operation created with given data</li>
 </ul>
 <h5 id="example-usage">Example Usage</h5>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">createOperation</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/operation-creators&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">Operation</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/shared&#39;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">createOperation</span><span class="p">,</span> <span class="nx">Operation</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions&#39;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">voteOperation</span>: <span class="kt">Operation</span> <span class="o">=</span> <span class="nx">createOperation</span><span class="p">(</span><span class="s1">&#39;vote&#39;</span><span class="p">,</span> <span class="p">{</span>
   <span class="nx">voter</span><span class="o">:</span> <span class="s1">&#39;jakipatryk&#39;</span><span class="p">,</span>
@@ -1181,8 +1154,7 @@
 <li><a href="../shared/#operation"><code>Operation</code></a>: <code>comment</code> operation</li>
 </ul>
 <h5 id="example-usage_1">Example Usage</h5>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">createComment</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/operation-creators&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">Operation</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/shared&#39;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">createComment</span><span class="p">,</span> <span class="nx">Operation</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions&#39;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">commentOperation</span>: <span class="kt">Operation</span> <span class="o">=</span> <span class="nx">createComment</span><span class="p">({</span>
   <span class="nx">parent_author</span><span class="o">:</span> <span class="s1">&#39;ned&#39;</span><span class="p">,</span>
@@ -1223,8 +1195,7 @@
 <li><a href="../shared/#operation"><code>Operation</code></a>: <code>comment_options</code> operation</li>
 </ul>
 <h5 id="example-usage_2">Example Usage</h5>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">createCommentOptions</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/operation-creators&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">Operation</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/shared&#39;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">createCommentOptions</span><span class="p">,</span> <span class="nx">Operation</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions&#39;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">commentOptionsOperation</span>: <span class="kt">Operation</span> <span class="o">=</span> <span class="nx">createComment</span><span class="p">({</span>
   <span class="nx">author</span><span class="o">:</span> <span class="s1">&#39;jakipatryk&#39;</span><span class="p">,</span>
@@ -1273,8 +1244,7 @@
 <li><a href="../shared/#operation"><code>Operation</code></a>: <code>custom_json</code> operation</li>
 </ul>
 <h5 id="example-usage_3">Example Usage</h5>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">createCustomJson</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/operation-creators&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">Operation</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/shared&#39;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">createCustomJson</span><span class="p">,</span> <span class="nx">Operation</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions&#39;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">customJsonOperation</span>: <span class="kt">Operation</span> <span class="o">=</span> <span class="nx">createCustomJson</span><span class="p">({</span>
   <span class="nx">requiredPostingAuths</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;jakipatryk&#39;</span><span class="p">],</span>
@@ -1312,8 +1282,10 @@
 <li><a href="../shared/#operation"><code>Operation</code></a>: <code>delete_comment</code> operation</li>
 </ul>
 <h5 id="example-usage_4">Example Usage</h5>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">createDeleteComment</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/operation-creators&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">Operation</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/shared&#39;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span>
+  <span class="nx">createDeleteComment</span><span class="p">,</span>
+  <span class="nx">Operation</span>
+<span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions&#39;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">deleteCommentOperation</span>: <span class="kt">Operation</span> <span class="o">=</span> <span class="nx">createDeleteComment</span><span class="p">({</span>
   <span class="nx">author</span><span class="o">:</span> <span class="s1">&#39;jakipatryk&#39;</span><span class="p">,</span>
@@ -1343,8 +1315,7 @@
 <li><a href="../shared/#operation"><code>Operation</code></a>: <code>vote</code> operation</li>
 </ul>
 <h5 id="example-usage_5">Example Usage</h5>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">createVote</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/operation-creators&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">Operation</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/shared&#39;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">createVote</span><span class="p">,</span> <span class="nx">Operation</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions&#39;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">voteOperation</span>: <span class="kt">Operation</span> <span class="o">=</span> <span class="nx">createVote</span><span class="p">({</span>
   <span class="nx">voter</span><span class="o">:</span> <span class="s1">&#39;jakipatryk&#39;</span><span class="p">,</span>

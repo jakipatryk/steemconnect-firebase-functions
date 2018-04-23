@@ -9,12 +9,6 @@ var __rest = (this && this.__rest) || function (s, e) {
     return t;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-/**
- * Creates and returns operation.
- * @param {string} type The type of the operation (ex. 'comment').
- * @param {Object} config The configuration object for the operation.
- * @returns A single operation in the form of an array.
- */
 exports.createOperation = (type, _a) => {
     var parameters = __rest(_a, []);
     return [

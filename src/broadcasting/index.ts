@@ -10,3 +10,4 @@ export { broadcastReblog } from './broadcastReblog';
 export { broadcastUnfollow } from './broadcastUnfollow';
 export { broadcastUpvote } from './broadcastUpvote';
 export { rely } from './rely';
+export * from './interfaces';

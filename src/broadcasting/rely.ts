@@ -1,10 +1,10 @@
 import { refreshAccessToken } from '../oauth2/refreshAccessToken';
-import { ClientCredenctials } from './../oauth2/interfaces/ClientCredentials';
+import { ClientCredentials } from './../oauth2/interfaces/ClientCredentials';
 import { isAccessTokenExpiredError } from './../shared/errors/isAccessTokenExpiredError';
 import { AccessTokenResponse } from './../shared/interfaces/AccessTokenResponse';
 import { BroadcastResult } from './interfaces/BroadcastResult';
 
-export const rely = ({ clientId, clientSecret }: ClientCredenctials) => ({
+export const rely = ({ clientId, clientSecret }: ClientCredentials) => ({
   access_token,
   refresh_token,
   username

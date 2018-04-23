@@ -7,3 +7,4 @@ __export(require("./broadcasting"));
 __export(require("./firebase"));
 __export(require("./oauth2"));
 __export(require("./operation-creators"));
+__export(require("./shared"));

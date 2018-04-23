@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const rp = require("request-promise");
-function refreshAccessToken({ clientId, clientSecret, refreshToken }) {
+function refreshAccessToken({ clientId, clientSecret, refresh_token }) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             const options = {
@@ -18,7 +18,7 @@ function refreshAccessToken({ clientId, clientSecret, refreshToken }) {
                     grant_type: 'refresh_token',
                     client_id: clientId,
                     client_secret: clientSecret,
-                    refresh_token: refreshToken
+                    refresh_token
                 },
                 json: true
             };

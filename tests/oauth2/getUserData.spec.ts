@@ -4,6 +4,12 @@ import { expect } from 'chai';
 import * as nock from 'nock';
 
 describe('getUserData', () => {
+  const accessToken = {
+    access_token: 'fdsf23f23',
+    username: 'jakipatryk',
+    expires_in: 64000
+  };
+
   it('should return data of the user who requested that', async () => {
     nock('https://steemconnect.com')
       .get('/api/me')
@@ -16,7 +22,6 @@ describe('getUserData', () => {
         user_metadata: {}
       });
 
-    const accessToken = 'gfdgergfdvcx.fdsfdsds';
     const userData = await getUserData(accessToken);
 
     expect(userData).to.exist.and.include({ user: 'jakipatryk-dev' });
@@ -30,7 +35,6 @@ describe('getUserData', () => {
         error_description: 'The token has invalid role'
       });
 
-    const accessToken = 'gfdgfsdfsfsdfsd';
     return getUserData(accessToken).catch(err => {
       expect(err).to.exist;
     });

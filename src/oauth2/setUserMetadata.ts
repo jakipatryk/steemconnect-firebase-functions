@@ -1,11 +1,11 @@
-import { UserData } from '../shared/interfaces/UserData';
 import * as rp from 'request-promise';
+import { UserData } from '../shared/interfaces/UserData';
+import { AccessTokenResponse } from './../shared/interfaces/AccessTokenResponse';
 
 export async function setUserMetadata({
-  accessToken,
+  access_token,
   metadata
-}: {
-  accessToken: string;
+}: AccessTokenResponse & {
   metadata: object;
 }): Promise<UserData> {
   const metadataClone = Object.assign({}, metadata);
@@ -15,7 +15,7 @@ export async function setUserMetadata({
   const options = {
     uri: 'https://steemconnect.com/api/me',
     headers: {
-      Authorization: accessToken
+      Authorization: access_token
     },
     body: userMetadata,
     json: true

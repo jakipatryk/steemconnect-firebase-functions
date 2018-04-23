@@ -8,7 +8,11 @@ import { expect } from 'chai';
 import * as nock from 'nock';
 
 describe('revokeAccessToken', () => {
-  const accessToken = 'e432fderefe.3454233rfdsgfhtjyui';
+  const accessToken = {
+    access_token: 'fdsf23f23',
+    username: 'jakipatryk',
+    expires_in: 64000
+  };
 
   it('should revoke an access token if access token is correct', async () => {
     nock('https://steemconnect.com')

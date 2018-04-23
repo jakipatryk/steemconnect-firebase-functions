@@ -4,10 +4,14 @@ import { isAccessTokenExpiredError } from './../shared/errors/isAccessTokenExpir
 import { AccessTokenResponse } from './../shared/interfaces/AccessTokenResponse';
 import { BroadcastResult } from './interfaces/BroadcastResult';
 
-export const rely = ({ clientId, clientSecret }: ClientCredentials) => ({
+export const rely = ({
+  clientId,
+  clientSecret
+}: Required<ClientCredentials>) => ({
   access_token,
   refresh_token,
-  username
+  username,
+  expires_in
 }: Required<AccessTokenResponse>) => async (
   broadcastable: Function
 ): Promise<BroadcastResult & Partial<AccessTokenResponse>> => {
@@ -18,7 +22,10 @@ export const rely = ({ clientId, clientSecret }: ClientCredentials) => ({
       const refreshedTokens = await refreshAccessToken({
         clientId,
         clientSecret,
-        refreshToken: refresh_token
+        access_token,
+        refresh_token,
+        username,
+        expires_in
       });
       const broadcastResult = await broadcastable({
         access_token: refreshedTokens.access_token,

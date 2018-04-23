@@ -1,5 +1,5 @@
 import { UserData } from '../shared/interfaces/UserData';
-export declare function setUserMetadata({accessToken, metadata}: {
-    accessToken: string;
+import { AccessTokenResponse } from './../shared/interfaces/AccessTokenResponse';
+export declare function setUserMetadata({access_token, metadata}: AccessTokenResponse & {
     metadata: object;
 }): Promise<UserData>;

@@ -6,6 +6,12 @@ import * as nock from 'nock';
 describe('refreshAccessToken', () => {
   const clientId = 'test.app';
   const clientSecret = 'fdsfew32fsd329fg';
+  const accessToken = {
+    access_token: 'fdsf23f23',
+    username: 'jakipatryk',
+    expires_in: 64000,
+    refresh_token: '32rk3m23'
+  };
 
   it('should exchange refresh token for an access token (along with username etc.) with SteemConnect and return it if refresh token is valid', async () => {
     nock('https://steemconnect.com')
@@ -16,12 +22,11 @@ describe('refreshAccessToken', () => {
         username: 'dev',
         refresh_token: 'gfd4t.432rrdf43.gfdger'
       });
-    const refreshToken = 'valid.refresh.token';
 
     const newAccessToken = await refreshAccessToken({
       clientId,
       clientSecret,
-      refreshToken
+      ...accessToken
     });
 
     expect(newAccessToken).to.exist.and.have.property('access_token');
@@ -34,9 +39,8 @@ describe('refreshAccessToken', () => {
         error: 'invalid_grant',
         error_description: 'The token has invalid role'
       });
-    const refreshToken = 'invalid.refresh.token';
 
-    return refreshAccessToken({ clientId, clientSecret, refreshToken }).catch(
+    return refreshAccessToken({ clientId, clientSecret, ...accessToken }).catch(
       err => expect(err).to.exist.and.have.property('error_description')
     );
   });

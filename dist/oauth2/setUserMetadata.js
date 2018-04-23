@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const rp = require("request-promise");
-function setUserMetadata({ accessToken, metadata }) {
+function setUserMetadata({ access_token, metadata }) {
     return __awaiter(this, void 0, void 0, function* () {
         const metadataClone = Object.assign({}, metadata);
         const userMetadata = {
@@ -18,7 +18,7 @@ function setUserMetadata({ accessToken, metadata }) {
         const options = {
             uri: 'https://steemconnect.com/api/me',
             headers: {
-                Authorization: accessToken
+                Authorization: access_token
             },
             body: userMetadata,
             json: true

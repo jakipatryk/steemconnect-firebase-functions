@@ -5,10 +5,10 @@ import * as rp from 'request-promise';
 export async function refreshAccessToken({
   clientId,
   clientSecret,
-  refreshToken
-}: ClientCredentials & {
-  refreshToken: string;
-}): Promise<AccessTokenResponse> {
+  refresh_token
+}: Required<ClientCredentials> & Required<AccessTokenResponse>): Promise<
+  AccessTokenResponse
+> {
   try {
     const options = {
       uri: 'https://steemconnect.com/api/oauth2/token',
@@ -16,7 +16,7 @@ export async function refreshAccessToken({
         grant_type: 'refresh_token',
         client_id: clientId,
         client_secret: clientSecret,
-        refresh_token: refreshToken
+        refresh_token
       },
       json: true
     };

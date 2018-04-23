@@ -4,19 +4,6 @@ This module stores these tools that didn't fit other modules or are used by mult
 
 You'll find here two **utility functions**, a bunch of **helper functions**, **error constants**, and a lot of **interfaces** (+ one **type**).
 
-## How to use it?
-
-To use any of the tools from this module, you have to import it directly from this module:
-
-```typescript
-import {
-  createBroadcastableVote,
-  VoteConfig
-} from 'steemconnect-firebase-funtions/shared';
-```
-
----
-
 ## API reference
 
 ### Utilities
@@ -117,7 +104,7 @@ Combines `createComment` with `createCommentOptions`, so you can create these tw
 ##### Example Usage
 
 ```typescript
-import { combineCommentWithOptions } from 'steemconnect-firebase-functions/shared';
+import { combineCommentWithOptions } from 'steemconnect-firebase-functions';
 
 const combinedCommentWithOptions = combineCommentWithOptions({
   parent_permlink: 'i-am-ned',
@@ -203,7 +190,7 @@ Creates [_broadcastable_](getting-started.md#broadcastable) for a `vote` operati
 ##### Example Usage
 
 ```typescript
-import { createBroadcastableVote } from 'steemconnect-firebase-functions/shared';
+import { createBroadcastableVote } from 'steemconnect-firebase-functions';
 
 const broadcastableVote = createBroadcastableVote({
   voter: 'jakipatryk',
@@ -242,7 +229,7 @@ Creates [_broadcastable_](getting-started.md#broadcastable) for a `comment` oper
 ##### Example Usage
 
 ```typescript
-import { createBroadcastableComment } from 'steemconnect-firebase-functions/shared';
+import { createBroadcastableComment } from 'steemconnect-firebase-functions';
 
 const broadcastableComment = createBroadcastableComment({
   parent_author: 'ned',
@@ -282,7 +269,7 @@ Creates [_broadcastable_](getting-started.md#broadcastable) for a `comment_optio
 ##### Example Usage
 
 ```typescript
-import { createBroadcastableCommentOptions } from 'steemconnect-firebase-functions/shared';
+import { createBroadcastableCommentOptions } from 'steemconnect-firebase-functions';
 
 const broadcastableCommentOptions = createBroadcastableCommentOptions({
   author: 'jakipatryk',
@@ -320,7 +307,7 @@ Creates [_broadcastable_](getting-started.md#broadcastable) for a `custom_json` 
 ##### Example Usage
 
 ```typescript
-import { createBroadcastableCustomJson } from 'steemconnect-firebase-functions/shared';
+import { createBroadcastableCustomJson } from 'steemconnect-firebase-functions';
 
 const broadcastableCustomJson = createBroadcastableCustomJson({
   required_posting_auths: ['jakipatryk'],
@@ -368,8 +355,7 @@ Checks if provided error object is equal the error object to check against.
 ##### Example Usage
 
 ```typescript
-import { checkOAuth2Error, AccessTokenResponse, ACCESS_TOKEN_EXPIRED } from 'steemconnect-firebase-functions/shared';
-import { broadcastUpvote, Vote } from 'steemconnect-firebase-functions/broadcasting';
+import { checkOAuth2Error, AccessTokenResponse, ACCESS_TOKEN_EXPIRED, broadcastUpvote, Vote } from 'steemconnect-firebase-functions';
 
 const accessToken: AccessTokenResponse = {
   access_token: 'smtnjknfjfnsk342.sddvdskgs',
@@ -418,8 +404,7 @@ Checks if provided error object is equal to the error caused by expired access t
 ##### Example Usage
 
 ```typescript
-import { isAccessTokenExpiredError, AccessTokenResponse } from 'steemconnect-firebase-functions/shared';
-import { broadcastUpvote, Vote } from 'steemconnect-firebase-functions/broadcasting';
+import { isAccessTokenExpiredError, AccessTokenResponse, broadcastUpvote, Vote } from 'steemconnect-firebase-functions';
 
 const accessToken: AccessTokenResponse = {
   access_token: 'smtnjknfjfnsk342.sddvdskgs',
@@ -468,8 +453,7 @@ Checks if provided error object is equal to the error caused by invalid access t
 ##### Example Usage
 
 ```typescript
-import { isAccessTokenInvalidError, AccessTokenResponse } from 'steemconnect-firebase-functions/shared';
-import { broadcastUpvote, Vote } from 'steemconnect-firebase-functions/broadcasting';
+import { isAccessTokenInvalidError, AccessTokenResponse, broadcastUpvote, Vote } from 'steemconnect-firebase-functions';
 
 const accessToken: AccessTokenResponse = {
   access_token: 'smtnjknfjfnsk342.sddvdskgs',
@@ -518,8 +502,7 @@ Checks if provided error object is equal to the error caused by revoked access t
 ##### Example Usage
 
 ```typescript
-import { isAccessTokenRevokedError, AccessTokenResponse } from 'steemconnect-firebase-functions/shared';
-import { broadcastUpvote, Vote } from 'steemconnect-firebase-functions/broadcasting';
+import { isAccessTokenRevokedError, AccessTokenResponse, broadcastUpvote, Vote } from 'steemconnect-firebase-functions';
 
 const accessToken: AccessTokenResponse = {
   access_token: 'smtnjknfjfnsk342.sddvdskgs',
@@ -568,8 +551,7 @@ Checks if provided error object is equal to any of errors caused by access token
 ##### Example Usage
 
 ```typescript
-import { isAccessTokenError, AccessTokenResponse } from 'steemconnect-firebase-functions/shared';
-import { broadcastUpvote, Vote } from 'steemconnect-firebase-functions/broadcasting';
+import { isAccessTokenError, AccessTokenResponse, broadcastUpvote, Vote } from 'steemconnect-firebase-functions';
 
 const accessToken: AccessTokenResponse = {
   access_token: 'smtnjknfjfnsk342.sddvdskgs',
@@ -620,11 +602,11 @@ Checks if provided error object is caused by refresh token.
 ##### Example Usage
 
 ```typescript
-import { isRefreshTokenError } from 'steemconnect-firebase-functions/shared';
 import {
+  isRefreshTokenError,
   refreshAccessToken,
   ClientCredentials
-} from 'steemconnect-firebase-functions/oauth2';
+} from 'steemconnect-firebase-functions';
 
 const clientCredentials: ClientCredentials = {
   clientId: 'strimi.app',
@@ -671,11 +653,11 @@ Checks if provided error object is caused by wrong code.
 ##### Example Usage
 
 ```typescript
-import { isCodeError } from 'steemconnect-firebase-functions/shared';
 import {
+  isCodeError,
   getAccessToken,
   ClientCredentials
-} from 'steemconnect-firebase-functions/oauth2';
+} from 'steemconnect-firebase-functions';
 
 const clientCredentials: ClientCredentials = {
   clientId: 'strimi.app',
@@ -723,7 +705,7 @@ Creates [_broadcastable_](getting-started.md#broadcastable) for a `delete_commen
 ##### Example Usage
 
 ```typescript
-import { createBroadcastableDeleteComment } from 'steemconnect-firebase-functions/shared';
+import { createBroadcastableDeleteComment } from 'steemconnect-firebase-functions';
 
 const broadcastableDeleteComment = createBroadcastableDeleteComment({
   author: 'jakipatryk',

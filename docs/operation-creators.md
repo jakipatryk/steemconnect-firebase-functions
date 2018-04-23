@@ -6,22 +6,6 @@ Created operations can be then broadcasted to the Steem network using the [`broa
 
 Most likely you will use this module for creating operations that aren't implemented yet in the [_broadcasting_](broadcasting.md) module.
 
-## How to use it?
-
-To use any of the functions below, you have to import it. You can either import it directly from this module:
-
-```typescript
-import { createOperation } from 'steemconnect-firebase-functions/operation-creators';
-```
-
-or from the library's main module:
-
-```typescript
-import { createOperation } from 'steemconnect-firebase-functions';
-```
-
----
-
 ## API reference
 
 ### Functions
@@ -55,8 +39,7 @@ Creates operation based on given type and parameters.
 ##### Example Usage
 
 ```typescript
-import { createOperation } from 'steemconnect-firebase-functions/operation-creators';
-import { Operation } from 'steemconnect-firebase-functions/shared';
+import { createOperation, Operation } from 'steemconnect-firebase-functions';
 
 const voteOperation: Operation = createOperation('vote', {
   voter: 'jakipatryk',
@@ -103,8 +86,7 @@ Creates `comment` operation.
 ##### Example Usage
 
 ```typescript
-import { createComment } from 'steemconnect-firebase-functions/operation-creators';
-import { Operation } from 'steemconnect-firebase-functions/shared';
+import { createComment, Operation } from 'steemconnect-firebase-functions';
 
 const commentOperation: Operation = createComment({
   parent_author: 'ned',
@@ -152,8 +134,7 @@ Creates `comment_options` operation.
 ##### Example Usage
 
 ```typescript
-import { createCommentOptions } from 'steemconnect-firebase-functions/operation-creators';
-import { Operation } from 'steemconnect-firebase-functions/shared';
+import { createCommentOptions, Operation } from 'steemconnect-firebase-functions';
 
 const commentOptionsOperation: Operation = createComment({
   author: 'jakipatryk',
@@ -209,8 +190,7 @@ Creates `custom_json` operation.
 ##### Example Usage
 
 ```typescript
-import { createCustomJson } from 'steemconnect-firebase-functions/operation-creators';
-import { Operation } from 'steemconnect-firebase-functions/shared';
+import { createCustomJson, Operation } from 'steemconnect-firebase-functions';
 
 const customJsonOperation: Operation = createCustomJson({
   requiredPostingAuths: ['jakipatryk'],
@@ -255,8 +235,10 @@ Creates `delete_comment` operation.
 ##### Example Usage
 
 ```typescript
-import { createDeleteComment } from 'steemconnect-firebase-functions/operation-creators';
-import { Operation } from 'steemconnect-firebase-functions/shared';
+import {
+  createDeleteComment,
+  Operation
+} from 'steemconnect-firebase-functions';
 
 const deleteCommentOperation: Operation = createDeleteComment({
   author: 'jakipatryk',
@@ -293,8 +275,7 @@ Creates `vote` operation.
 ##### Example Usage
 
 ```typescript
-import { createVote } from 'steemconnect-firebase-functions/operation-creators';
-import { Operation } from 'steemconnect-firebase-functions/shared';
+import { createVote, Operation } from 'steemconnect-firebase-functions';
 
 const voteOperation: Operation = createVote({
   voter: 'jakipatryk',

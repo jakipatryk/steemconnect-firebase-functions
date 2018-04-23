@@ -20,7 +20,7 @@ It is a library designed to help developers who want to create apps based on Ste
 ## How to install?
 
 ```
-npm i steemconnect-firebase-functions@beta
+npm i steemconnect-firebase-functions
 ```
 
 ---

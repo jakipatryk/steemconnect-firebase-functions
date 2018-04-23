@@ -5,7 +5,6 @@ import { PostWithBeneficiaries } from './interfaces/PostWithBeneficiaries';
 
 export const broadcastPostWithBeneficiaries = ({
   mainTag,
-
   permlink,
   title,
   body,

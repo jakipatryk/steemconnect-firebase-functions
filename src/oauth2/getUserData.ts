@@ -2,9 +2,9 @@ import * as rp from 'request-promise';
 import { UserData } from '../shared/interfaces/UserData';
 import { AccessTokenResponse } from './../shared/interfaces/AccessTokenResponse';
 
-export async function getUserData(
-  access_token: AccessTokenResponse
-): Promise<UserData> {
+export async function getUserData({
+  access_token
+}: AccessTokenResponse): Promise<UserData> {
   try {
     const options = {
       uri: 'https://steemconnect.com/api/me',

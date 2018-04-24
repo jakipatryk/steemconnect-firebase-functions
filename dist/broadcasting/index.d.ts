@@ -1,4 +1,5 @@
 export { broadcastComment } from './broadcastComment';
+export { broadcastDeletion } from './broadcastDeletion';
 export { broadcastDownvote } from './broadcastDownvote';
 export { broadcastFollow } from './broadcastFollow';
 export { broadcastOperations } from './broadcastOperations';

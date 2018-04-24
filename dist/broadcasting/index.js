@@ -2,6 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var broadcastComment_1 = require("./broadcastComment");
 exports.broadcastComment = broadcastComment_1.broadcastComment;
+var broadcastDeletion_1 = require("./broadcastDeletion");
+exports.broadcastDeletion = broadcastDeletion_1.broadcastDeletion;
 var broadcastDownvote_1 = require("./broadcastDownvote");
 exports.broadcastDownvote = broadcastDownvote_1.broadcastDownvote;
 var broadcastFollow_1 = require("./broadcastFollow");

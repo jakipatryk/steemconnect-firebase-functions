@@ -1,6 +1,6 @@
 {
   "name": "steemconnect-firebase-functions",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "A TypeScript library that can help you build applications with SteemConnect and Firebase.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

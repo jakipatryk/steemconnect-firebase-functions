@@ -137,7 +137,7 @@ import {
   AccessTokenResponse,
   Operations,
   ClientCredentials
-} from 'steemconnect-firebase-functions/broadcasting';
+} from 'steemconnect-firebase-functions';
 
 const clientCredentials: ClientCredentials = {
   clientId: 'strimi.app',
@@ -847,7 +847,7 @@ In the broadcasting module, it defines a configuration object for a comment.
 
 ```typescript
 export interface Comment {
-  parentAuthor?: string;
+  parentAuthor: string;
   parentPermlink: string;
   commentPermlink: string;
   commentBody: string;

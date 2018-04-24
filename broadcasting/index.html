@@ -2207,7 +2207,7 @@
   <span class="nx">AccessTokenResponse</span><span class="p">,</span>
   <span class="nx">Operations</span><span class="p">,</span>
   <span class="nx">ClientCredentials</span>
-<span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions/broadcasting&#39;</span><span class="p">;</span>
+<span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;steemconnect-firebase-functions&#39;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">clientCredentials</span>: <span class="kt">ClientCredentials</span> <span class="o">=</span> <span class="p">{</span>
   <span class="nx">clientId</span><span class="o">:</span> <span class="s1">&#39;strimi.app&#39;</span><span class="p">,</span>
@@ -2831,7 +2831,7 @@
 <p>In the broadcasting module, it defines a configuration object for a comment.</p>
 <h5 id="implementation_12">Implementation</h5>
 <div class="codehilite"><pre><span></span><span class="kr">export</span> <span class="kr">interface</span> <span class="nx">Comment</span> <span class="p">{</span>
-  <span class="nx">parentAuthor?</span>: <span class="kt">string</span><span class="p">;</span>
+  <span class="nx">parentAuthor</span>: <span class="kt">string</span><span class="p">;</span>
   <span class="nx">parentPermlink</span>: <span class="kt">string</span><span class="p">;</span>
   <span class="nx">commentPermlink</span>: <span class="kt">string</span><span class="p">;</span>
   <span class="nx">commentBody</span>: <span class="kt">string</span><span class="p">;</span>
